@@ -1,0 +1,86 @@
+From f1b738d8445e9ebd316f61a077264edd11d17c4e Mon Sep 17 00:00:00 2001
+From: matias pizarro <matias@pizarro.net>
+Date: Wed, 11 Sep 2024 01:03:43 +0200
+Subject: [PATCH] Rationalize and clean up editors/linux-sublime3
+
+---
+ editors/linux-sublime3/Makefile                   | 15 +++++++--------
+ .../files/patch-sublime_text.desktop              |  2 +-
+ editors/linux-sublime3/pkg-plist                  |  2 +-
+ 3 files changed, 9 insertions(+), 10 deletions(-)
+
+diff --git a/editors/linux-sublime3/Makefile b/editors/linux-sublime3/Makefile
+index 43da1f4980..543a3ec319 100644
+--- a/editors/linux-sublime3/Makefile
++++ b/editors/linux-sublime3/Makefile
+@@ -1,14 +1,13 @@
+ PORTNAME=	sublime
+-PORTVERSION=	3.2.2
+-PORTREVISION=	2
++PORTVERSION=	3211
+ CATEGORIES=	editors linux
+-MASTER_SITES=	http://download.sublimetext.com/
++MASTER_SITES=	https://download.sublimetext.com/
+ PKGNAMEPREFIX=	linux-
+ PKGNAMESUFFIX=	3
+ 
+ MAINTAINER=	matias@pizarro.net
+ COMMENT=	Sophisticated text editor for code, markup and prose
+-WWW=		https://www.sublimetext.com
++WWW=		https://www.sublimetext.com/3
+ 
+ LICENSE=	SUBLIMEHQ
+ LICENSE_NAME=	End User License Agreement
+@@ -21,15 +20,15 @@ ONLY_FOR_ARCHS_REASON=	upstream only supports amd64 and i386
+ USES=		desktop-file-utils gnome linux tar:bzip2
+ USE_LINUX=	gtk3
+ 
+-CONFLICTS_INSTALL=	linux-sublime[0-9]*
++CONFLICTS_INSTALL=     linux-sublime-text[0-9]*
+ 
+ NO_BUILD=	yes
+ SUB_FILES=	sublime
+ 
+ WRKSRC=		${WRKDIR}/sublime_text_3
+ 
+-DISTNAME_amd64=	sublime_text_3_build_3211_x64
+-DISTNAME_i386=	sublime_text_3_build_3211_x32
++DISTNAME_amd64=	sublime_text_3_build_${PORTVERSION}_x64
++DISTNAME_i386=	sublime_text_3_build_${PORTVERSION}_x32
+ 
+ do-install:
+ 	@${MKDIR} ${STAGEDIR}${DATADIR}
+@@ -41,6 +40,6 @@ do-install:
+ .endfor
+ 	${INSTALL_DATA} ${WRKSRC}/sublime_text.desktop ${STAGEDIR}${PREFIX}/share/applications/
+ 	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
+-	${INSTALL_SCRIPT} ${WRKDIR}/sublime ${STAGEDIR}${PREFIX}/bin/sublime
++	${INSTALL_SCRIPT} ${WRKDIR}/sublime ${STAGEDIR}${PREFIX}/bin/sublime_text
+ 
+ .include <bsd.port.mk>
+diff --git a/editors/linux-sublime3/files/patch-sublime_text.desktop b/editors/linux-sublime3/files/patch-sublime_text.desktop
+index 0814f17c93..0403acfa19 100644
+--- a/editors/linux-sublime3/files/patch-sublime_text.desktop
++++ b/editors/linux-sublime3/files/patch-sublime_text.desktop
+@@ -5,7 +5,7 @@
+  GenericName=Text Editor
+  Comment=Sophisticated text editor for code, markup and prose
+ -Exec=/opt/sublime_text/sublime_text %F
+-+Exec=sublime %F
+++Exec=sublime_text %F
+  Terminal=false
+  MimeType=text/plain;
+  Icon=sublime-text
+diff --git a/editors/linux-sublime3/pkg-plist b/editors/linux-sublime3/pkg-plist
+index ff834895eb..377a8a0c64 100644
+--- a/editors/linux-sublime3/pkg-plist
++++ b/editors/linux-sublime3/pkg-plist
+@@ -1,4 +1,4 @@
+-bin/sublime
++bin/sublime_text
+ share/applications/sublime_text.desktop
+ share/icons/hicolor/128x128/apps/sublime-text.png
+ share/icons/hicolor/16x16/apps/sublime-text.png
+-- 
+2.46.0
+

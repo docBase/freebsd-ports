@@ -1,0 +1,25 @@
+PORTNAME=	pcre2
+PORTVERSION=	10.40
+DISTVERSIONSUFFIX=	-5.el9
+CATEGORIES=	devel linux
+PKGNAMESUFFIX=	-syntax
+
+MAINTAINER=	emulation@FreeBSD.org
+COMMENT=	Documentation for PCRE2 regular expressions (Linux Rocky Linux ${LINUX_DIST_VER})
+WWW=		https://www.pcre.org/
+
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/usr/share/licenses/pcre2-syntax/LICENCE
+
+USES=		linux:rl9
+LINUX_DIST_VER=	9
+USE_LDCONFIG=	yes
+USE_LINUX_RPM=	noarch
+
+SHARE_DISTNAMES=	${PORTNAME}${PKGNAMESUFFIX}-${DISTVERSIONFULL}
+SRC_DISTFILES=		${PORTNAME}-${DISTVERSIONFULL}${SRC_SUFX}:SOURCE
+
+DATADIR=	${PREFIX}/usr/share/${PORTNAME}
+DOCSDIR=	${PREFIX}/usr/share/doc/${PORTNAME}
+
+.include <bsd.port.mk>

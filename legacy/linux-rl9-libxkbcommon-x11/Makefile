@@ -1,0 +1,22 @@
+PORTNAME=	libxkbcommon
+PORTVERSION=	1.0.3
+DISTVERSIONSUFFIX=	-4.el9
+CATEGORIES=	x11 linux
+PKGNAMESUFFIX=	-x11
+
+MAINTAINER=	emulation@FreeBSD.org
+COMMENT=	X.Org X11 XKB keymap creation library (Rocky Linux ${LINUX_DIST_VER})
+WWW=		https://xkbcommon.org/
+
+LICENSE=	MIT
+
+USES=		cpe linux:rl9
+CPE_VENDOR=	xkbcommon
+USE_LDCONFIG=	yes
+USE_LINUX=	libxkbcommon
+USE_LINUX_RPM=	yes
+
+LIB_DISTNAMES=	${PORTNAME}${PKGNAMESUFFIX}-${DISTVERSIONFULL}
+SRC_DISTFILES=	${PORTNAME}-${DISTVERSIONFULL}${SRC_SUFX}:SOURCE
+
+.include <bsd.port.mk>

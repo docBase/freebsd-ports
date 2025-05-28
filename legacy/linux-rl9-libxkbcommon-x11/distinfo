@@ -1,0 +1,7 @@
+TIMESTAMP = 1726411754
+SHA256 (rocky/l/libxkbcommon-x11-1.0.3-4.el9.aarch64.rpm) = 8d35b9dadf98bac0d2ff352a5649921f6c478b34bc5d3f68356e984067894097
+SIZE (rocky/l/libxkbcommon-x11-1.0.3-4.el9.aarch64.rpm) = 20800
+SHA256 (rocky/l/libxkbcommon-x11-1.0.3-4.el9.x86_64.rpm) = 80d6c9dad2ac97f6ecc5295b8995f90f4d0c91f6fd40998400b2be7477d9579f
+SIZE (rocky/l/libxkbcommon-x11-1.0.3-4.el9.x86_64.rpm) = 21419
+SHA256 (rocky/l/libxkbcommon-1.0.3-4.el9.src.rpm) = e35b80f3ff5d5047256933fd2cf015d9aad9e40052701a3a27c6de6c107d5d2e
+SIZE (rocky/l/libxkbcommon-1.0.3-4.el9.src.rpm) = 445099
