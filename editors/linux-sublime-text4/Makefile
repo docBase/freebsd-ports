@@ -1,5 +1,5 @@
 PORTNAME=	sublime-text4
-PORTVERSION=	4180
+PORTVERSION=	4192
 CATEGORIES=	editors linux
 MASTER_SITES=	http://download.sublimetext.com/
 PKGNAMEPREFIX=	linux-
@@ -17,7 +17,8 @@ ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	upstream only supports amd64 and aarch64
 
 USES=		desktop-file-utils gnome linux tar:xz
-USE_LINUX=	curl gtk3
+RUN_DEPENDS=    linux-rl9-curl>0:ftp/linux-rl9-curl
+USE_LINUX=	gtk3
 
 CONFLICTS_INSTALL=	linux-sublime[0-9]*
 
