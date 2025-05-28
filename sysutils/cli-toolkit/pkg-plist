@@ -1,0 +1,11 @@
+bin/acpi_cmbat
+bin/ctrl
+bin/desktop-pause
+bin/herbe1
+bin/herbe2
+bin/herbe4
+bin/herbe60
+bin/herbe8
+bin/pwroff
+bin/reset_wlan0
+bin/suspend
