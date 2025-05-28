@@ -15,6 +15,7 @@ lib/vm-bhyve/vm-switch-netgraph
 lib/vm-bhyve/vm-switch-standard
 lib/vm-bhyve/vm-switch-vale
 lib/vm-bhyve/vm-switch-vxlan
+lib/vm-bhyve/vm-unlock
 lib/vm-bhyve/vm-util
 lib/vm-bhyve/vm-zfs
 share/man/man8/vm.8.gz
