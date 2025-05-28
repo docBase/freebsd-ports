@@ -1,0 +1,74 @@
+From 48fcf8fe3b64f2b0bde7825357454d28642a97be Mon Sep 17 00:00:00 2001
+From: matias pizarro <matias@pizarro.net>
+Date: Wed, 11 Sep 2024 02:25:26 +0200
+Subject: [PATCH] Update editors/linux-bcompare to v4.4.7
+
+---
+ editors/linux-bcompare/Makefile                       | 11 ++++++-----
+ editors/linux-bcompare/distinfo                       | 10 +++++-----
+ .../files/patch-usr_lib64_beyondcompare_bcmount.sh    |  8 ++++++++
+ 3 files changed, 19 insertions(+), 10 deletions(-)
+ create mode 100644 editors/linux-bcompare/files/patch-usr_lib64_beyondcompare_bcmount.sh
+
+diff --git a/editors/linux-bcompare/Makefile b/editors/linux-bcompare/Makefile
+index 0a6b0f8b05..e2eb630c9f 100644
+--- a/editors/linux-bcompare/Makefile
++++ b/editors/linux-bcompare/Makefile
+@@ -1,8 +1,8 @@
+ PORTNAME=	bcompare
+-DISTVERSION=	4.3.7
+-DISTVERSIONSUFFIX=	.25118
++DISTVERSION=	4.4.7
++DISTVERSIONSUFFIX=	.28397
+ CATEGORIES=	editors devel linux
+-MASTER_SITES=	http://scootersoftware.com/
++MASTER_SITES=	http://scootersoftware.com/files/
+ PKGNAMEPREFIX=	linux-
+ EXTRACT_SUFX=	.rpm
+ 
+@@ -52,10 +52,11 @@ PLIST_SUB+=	QT4AMD64=""
+ BCLIB_SRC=	${WRKSRC}/usr/${LIBDIR}/beyondcompare
+ BCLIB_STG=	${STAGEDIR}${PREFIX}/lib/beyondcompare
+ 
+-SHEBANG_FILES=	${BCLIB_SRC}/bcmount.sh ${BCLIB_SRC}/kde_context_menu
++# SHEBANG_FILES=	${BCLIB_SRC}/bcmount.sh ${BCLIB_SRC}/kde_context_menu
++SHEBANG_FILES=	${BCLIB_SRC}/kde_context_menu
+ 
+ pre-install:
+-	${LINUXBASE}/usr/bin/gcc -Wall -fPIC -shared ${FILESDIR}/nosched.c -ldl -o ${BCLIB_SRC}/nosched.so
++	${LINUXBASE}/usr/bin/gcc --sysroot=${LINUXBASE} -Wall -fPIC -shared ${FILESDIR}/nosched.c -ldl -o ${BCLIB_SRC}/nosched.so
+ 
+ do-install:
+ # bin
+diff --git a/editors/linux-bcompare/distinfo b/editors/linux-bcompare/distinfo
+index d3915c5a20..bd699cbbe4 100644
+--- a/editors/linux-bcompare/distinfo
++++ b/editors/linux-bcompare/distinfo
+@@ -1,5 +1,5 @@
+-TIMESTAMP = 1601823220
+-SHA256 (bcompare-4.3.7.25118.i386.rpm) = 71a72fa4318b7afedb03ec7147523d3aa47e26b090e1a170316990eb88268828
+-SIZE (bcompare-4.3.7.25118.i386.rpm) = 12675958
+-SHA256 (bcompare-4.3.7.25118.x86_64.rpm) = c913df4d0df858c4d1de62ee269b82a3e231b7408e36ee43ba672fd07e97dee0
+-SIZE (bcompare-4.3.7.25118.x86_64.rpm) = 18808757
++TIMESTAMP = 1703173253
++SHA256 (bcompare-4.4.7.28397.i386.rpm) = 26401171e6235d125814eafa5653359ed9c7d8d34145f2ac6302331c2607147f
++SIZE (bcompare-4.4.7.28397.i386.rpm) = 13054732
++SHA256 (bcompare-4.4.7.28397.x86_64.rpm) = aeea6fd6c0edc2043928861348d648acaeba5f93a8ff247cda3c3476437734b8
++SIZE (bcompare-4.4.7.28397.x86_64.rpm) = 19068518
+diff --git a/editors/linux-bcompare/files/patch-usr_lib64_beyondcompare_bcmount.sh b/editors/linux-bcompare/files/patch-usr_lib64_beyondcompare_bcmount.sh
+new file mode 100644
+index 0000000000..fcdebc5deb
+--- /dev/null
++++ b/editors/linux-bcompare/files/patch-usr_lib64_beyondcompare_bcmount.sh
+@@ -0,0 +1,8 @@
++--- usr/lib64/beyondcompare/bcmount.sh.orig	2024-09-11 00:12:15 UTC
+++++ usr/lib64/beyondcompare/bcmount.sh
++@@ -1,4 +1,4 @@
++-#!/usr/bin/sh
+++#!/bin/sh
++ _='''' # Prefer python3 if it exists
++ command -v python3 > /dev/null 2>&1 && exec python3 $0 "$@" || exec python $0 "$@"
++ '''
+-- 
+2.46.0
+

@@ -1,0 +1,271 @@
+From 69d27345ce48d4bb502382eccc46fed78df1e2fd Mon Sep 17 00:00:00 2001
+From: matias pizarro <matias@pizarro.net>
+Date: Tue, 11 Mar 2025 18:44:25 +0100
+Subject: [PATCH] Update Beyond Compare to v5.0.6, that requires RL9 base
+
+---
+ editors/linux-rl9-bcompare/Makefile           | 77 +++++++++++++++++++
+ editors/linux-rl9-bcompare/distinfo           |  3 +
+ editors/linux-rl9-bcompare/files/nosched.c    | 37 +++++++++
+ .../files/patch-usr_bin_bcompare              | 36 +++++++++
+ editors/linux-rl9-bcompare/pkg-descr          |  3 +
+ editors/linux-rl9-bcompare/pkg-plist          | 56 ++++++++++++++
+ 6 files changed, 212 insertions(+)
+ create mode 100644 editors/linux-rl9-bcompare/Makefile
+ create mode 100644 editors/linux-rl9-bcompare/distinfo
+ create mode 100644 editors/linux-rl9-bcompare/files/nosched.c
+ create mode 100644 editors/linux-rl9-bcompare/files/patch-usr_bin_bcompare
+ create mode 100644 editors/linux-rl9-bcompare/pkg-descr
+ create mode 100644 editors/linux-rl9-bcompare/pkg-plist
+
+diff --git a/editors/linux-rl9-bcompare/Makefile b/editors/linux-rl9-bcompare/Makefile
+new file mode 100644
+index 0000000000..3880b968c6
+--- /dev/null
++++ b/editors/linux-rl9-bcompare/Makefile
+@@ -0,0 +1,77 @@
++PORTNAME=	bcompare
++DISTVERSION=	5.0.6
++DISTVERSIONSUFFIX=	.30713
++CATEGORIES=	editors devel linux
++MASTER_SITES=	http://scootersoftware.com/files/
++PKGNAMEPREFIX=	linux-rl9-
++
++DISTNAME_amd64=	${DISTNAME}.x86_64
++EXTRACT_SUFX=	.rpm
++
++MAINTAINER=	matias@pizarro.net
++COMMENT=	Compare, sync, and merge files and folders (X11)
++WWW=		https://www.scootersoftware.com/
++
++LICENSE=	SCOOTERSOFTWARE
++LICENSE_NAME=	Scooter Software License
++LICENSE_FILE=	${FILESDIR}/LICENSE.txt
++LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
++
++ONLY_FOR_ARCHS=	amd64
++ONLY_FOR_ARCHS_REASON=	upstream only supports amd64
++
++USES=		desktop-file-utils gnome linux:rl9 shared-mime-info
++USE_LINUX=	devtools:build base:run curl:run dbuslibs:run systemd-libs:run xorglibs:run xcb-util:run freetype:run
++
++RUN_DEPENDS=	linux_base-rl9>0:emulators/linux_base-rl9 \
++		linux-rl9-qt5-qtx11extras>0:x11/linux-rl9-qt5-qtx11extras \
++		linux-rl9-libsigsegv>0:devel/linux-rl9-libsigsegv
++
++NO_BUILD=	yes
++
++NO_WRKSUBDIR=	true
++
++DATA_FILTER=	-type d -o -name *\.html -o -name *\.js -o -name *\.css -o \
++		-name *\.gif -o -name *\.png -o -name *\.jpg -o -name \
++		*\.desktop -o -name mime\.types -o -name README -o -name copyright -o -name \
++		BCompare.mad -o -name RPM-GPG-KEY-scootersoftware -o -name \
++		scootersoftware.repo 
++
++LIB_FILES=	lib7z.so libQt5Pas.so.1 libcloudstorage.so.22.0 libunrar.so nosched.so
++PROGRAM_FILES=	BCompare
++SCRIPT_FILES=	bcmount.sh
++
++.include <bsd.port.options.mk>
++
++LIBDIR=		lib64
++
++BCLIB_SRC=	${WRKSRC}/usr/${LIBDIR}/beyondcompare
++BCLIB_STG=	${STAGEDIR}${PREFIX}/lib/beyondcompare
++
++pre-install:
++	${LINUXBASE}/usr/bin/gcc --sysroot=${LINUXBASE} -Wall -fPIC -shared \
++		${FILESDIR}/nosched.c -ldl -o ${BCLIB_SRC}/nosched.so
++
++do-install:
++# bin
++	${INSTALL_SCRIPT} ${WRKSRC}/usr/bin/bcompare ${STAGEDIR}${PREFIX}/bin
++# lib
++	(cd ${BCLIB_SRC}     && ${COPYTREE_SHARE}  .                ${BCLIB_STG} "${DATA_FILTER}")
++	(cd ${BCLIB_SRC}     && ${INSTALL_PROGRAM} ${PROGRAM_FILES} ${BCLIB_STG})
++	(cd ${BCLIB_SRC}     && ${INSTALL_SCRIPT}  ${SCRIPT_FILES}  ${BCLIB_STG})
++	(cd ${BCLIB_SRC}     && ${INSTALL_LIB}     ${LIB_FILES}     ${BCLIB_STG})
++	${INSTALL_LIB} ${BCLIB_SRC}/ext/*.so   ${BCLIB_STG}/ext
++	${LN} -sf ${LINUXBASE}/usr/${LIBDIR}/libbz2.so.1.0.8 ${BCLIB_STG}/libbz2.so.1.0
++# data
++	(cd ${WRKSRC}/usr/share && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share)
++	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/16x16/apps
++	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/32x32/apps
++	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/48x48/apps
++	${LN} -sf ../../../../pixmaps/bcompare.png \
++		${STAGEDIR}${PREFIX}/share/icons/hicolor/16x16/apps/bcompare.png
++	${LN} -sf ../../../../pixmaps/bcomparefull32.png \
++		${STAGEDIR}${PREFIX}/share/icons/hicolor/32x32/apps/bcompare.png
++	${LN} -sf ../../../../pixmaps/bcompare.png \
++		${STAGEDIR}${PREFIX}/share/icons/hicolor/48x48/apps/bcompare.png
++
++.include <bsd.port.mk>
+diff --git a/editors/linux-rl9-bcompare/distinfo b/editors/linux-rl9-bcompare/distinfo
+new file mode 100644
+index 0000000000..36aca37f02
+--- /dev/null
++++ b/editors/linux-rl9-bcompare/distinfo
+@@ -0,0 +1,3 @@
++TIMESTAMP = 1741517208
++SHA256 (bcompare-5.0.6.30713.x86_64.rpm) = ce97a2f5cc18b7b6a5ba571a261c5ed9b9458a71ff18621e9cee65667da1b642
++SIZE (bcompare-5.0.6.30713.x86_64.rpm) = 18457692
+diff --git a/editors/linux-rl9-bcompare/files/nosched.c b/editors/linux-rl9-bcompare/files/nosched.c
+new file mode 100644
+index 0000000000..ef7f3c636e
+--- /dev/null
++++ b/editors/linux-rl9-bcompare/files/nosched.c
+@@ -0,0 +1,37 @@
++#define _GNU_SOURCE
++
++#include <dlfcn.h>
++#include <pthread.h>
++#include <stdio.h>
++#include <string.h>
++
++/* Thanks to shkhln (https://forums.freebsd.org/members/shkhln.54069/) and
++ * aragats (https://forums.freebsd.org/members/aragats.37029/) for coming
++ * up with the nosched.c fix
++ */
++
++int pthread_noop() {
++  fprintf(stderr, "%s(...)\n", __func__);
++  return 0;
++}
++
++/* https://stackoverflow.com/questions/15599026/how-can-i-intercept-dlsym-calls-using-ld-preload/18825060#18825060 */
++void* _dl_sym(void*, const char*, void*);
++
++static void* (*libc_dlsym)(void*, const char*) = NULL;
++
++void* dlsym(void* handle, const char* symbol) {
++
++  if (!libc_dlsym) {
++    /* libc_dlsym = _dl_sym(RTLD_NEXT, "dlsym", dlsym); */
++    libc_dlsym = dlvsym(RTLD_NEXT, "dlsym", "GLIBC_2.2.5");
++    libc_dlsym = libc_dlsym(RTLD_NEXT, "dlsym");
++  }
++
++  if (strcmp(symbol, "pthread_attr_setinheritsched") == 0) {
++    return pthread_noop;
++  }
++
++  return libc_dlsym(handle, symbol);
++}
++
+diff --git a/editors/linux-rl9-bcompare/files/patch-usr_bin_bcompare b/editors/linux-rl9-bcompare/files/patch-usr_bin_bcompare
+new file mode 100644
+index 0000000000..da36906939
+--- /dev/null
++++ b/editors/linux-rl9-bcompare/files/patch-usr_bin_bcompare
+@@ -0,0 +1,36 @@
++--- usr/bin/bcompare.orig	2024-09-11 00:41:23 UTC
+++++ usr/bin/bcompare
++@@ -1,17 +1,21 @@
++ #!/bin/sh
++ 
++-BC_LIB=/usr/lib64/beyondcompare
+++LINUXULATOR_LIB=/compat/linux/usr/lib64
+++BC_LIB=/usr/local/lib/beyondcompare
++ export BC_LIB
++ 
+++_LD_PRELOAD="$BC_LIB/nosched.so"
+++export _LD_PRELOAD
+++
++ BC_PACKAGE_TYPE=rpm
++ export BC_PACKAGE_TYPE
++ 
++ EXEC="$BC_LIB/BCompare"
++ 
++ if [ -n "$LD_LIBRARY_PATH" ]; then
++-export LD_LIBRARY_PATH="$BC_LIB:$LD_LIBRARY_PATH"
+++export LD_LIBRARY_PATH="$BC_LIB:$LD_LIBRARY_PATH:$LINUXULATOR_LIB"
++ else
++-export LD_LIBRARY_PATH="$BC_LIB"
+++export LD_LIBRARY_PATH="$BC_LIB:$LINUXULATOR_LIB"
++ fi
++ 
++ #check to see if we have all of the shared libraries.
++@@ -40,7 +44,7 @@ done
++ 	ARGS=$ARGS" \"$1\""
++ 	shift 1
++ done
++-/bin/bash -c "exec -a $0 $EXEC $ARGS > /dev/null 2>&1" $0
+++LD_PRELOAD=$_LD_PRELOAD /usr/bin/env bash -c "exec -a $0 $EXEC $ARGSS > /dev/null 2>&1" $0
++ 
++ ########################################
++ # set exit code / wait on existing instance
+diff --git a/editors/linux-rl9-bcompare/pkg-descr b/editors/linux-rl9-bcompare/pkg-descr
+new file mode 100644
+index 0000000000..4966d9163f
+--- /dev/null
++++ b/editors/linux-rl9-bcompare/pkg-descr
+@@ -0,0 +1,3 @@
++Compare files and folders using simple, powerful commands that focus on
++the differences you're interested in and ignore those you're not.  Merge
++changes, synchronize files, and generate reports.
+diff --git a/editors/linux-rl9-bcompare/pkg-plist b/editors/linux-rl9-bcompare/pkg-plist
+new file mode 100644
+index 0000000000..fc88e49852
+--- /dev/null
++++ b/editors/linux-rl9-bcompare/pkg-plist
+@@ -0,0 +1,56 @@
++@dir bin
++bin/bcompare
++@dir share
++@dir share/applications
++share/applications/bcompare.desktop
++@dir share/mime
++@dir share/mime/packages
++share/mime/packages/bcompare.xml
++@dir share/icons
++@dir share/icons/hicolor
++@dir share/icons/hicolor/16x16
++@dir share/icons/hicolor/16x16/apps
++share/icons/hicolor/16x16/apps/bcompare.png
++@dir share/icons/hicolor/32x32
++@dir share/icons/hicolor/32x32/apps
++share/icons/hicolor/32x32/apps/bcompare.png
++@dir share/icons/hicolor/48x48
++@dir share/icons/hicolor/48x48/apps
++share/icons/hicolor/48x48/apps/bcompare.png
++@dir share/pixmaps
++share/pixmaps/bcompare.png
++share/pixmaps/bcomparefull32.png
++share/pixmaps/bcomparehalf32.png
++@dir lib/beyondcompare
++@dir lib/beyondcompare/ext
++lib/beyondcompare/bcmount.sh
++lib/beyondcompare/BCompare
++lib/beyondcompare/BCompare.mad
++lib/beyondcompare/lib7z.so
++lib/beyondcompare/libbz2.so.1.0
++lib/beyondcompare/libcloudstorage.so.22.0
++lib/beyondcompare/libQt5Pas.so.1
++lib/beyondcompare/libunrar.so
++lib/beyondcompare/mime.types
++lib/beyondcompare/nosched.so
++lib/beyondcompare/README
++lib/beyondcompare/RPM-GPG-KEY-scootersoftware
++lib/beyondcompare/scootersoftware.repo
++@(,,644) lib/beyondcompare/ext/bcompare_ext_kde.desktop
++@(,,644) lib/beyondcompare/ext/bcompare_ext_konq.desktop
++lib/beyondcompare/ext/bcompare-ext-caja.amd64.so
++lib/beyondcompare/ext/bcompare-ext-caja.i386.so
++lib/beyondcompare/ext/bcompare-ext-nautilus.amd64.so
++lib/beyondcompare/ext/bcompare-ext-nautilus.i386.so
++lib/beyondcompare/ext/bcompare-ext-nemo.amd64.so
++lib/beyondcompare/ext/bcompare-ext-nemo.i386.so
++lib/beyondcompare/ext/bcompare-ext-thunarx-2.amd64.so
++lib/beyondcompare/ext/bcompare-ext-thunarx-2.i386.so
++lib/beyondcompare/ext/bcompare-ext-thunarx-3.amd64.so
++lib/beyondcompare/ext/bcompare-ext-thunarx-3.i386.so
++lib/beyondcompare/ext/bcompare_ext_kde.amd64.so
++lib/beyondcompare/ext/bcompare_ext_kde.i386.so
++lib/beyondcompare/ext/bcompare_ext_kde5.amd64.so
++lib/beyondcompare/ext/bcompare_ext_kde6.amd64.so
++lib/beyondcompare/ext/bcompare_ext_konq.amd64.so
++lib/beyondcompare/ext/bcompare_ext_konq.i386.so
+-- 
+2.48.1
+

@@ -1,0 +1,50 @@
+From b7d1c10435915643a7731c8e9ecb0ccab4c140d2 Mon Sep 17 00:00:00 2001
+From: matias pizarro <matias@pizarro.net>
+Date: Tue, 11 Mar 2025 18:25:28 +0100
+Subject: [PATCH] Update Beyond Compare to v5.0.6, that requires RL9 base
+
+---
+ editors/linux-sublime-text4/Makefile |  5 ++---
+ editors/linux-sublime-text4/distinfo | 10 +++++-----
+ 2 files changed, 7 insertions(+), 8 deletions(-)
+
+diff --git a/editors/linux-sublime-text4/Makefile b/editors/linux-sublime-text4/Makefile
+index 67af6e4fe2..ac98291291 100644
+--- a/editors/linux-sublime-text4/Makefile
++++ b/editors/linux-sublime-text4/Makefile
+@@ -1,5 +1,5 @@
+ PORTNAME=	sublime-text4
+-PORTVERSION=	4180
++PORTVERSION=	4192
+ CATEGORIES=	editors linux
+ MASTER_SITES=	http://download.sublimetext.com/
+ PKGNAMEPREFIX=	linux-
+@@ -16,9 +16,8 @@ LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
+ ONLY_FOR_ARCHS=	aarch64 amd64
+ ONLY_FOR_ARCHS_REASON=	upstream only supports amd64 and aarch64
+ 
+-RUN_DEPENDS=	linux-c7-curl>0:ftp/linux-c7-curl
+-
+ USES=		desktop-file-utils gnome linux tar:xz
++RUN_DEPENDS=    linux-c7-curl>0:ftp/linux-c7-curl
+ USE_LINUX=	gtk3
+ 
+ CONFLICTS_INSTALL=	linux-sublime[0-9]*
+diff --git a/editors/linux-sublime-text4/distinfo b/editors/linux-sublime-text4/distinfo
+index f461fa5261..60c4fa8d1d 100644
+--- a/editors/linux-sublime-text4/distinfo
++++ b/editors/linux-sublime-text4/distinfo
+@@ -1,5 +1,5 @@
+-TIMESTAMP = 1725995615
+-SHA256 (sublime_text_build_4180_arm64.tar.xz) = cd18368df862fa0ea22eb305d53180613f9040a48d2355b862fd5bcfda045c78
+-SIZE (sublime_text_build_4180_arm64.tar.xz) = 15335820
+-SHA256 (sublime_text_build_4180_x64.tar.xz) = a65e36011e33585defc77c0f49991f20fece92cba77b99ec6e6722c8952ff03e
+-SIZE (sublime_text_build_4180_x64.tar.xz) = 15767020
++TIMESTAMP = 1740904005
++SHA256 (sublime_text_build_4192_arm64.tar.xz) = 81584305a7379320d4d6a2225e837b5dfe49bdb76789fd901ae154cb60b7e0ca
++SIZE (sublime_text_build_4192_arm64.tar.xz) = 15646016
++SHA256 (sublime_text_build_4192_x64.tar.xz) = dc2328af3423f8914f4d7a7a3cf857e8c95ccff9096f614cda2c14b2fae1cbeb
++SIZE (sublime_text_build_4192_x64.tar.xz) = 16157072
+-- 
+2.48.1
+
