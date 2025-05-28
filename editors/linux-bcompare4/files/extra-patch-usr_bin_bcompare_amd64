@@ -1,0 +1,46 @@
+--- usr/bin/bcompare.orig	2020-09-24 21:23:08 UTC
++++ usr/bin/bcompare
+@@ -1,17 +1,22 @@
+ #!/bin/sh
+ 
+-BC_LIB=/usr/lib64/beyondcompare
++LINUXULATOR_LIB=/compat/linux/usr/lib64
++
++BC_LIB=/usr/local/lib/beyondcompare
+ export BC_LIB
+ 
++_LD_PRELOAD="$BC_LIB/nosched.so"
++export _LD_PRELOAD
++
+ BC_PACKAGE_TYPE=rpm
+ export BC_PACKAGE_TYPE
+ 
+ EXEC="$BC_LIB/BCompare"
+ 
+ if [ -n "$LD_LIBRARY_PATH" ]; then
+-export LD_LIBRARY_PATH="$BC_LIB:$LD_LIBRARY_PATH"
++export LD_LIBRARY_PATH="$BC_LIB:$LD_LIBRARY_PATH:$LINUXULATOR_LIB"
+ else
+-export LD_LIBRARY_PATH="$BC_LIB"
++export LD_LIBRARY_PATH="$BC_LIB:$LINUXULATOR_LIB"
+ fi
+ 
+ #check to see if we have all of the shared libraries.
+@@ -28,7 +33,7 @@
+ ########################################
+ # initialize context menu action scripts for KDE 3.5
+ if [ "$KDE_FULL_SESSION" = "true" ] && [ -f "$BC_LIB/kde_context_menu" ] ; then
+-	if [ "$KDE_SESSION_VERSION" != "4" ] && [ "$KDE_SESSION_VERSION" != "5" ]; then
++	if [ "$KDE_SESSION_VERSION" != "4" ] && [ "$KDE_SESSION_VERSION" != "5" ] && [ "$KDE_SESSION_VERSION" != "6" ]; then
+ 		mkdir -p "$HOME/.beyondcompare"
+ 		if [ -d "$HOME/.kde/share/apps/konqueror" ]; then
+ 			mkdir -p "$HOME/.kde/share/apps/konqueror/servicemenus"
+@@ -44,7 +49,7 @@
+ 	ARGS=$ARGS" \"$1\""
+ 	shift 1
+ done
+-/bin/bash -c "exec -a $0 $EXEC $ARGS > /dev/null 2>&1" $0
++LD_PRELOAD=$_LD_PRELOAD /usr/bin/env bash -c "exec -a $0 $EXEC $ARGS > /dev/null 2>&1" $0
+ 
+ ########################################
+ # set exit code / wait on existing instance
