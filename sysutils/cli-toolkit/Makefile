@@ -1,6 +1,6 @@
-PORTNAME=	sysutils
-PORTVERSION=	0.1.0
-CATEGORIES=	xanadu
+PORTNAME=	cli-toolkit
+PORTVERSION=	0.1.1
+CATEGORIES=	sysutils
 MASTER_SITES=	GH
 
 MAINTAINER=	matias@pizarro.net
