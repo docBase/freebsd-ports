@@ -1,5 +1,0 @@
-TIMESTAMP = 1726431320
-SHA256 (rocky/p/pcre2-syntax-10.40-5.el9.noarch.rpm) = 965d1e0cee6810f93e5bee04b6c9d31668a7560247b9ed8871d03be070e7fdde
-SIZE (rocky/p/pcre2-syntax-10.40-5.el9.noarch.rpm) = 143504
-SHA256 (rocky/p/pcre2-10.40-5.el9.src.rpm) = 38ad947deba107b2dd29d1b60ee05f6bc0f4ae4a5ddbf18361f93469c0957349
-SIZE (rocky/p/pcre2-10.40-5.el9.src.rpm) = 1786097

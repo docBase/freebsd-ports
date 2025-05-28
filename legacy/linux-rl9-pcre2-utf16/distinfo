@@ -1,7 +1,0 @@
-TIMESTAMP = 1726432823
-SHA256 (rocky/p/pcre2-utf16-10.40-5.el9.aarch64.rpm) = ebd3649f24a3307b61b5d06722959b066e75dcd91ae9f3334c12e21d84868ee4
-SIZE (rocky/p/pcre2-utf16-10.40-5.el9.aarch64.rpm) = 200197
-SHA256 (rocky/p/pcre2-utf16-10.40-5.el9.x86_64.rpm) = 9eecbc083fcee6384f9f382c0a20044f01a2694d01f860de11c8fcb9c606d52e
-SIZE (rocky/p/pcre2-utf16-10.40-5.el9.x86_64.rpm) = 218289
-SHA256 (rocky/p/pcre2-10.40-5.el9.src.rpm) = 38ad947deba107b2dd29d1b60ee05f6bc0f4ae4a5ddbf18361f93469c0957349
-SIZE (rocky/p/pcre2-10.40-5.el9.src.rpm) = 1786097
