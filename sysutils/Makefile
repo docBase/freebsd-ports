@@ -75,6 +75,7 @@
     SUBDIR += autojump
     SUBDIR += automounter
     SUBDIR += autorestic
+    SUBDIR += awslim
     SUBDIR += azure-agent
     SUBDIR += b2sum
     SUBDIR += b3sum
@@ -265,7 +266,6 @@
     SUBDIR += daemonize
     SUBDIR += daemontools
     SUBDIR += daemontools-encore
-    SUBDIR += daggy
     SUBDIR += damager
     SUBDIR += dar
     SUBDIR += data-prepper
@@ -552,6 +552,7 @@
     SUBDIR += jail_exporter
     SUBDIR += jailadmin
     SUBDIR += jaildaemon
+    SUBDIR += jailmanager
     SUBDIR += jailme
     SUBDIR += jailrc
     SUBDIR += jailutils
@@ -716,6 +717,7 @@
     SUBDIR += mkfwimage
     SUBDIR += mkjail
     SUBDIR += mkntpwd
+    SUBDIR += mkr
     SUBDIR += mmc-utils
     SUBDIR += mmve
     SUBDIR += modman
@@ -762,6 +764,7 @@
     SUBDIR += nmrpflash
     SUBDIR += node_exporter
     SUBDIR += nomad
+    SUBDIR += nomad-driver-podman
     SUBDIR += nomad-pot-driver
     SUBDIR += npadmin
     SUBDIR += npmount
@@ -945,7 +948,6 @@
     SUBDIR += plasma-pass
     SUBDIR += plasma5-libksysguard
     SUBDIR += plasma6-discover
-    SUBDIR += plasma6-drkonqi
     SUBDIR += plasma6-kde-cli-tools
     SUBDIR += plasma6-kinfocenter
     SUBDIR += plasma6-kmenuedit
@@ -1073,11 +1075,6 @@
     SUBDIR += py-tarsnapper
     SUBDIR += py-tldr
     SUBDIR += py-tmuxp
-    SUBDIR += py-upt
-    SUBDIR += py-upt-cpan
-    SUBDIR += py-upt-freebsd
-    SUBDIR += py-upt-pypi
-    SUBDIR += py-upt-rubygems
     SUBDIR += py-uptime
     SUBDIR += qchroot
     SUBDIR += qdirstat
@@ -1264,8 +1261,6 @@
     SUBDIR += schilyutils
     SUBDIR += screen
     SUBDIR += screen-devel
-    SUBDIR += screen49
-    SUBDIR += screen50
     SUBDIR += screenfetch
     SUBDIR += screenie
     SUBDIR += scterc
@@ -1335,6 +1330,7 @@
     SUBDIR += syngesture
     SUBDIR += sysctlbyname-improved-kmod
     SUBDIR += sysctlinfo-kmod
+    SUBDIR += sysctltui
     SUBDIR += sysgather
     SUBDIR += sysinfo
     SUBDIR += syslinux
@@ -1372,6 +1368,7 @@
     SUBDIR += tiramisu
     SUBDIR += titlefix
     SUBDIR += tkdvd
+    SUBDIR += tldr
     SUBDIR += tlsdate
     SUBDIR += tm
     SUBDIR += tmate

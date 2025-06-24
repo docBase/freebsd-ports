@@ -283,7 +283,6 @@
     SUBDIR += mnn
     SUBDIR += molequeue
     SUBDIR += mtx
-    SUBDIR += mxnet
     SUBDIR += najitool
     SUBDIR += navi
     SUBDIR += ncnn
@@ -312,7 +311,6 @@
     SUBDIR += opennn
     SUBDIR += openr2
     SUBDIR += openvdb
-    SUBDIR += orange3
     SUBDIR += orville-write
     SUBDIR += osinfo-db
     SUBDIR += ossp-uuid
@@ -432,7 +430,6 @@
     SUBDIR += py-crudini
     SUBDIR += py-datasets
     SUBDIR += py-detecta
-    SUBDIR += py-dictdiffer
     SUBDIR += py-eemeter
     SUBDIR += py-einops
     SUBDIR += py-emoji
@@ -444,8 +441,6 @@
     SUBDIR += py-fleep
     SUBDIR += py-fuzzy
     SUBDIR += py-gguf
-    SUBDIR += py-gluoncv
-    SUBDIR += py-gluonnlp
     SUBDIR += py-gpiozero
     SUBDIR += py-halo
     SUBDIR += py-hf-xet
@@ -475,7 +470,6 @@
     SUBDIR += py-mmengine
     SUBDIR += py-mmsegmentation
     SUBDIR += py-molequeue
-    SUBDIR += py-mxnet
     SUBDIR += py-natten
     SUBDIR += py-npTDMS
     SUBDIR += py-numcodecs
@@ -489,11 +483,6 @@
     SUBDIR += py-openpaperwork-gtk
     SUBDIR += py-openvdb
     SUBDIR += py-optuna
-    SUBDIR += py-orange3-associate
-    SUBDIR += py-orange3-datafusion
-    SUBDIR += py-orange3-educational
-    SUBDIR += py-orange3-network
-    SUBDIR += py-orange3-timeseries
     SUBDIR += py-oterm
     SUBDIR += py-palettable
     SUBDIR += py-papermill
@@ -528,8 +517,6 @@
     SUBDIR += py-shell-gpt
     SUBDIR += py-sigopt
     SUBDIR += py-soapy_power
-    SUBDIR += py-spdx
-    SUBDIR += py-spdx-lookup
     SUBDIR += py-spdx-tools
     SUBDIR += py-spinners
     SUBDIR += py-synced-collections
@@ -566,6 +553,7 @@
     SUBDIR += qt6ct
     SUBDIR += quantum++
     SUBDIR += quary
+    SUBDIR += radio_datetime_analyzer
     SUBDIR += randomx
     SUBDIR += rash
     SUBDIR += raspberrypi-gpioshutdown
@@ -589,6 +577,7 @@
     SUBDIR += rubygem-iesd
     SUBDIR += rubygem-mime-types
     SUBDIR += rubygem-mime-types-data
+    SUBDIR += rubygem-mime-types-gitlab
     SUBDIR += rubygem-mimemagic
     SUBDIR += rubygem-octicons
     SUBDIR += rubygem-rabbit
@@ -600,6 +589,7 @@
     SUBDIR += seabios
     SUBDIR += sent
     SUBDIR += seq2
+    SUBDIR += sff
     SUBDIR += sfm
     SUBDIR += shared-mime-info
     SUBDIR += shc
