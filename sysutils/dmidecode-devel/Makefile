@@ -1,9 +1,9 @@
 PORTNAME=	dmidecode
-PORTVERSION=	g20250616.b125744b6564
+DISTVERSION=	b125744b65641fbb2fad7237305606d21b70a2c2
+PORTVERSION=	g20250616.${DISTVERSION}
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=  -devel
-DISTNAME=	${PORTNAME}-master
-MASTER_SITES=	https://cgit.git.savannah.gnu.org/cgit/dmidecode.git/snapshot/
+MASTER_SITES=	https://cgit.git.savannah.gnu.org/cgit/${PORTNAME}.git/snapshot/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Tool for dumping DMI (SMBIOS) contents in human-readable format
