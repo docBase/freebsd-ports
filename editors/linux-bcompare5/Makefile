@@ -1,6 +1,6 @@
 PORTNAME=	bcompare
-DISTVERSION=	5.0.7
-DISTVERSIONSUFFIX=	.30840
+DISTVERSION=	5.1.0
+DISTVERSIONSUFFIX=	.31016
 CATEGORIES=	editors devel linux
 MASTER_SITES=	https://scootersoftware.com/files/
 PKGNAMEPREFIX=	linux-
