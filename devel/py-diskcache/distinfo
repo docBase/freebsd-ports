@@ -1,5 +1,3 @@
-TIMESTAMP = 1716359609
-SHA256 (grantjenks-python-diskcache-v5.6.3_GH0.tar.gz) = ecd01a006c60c68171571da77d905878bacc2103a8e0ade55dcda26271ea2bb3
-SIZE (grantjenks-python-diskcache-v5.6.3_GH0.tar.gz) = 655441
-SHA256 (b89111d.patch) = 0d3451f01e8331d0d3db654566b08eac552f8b71f0f090f5a381c45f5d6ac4ae
-SIZE (b89111d.patch) = 4077
+TIMESTAMP = 1752617096
+SHA256 (matias-pizarro-python-diskcache-v5.6.4-rc2_GH0.tar.gz) = 787453f7f5ff7d5ab589cbb75e869571eac8aae9d1548359034c01e095f884ed
+SIZE (matias-pizarro-python-diskcache-v5.6.4-rc2_GH0.tar.gz) = 656016
