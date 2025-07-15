@@ -877,6 +877,7 @@
     SUBDIR += putty-nogtk
     SUBDIR += pvk
     SUBDIR += pwauth
+    SUBDIR += pwdsafety
     SUBDIR += pwman
     SUBDIR += pwned-check
     SUBDIR += py-SecretStorage
@@ -1331,6 +1332,7 @@
     SUBDIR += sshguard
     SUBDIR += sshpass
     SUBDIR += ssl-admin
+    SUBDIR += ssl-checker
     SUBDIR += ssllabs-scan
     SUBDIR += sslproxy
     SUBDIR += sslscan

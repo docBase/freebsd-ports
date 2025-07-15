@@ -659,6 +659,7 @@
     SUBDIR += electron34
     SUBDIR += electron35
     SUBDIR += electron36
+    SUBDIR += electron37
     SUBDIR += elf
     SUBDIR += elf-dissector
     SUBDIR += elfcat
@@ -684,9 +685,6 @@
     SUBDIR += esbuild
     SUBDIR += estd
     SUBDIR += etcd
-    SUBDIR += etcd31
-    SUBDIR += etcd32
-    SUBDIR += etcd33
     SUBDIR += etcd34
     SUBDIR += etcd35
     SUBDIR += etcd36
@@ -786,6 +784,7 @@
     SUBDIR += geany-plugin-latex
     SUBDIR += geany-plugin-lineoperations
     SUBDIR += geany-plugin-lipsum
+    SUBDIR += geany-plugin-lsp
     SUBDIR += geany-plugin-lua
     SUBDIR += geany-plugin-macro
     SUBDIR += geany-plugin-markdown
@@ -870,6 +869,7 @@
     SUBDIR += gitea-act_runner
     SUBDIR += gitg
     SUBDIR += github-backup-utils
+    SUBDIR += gitid
     SUBDIR += gitinspector
     SUBDIR += gitlab-runner
     SUBDIR += gitlab-shell
@@ -1823,6 +1823,7 @@
     SUBDIR += oniguruma
     SUBDIR += open-beagle
     SUBDIR += open62541
+    SUBDIR += openapi-tui
     SUBDIR += opencl
     SUBDIR += opencl-clang
     SUBDIR += opencvs
@@ -4684,7 +4685,7 @@
     SUBDIR += py-cmdtest
     SUBDIR += py-cobble
     SUBDIR += py-codegen
-    SUBDIR += py-cog
+    SUBDIR += py-cogapp
     SUBDIR += py-collections-extended
     SUBDIR += py-colorama
     SUBDIR += py-colored-traceback
@@ -5575,6 +5576,7 @@
     SUBDIR += py-pydantic-compat
     SUBDIR += py-pydantic-core
     SUBDIR += py-pydantic-extra-types
+    SUBDIR += py-pydantic-resolve
     SUBDIR += py-pydantic-settings
     SUBDIR += py-pydantic-vault
     SUBDIR += py-pydantic-yaml
@@ -6278,8 +6280,6 @@
     SUBDIR += pycanberra
     SUBDIR += pycdc
     SUBDIR += pycharm
-    SUBDIR += pycharm-ce
-    SUBDIR += pycharm-pro
     SUBDIR += pycomposefile
     SUBDIR += pycos
     SUBDIR += pycount
@@ -6795,6 +6795,7 @@
     SUBDIR += rubygem-aws-sdk-notificationscontacts
     SUBDIR += rubygem-aws-sdk-oam
     SUBDIR += rubygem-aws-sdk-observabilityadmin
+    SUBDIR += rubygem-aws-sdk-odb
     SUBDIR += rubygem-aws-sdk-omics
     SUBDIR += rubygem-aws-sdk-opensearchserverless
     SUBDIR += rubygem-aws-sdk-opensearchservice
@@ -7176,6 +7177,7 @@
     SUBDIR += rubygem-cucumber-messages22
     SUBDIR += rubygem-cucumber-messages24
     SUBDIR += rubygem-cucumber-messages25
+    SUBDIR += rubygem-cucumber-messages27
     SUBDIR += rubygem-cucumber-rails
     SUBDIR += rubygem-cucumber-tag-expressions
     SUBDIR += rubygem-cucumber-wire

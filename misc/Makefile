@@ -270,6 +270,7 @@
     SUBDIR += mate-user-guide
     SUBDIR += mbuffer
     SUBDIR += mc
+    SUBDIR += mcp-probe
     SUBDIR += mdp
     SUBDIR += meshoptimizer
     SUBDIR += metalink-checker
@@ -315,6 +316,7 @@
     SUBDIR += osinfo-db
     SUBDIR += ossp-uuid
     SUBDIR += otter
+    SUBDIR += outside
     SUBDIR += owrep
     SUBDIR += p5-Acme-ButFirst
     SUBDIR += p5-Array-Compare

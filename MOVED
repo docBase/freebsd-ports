@@ -4649,3 +4649,10 @@ lang/linux-dotnet-runtime||2025-07-01|Has expired: Ancient version, no practical
 lang/linux-dotnet-cli||2025-07-01|Removed, depends on removed lang/linux-dotnet-runtime
 math/manifold||2025-07-06|Removed, planned to update BRL-CAD, but currently blocked
 shells/bash53||2025-07-07|Removed in favour of updating shells/bash
+devel/etcd31||2025-07-08|Has expired: EOLed upstream, switch to a newer version
+devel/etcd32||2025-07-08|Has expired: EOLed upstream, switch to a newer version
+devel/etcd33||2025-07-08|Has expired: EOLed upstream, switch to a newer version
+lang/luajit-devel|lang/luajit|2025-07-08|Removed, use lang/luajit instead
+devel/py-cog|devel/py-cogapp|2025-07-14|Renamed to match upstream PyPI package name
+devel/pycharm-ce|devel/pycharm|2025-07-14|Has expired: Pycharm is now unified product. Please switch to devel/pycharm
+devel/pycharm-pro|devel/pycharm|2025-07-14|Has expired: Pycharm is now unified product. Please switch to devel/pycharm

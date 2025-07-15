@@ -473,6 +473,7 @@
     SUBDIR += mdbook-linkcheck
     SUBDIR += mdbook-mermaid
     SUBDIR += mdq
+    SUBDIR += mdtt
     SUBDIR += meilisearch
     SUBDIR += meld
     SUBDIR += metauml
@@ -532,6 +533,7 @@
     SUBDIR += opensp
     SUBDIR += openvanilla-framework
     SUBDIR += or-aspell
+    SUBDIR += otree
     SUBDIR += ov
     SUBDIR += ox-gfm.el
     SUBDIR += p5-AI-Categorizer
@@ -1420,6 +1422,8 @@
     SUBDIR += py-jarowinkler
     SUBDIR += py-jc
     SUBDIR += py-jinja2-cli
+    SUBDIR += py-jinjanator
+    SUBDIR += py-jinjanator-plugins
     SUBDIR += py-jiter
     SUBDIR += py-jq
     SUBDIR += py-json2html
@@ -2193,6 +2197,8 @@
     SUBDIR += xstream
     SUBDIR += xsv-rs
     SUBDIR += xwindiff
+    SUBDIR += xxdiff
+    SUBDIR += xxdiff-scripts
     SUBDIR += y2l
     SUBDIR += yali
     SUBDIR += yaml-mode.el
