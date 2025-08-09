@@ -255,6 +255,7 @@
     SUBDIR += keepass
     SUBDIR += keepass-plugin-keepassrpc
     SUBDIR += keepassxc
+    SUBDIR += keepassxc276
     SUBDIR += keybase
     SUBDIR += keychain
     SUBDIR += keyprint
@@ -273,6 +274,7 @@
     SUBDIR += krb5
     SUBDIR += krb5-120
     SUBDIR += krb5-121
+    SUBDIR += krb5-122
     SUBDIR += krb5-devel
     SUBDIR += kstart
     SUBDIR += ktls_isa-l_crypto-kmod
@@ -441,7 +443,6 @@
     SUBDIR += openfhe
     SUBDIR += openfortivpn
     SUBDIR += openiked
-    SUBDIR += openiked-portable
     SUBDIR += opensaml
     SUBDIR += opensc
     SUBDIR += openssh-askpass
@@ -452,8 +453,6 @@
     SUBDIR += openssl-quictls
     SUBDIR += openssl-unsafe
     SUBDIR += openssl111
-    SUBDIR += openssl31
-    SUBDIR += openssl31-quictls
     SUBDIR += openssl32
     SUBDIR += openssl33
     SUBDIR += openssl33-quictls
@@ -785,6 +784,7 @@
     SUBDIR += passivedns
     SUBDIR += pcsc-tools
     SUBDIR += pdfcrack
+    SUBDIR += pdfrip
     SUBDIR += pear-Auth
     SUBDIR += pear-Auth_HTTP
     SUBDIR += pear-Auth_PrefManager
@@ -938,6 +938,7 @@
     SUBDIR += py-dfdatetime
     SUBDIR += py-dfwinreg
     SUBDIR += py-dirhash
+    SUBDIR += py-distro2sbom
     SUBDIR += py-django-auth-kerberos
     SUBDIR += py-docker-pycreds
     SUBDIR += py-ecdsa
@@ -980,6 +981,7 @@
     SUBDIR += py-keyring
     SUBDIR += py-keyrings.alt
     SUBDIR += py-krb5
+    SUBDIR += py-lib4sbom
     SUBDIR += py-libnacl
     SUBDIR += py-liboqs-python
     SUBDIR += py-m2crypto

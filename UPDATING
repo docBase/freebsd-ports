@@ -5,6 +5,48 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+
+20250804:
+  AFFECTS: users of databases/adminer
+  AUTHOR: pkaipila@gmail.com
+
+  Flavors have been added to the adminer port. Due to the change in PKGNAME,
+  pkg will not notice the update. Replace the package with a flavored one
+  such as php84-adminer.
+
+20250728:
+  AFFECTS: users of www/privatebin
+  AUTHOR: dvl@FreeBSD.org
+
+  This release changes configuration defaults including switching the template
+  and removing legacy features.
+
+  See details at https://github.com/PrivateBin/PrivateBin/releases/tag/2.0.0
+
+20250720:
+  AFFECTS: users of www/phpmyfaq
+  AUTHOR: flo@FreeBSD.org
+
+  Upgrading from 3.2.x is a major upgrade. Your existing templates will not
+  work with phpMyFAQ 4.0. Please make a full backup before you run the
+  upgrade! First, log in as admin into the admin section and enable the
+  maintenance mode. (Configuration >> Edit Configuration >> Set FAQ in
+  maintenance mode) Second, you have to delete all files except:
+
+    in the directory config/
+        keep the file database.php
+        only if using LDAP/ActiveDirectory support also keep the file ldap.php
+        only if using EntraID support also keep the file azure.php
+    the directory attachments/
+    the directory data/
+    the directory images/
+
+  Install the new version then open the following URL in your browser:
+
+  https://www.example.com/faq/update
+
+  Click the button of the update script, your version will automatically be updated.
+
 20250709:
   AFFECTS: users of sysutils/bastille
   AUTHOR: jdhurtado@orbiware.com

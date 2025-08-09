@@ -1,8 +1,7 @@
 PORTNAME=	librewolf
-DISTVERSION=	140.0.2
+DISTVERSION=	141.0.2
 LWPATCH=	-1
 DISTVERSIONSUFFIX=	${LWPATCH}.source
-PORTREVISION=	1
 CATEGORIES=	www wayland
 MASTER_SITES=	https://gitlab.com/api/v4/projects/32320088/packages/generic/${PORTNAME}-source/${DISTVERSION}${LWPATCH}/
 
@@ -40,15 +39,19 @@ CONFIGURE_ENV+=	MOZ_REQUIRE_SIGNING=""
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}${LWPATCH}
 
+FIREFOX_ICON=		${MOZILLA}.png
+FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/browser/chrome/icons/default/default48.png
+
 MOZILLA_CAP=	${MOZILLA:C/^(.).*/\1/:tu}${MOZILLA:C/^.//}
 
-MOZ_EXPORT+=	MOZ_TELEMETRY_REPORTING="" \
+MOZ_EXPORT=	MOZ_TELEMETRY_REPORTING="" \
 		MOZILLA_OFFICIAL="1" \
 		MOZ_OFFICIAL_BRANDING="1" \
 		MOZ_APP_DISPLAYNAME="${MOZILLA_CAP}" \
 		MOZ_APP_NAME="${MOZILLA}"
 
 MOZ_OPTIONS=	--enable-application=browser \
+		--with-wasi-sysroot=${LOCALBASE}/share/wasi-sysroot \
 		--allow-addon-sideload \
 		--disable-crashreporter \
 		--disable-debug \
@@ -62,12 +65,8 @@ MOZ_OPTIONS=	--enable-application=browser \
 		--with-branding=browser/branding/${MOZILLA} \
 		--with-unsigned-addon-scopes=app,system \
 		--enable-bootstrap \
-		--with-wasi-sysroot=${LOCALBASE}/share/wasi-sysroot \
 		MOZ_CRASHREPORTER=0 \
 		MOZ_DATA_REPORTING=0
-
-FIREFOX_ICON=		${MOZILLA}.png
-FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/browser/chrome/icons/default/default48.png
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 
@@ -95,7 +94,7 @@ post-patch:
 	@${RM} ${WRKSRC}/mozconfig
 
 post-install:
-	${INSTALL_DATA} ${WRKDIR}/${MOZILLA_EXEC_NAME}.desktop ${STAGEDIR}${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKDIR}/${MOZILLA_EXEC_NAME}.desktop ${STAGEDIR}${DESKTOPDIR}
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/pixmaps
 	${LN} -sf ${FIREFOX_ICON_SRC} ${STAGEDIR}${PREFIX}/share/pixmaps/${FIREFOX_ICON}
 

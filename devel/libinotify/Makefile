@@ -1,6 +1,6 @@
 PORTNAME=	libinotify
 PORTVERSION=	20240724
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libinotify-kqueue/libinotify-kqueue/releases/download/${PORTVERSION}/
 
@@ -11,7 +11,7 @@ WWW=		https://github.com/libinotify-kqueue/libinotify-kqueue
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		libtool
+USES=		libtool pathfix
 
 CONFIGURE_ARGS=	--enable-skip-subfiles=fusefs,smbfs
 GNU_CONFIGURE=	yes
@@ -20,7 +20,8 @@ USE_LDCONFIG=	yes
 
 .if exists(/usr/include/sys/inotify.h)
 post-install:
-	${INSTALL_DATA} /usr/include/sys/inotify.h ${STAGEDIR}${PREFIX}/include/sys/
+	${PRINTF} '#pragma GCC system_header\n#include_next <sys/inotify.h>\n' \
+		> ${STAGEDIR}${PREFIX}/include/sys/inotify.h
 	${SED} -e '/Libs:/d' -e '/Cflags:/d' ${WRKSRC}/libinotify.pc \
 		> ${STAGEDIR}${PREFIX}/libdata/pkgconfig/libinotify.pc
 .endif
