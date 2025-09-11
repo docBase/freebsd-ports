@@ -1,0 +1,10 @@
+--- pyproject.toml.orig	2025-09-11 22:17:07.429515000 +0200
++++ pyproject.toml	2025-09-11 22:18:05.985614000 +0200
+@@ -30,7 +30,6 @@
+     "podman",
+     "podman-compose",
+ ]
+-license = "GPL-2.0-only"
+ dynamic = ["version", "readme"]
+ 
+ [project.urls]
