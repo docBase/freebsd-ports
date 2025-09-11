@@ -1,5 +1,6 @@
 PORTNAME=	frameworks
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde
 PKGNAMEPREFIX=	kf6-
 
@@ -9,7 +10,5 @@ WWW=		https://api.kde.org/frameworks/index.html
 
 USES=		kde:6 metaport qt:6
 USE_KDE=	${_USE_FRAMEWORKS_ALL}
-# pull bsd.qt.mk for QT_PLUGINDIR in the kf5-dependencies
-USE_QT=		#
 
 .include <bsd.port.mk>

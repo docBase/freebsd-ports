@@ -11,7 +11,6 @@
     SUBDIR += R-cran-sqldf
     SUBDIR += WWWdb
     SUBDIR += adminer
-    SUBDIR += adminerevo
     SUBDIR += adodb5
     SUBDIR += akonadi
     SUBDIR += apache-commons-dbutils
@@ -33,7 +32,6 @@
     SUBDIR += cegobridge
     SUBDIR += clickhouse
     SUBDIR += closql
-    SUBDIR += closql-devel
     SUBDIR += cockroach
     SUBDIR += couchdb3
     SUBDIR += courier-authlib-mysql
@@ -59,7 +57,6 @@
     SUBDIR += duckdb
     SUBDIR += ejdb
     SUBDIR += emacsql
-    SUBDIR += emacsql-devel
     SUBDIR += erlfdb
     SUBDIR += evolution-data-server
     SUBDIR += fastdb
@@ -67,6 +64,7 @@
     SUBDIR += firebird30-server
     SUBDIR += firebird40-client
     SUBDIR += firebird40-server
+    SUBDIR += fmptools
     SUBDIR += fortytwo-bdb
     SUBDIR += foundationdb71-client
     SUBDIR += foundationdb71-server
@@ -169,8 +167,6 @@
     SUBDIR += mariadb-java-client
     SUBDIR += mariadb1011-client
     SUBDIR += mariadb1011-server
-    SUBDIR += mariadb105-client
-    SUBDIR += mariadb105-server
     SUBDIR += mariadb106-client
     SUBDIR += mariadb106-server
     SUBDIR += mariadb114-client
@@ -195,7 +191,7 @@
     SUBDIR += mysql-connector-c++
     SUBDIR += mysql-connector-j
     SUBDIR += mysql-connector-java51
-    SUBDIR += mysql-connector-odbc-80
+    SUBDIR += mysql-connector-odbc
     SUBDIR += mysql2pgsql
     SUBDIR += mysql80-client
     SUBDIR += mysql80-server
@@ -862,6 +858,7 @@
     SUBDIR += py-sqlite-migrate
     SUBDIR += py-sqlite-utils
     SUBDIR += py-sqlite3
+    SUBDIR += py-sqlmodel
     SUBDIR += py-sqlobject
     SUBDIR += py-sqloxide
     SUBDIR += py-sqlparse
@@ -899,7 +896,6 @@
     SUBDIR += redis74
     SUBDIR += redis80
     SUBDIR += redis_exporter
-    SUBDIR += redisdesktopmanager
     SUBDIR += redisjson
     SUBDIR += retcl
     SUBDIR += rocksdb
@@ -956,6 +952,7 @@
     SUBDIR += rubygem-bdb1
     SUBDIR += rubygem-bigrecord
     SUBDIR += rubygem-brpoplpush-redis_script
+    SUBDIR += rubygem-click_house-client
     SUBDIR += rubygem-couchrest
     SUBDIR += rubygem-dalli
     SUBDIR += rubygem-data_objects
@@ -1024,6 +1021,7 @@
     SUBDIR += rubygem-openid-redis-store
     SUBDIR += rubygem-paranoia
     SUBDIR += rubygem-pg
+    SUBDIR += rubygem-pg-gitlab
     SUBDIR += rubygem-pg_array_parser
     SUBDIR += rubygem-pg_query
     SUBDIR += rubygem-pghero
@@ -1112,6 +1110,7 @@
     SUBDIR += tcl-sqlite3
     SUBDIR += tdb
     SUBDIR += tdb1410
+    SUBDIR += tdb1413
     SUBDIR += tdbc
     SUBDIR += tile38
     SUBDIR += tiledb
@@ -1129,6 +1128,7 @@
     SUBDIR += valkey
     SUBDIR += vfront
     SUBDIR += virtualpg
+    SUBDIR += weaviate
     SUBDIR += webdis
     SUBDIR += wfb2sql
     SUBDIR += xapian-bindings

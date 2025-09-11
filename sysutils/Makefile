@@ -444,6 +444,7 @@
     SUBDIR += gdu
     SUBDIR += genimage
     SUBDIR += genisoimage
+    SUBDIR += geomman
     SUBDIR += getdelta
     SUBDIR += geteltorito
     SUBDIR += getssl
@@ -515,9 +516,11 @@
     SUBDIR += httplog
     SUBDIR += hw-probe
     SUBDIR += hwstat
+    SUBDIR += hyprpolkitagent
     SUBDIR += i2c-tools
     SUBDIR += i7z
     SUBDIR += iat
+    SUBDIR += ictree
     SUBDIR += imgurbash2
     SUBDIR += immortal
     SUBDIR += incron
@@ -761,6 +764,8 @@
     SUBDIR += netevent
     SUBDIR += nfcutils
     SUBDIR += ngbuddy
+    SUBDIR += nginx-ui
+    SUBDIR += nitro
     SUBDIR += nitrogen
     SUBDIR += nix
     SUBDIR += nmdaemon
@@ -1201,6 +1206,7 @@
     SUBDIR += rubygem-license_scout
     SUBDIR += rubygem-log4r
     SUBDIR += rubygem-logify
+    SUBDIR += rubygem-mdless
     SUBDIR += rubygem-mogilefs-client
     SUBDIR += rubygem-mothra
     SUBDIR += rubygem-murder
@@ -1241,6 +1247,7 @@
     SUBDIR += rubygem-win32-file-stat
     SUBDIR += rubygem-winrm
     SUBDIR += rubygem-winrm-elevated
+    SUBDIR += rubygem-winrm-elevated-gitlab
     SUBDIR += rubygem-yell
     SUBDIR += runas
     SUBDIR += rundeck
@@ -1359,6 +1366,7 @@
     SUBDIR += szyszka
     SUBDIR += tai64nfrac
     SUBDIR += tailspin
+    SUBDIR += tarbsd-builder
     SUBDIR += tarsnap
     SUBDIR += tarsnap-gui
     SUBDIR += tarsnap-periodic
@@ -1421,6 +1429,7 @@
     SUBDIR += u-boot-a13-olinuxino
     SUBDIR += u-boot-a64-olinuxino
     SUBDIR += u-boot-bananapi
+    SUBDIR += u-boot-bananapi-r2-pro
     SUBDIR += u-boot-bananapim2
     SUBDIR += u-boot-beaglebone
     SUBDIR += u-boot-bhyve-arm64

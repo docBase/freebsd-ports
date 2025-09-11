@@ -16,6 +16,7 @@
     SUBDIR += apwal
     SUBDIR += arandr
     SUBDIR += arcan-trayicon
+    SUBDIR += ashell
     SUBDIR += aterm
     SUBDIR += autorandr
     SUBDIR += babl
@@ -133,8 +134,10 @@
     SUBDIR += hypridle
     SUBDIR += hyprland-qtutils
     SUBDIR += hyprlock
+    SUBDIR += hyprls
     SUBDIR += hyprpaper
     SUBDIR += hyprpicker
+    SUBDIR += hyprviz
     SUBDIR += i3bar-river
     SUBDIR += i3blocks
     SUBDIR += i3lock-color
@@ -348,6 +351,7 @@
     SUBDIR += py-i3-quickterm
     SUBDIR += py-i3ipc
     SUBDIR += py-mouseinfo
+    SUBDIR += py-nwg-displays
     SUBDIR += py-pyautogui
     SUBDIR += py-pynput
     SUBDIR += py-pyscreenshot
@@ -458,6 +462,8 @@
     SUBDIR += watershot
     SUBDIR += way-displays
     SUBDIR += waybar
+    SUBDIR += waycheck
+    SUBDIR += waycorner
     SUBDIR += wayidle
     SUBDIR += wayland-logout
     SUBDIR += waylock

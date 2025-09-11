@@ -1,6 +1,6 @@
 PORTNAME=	phoc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.48.0
+DISTVERSION=	0.49.0
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -30,7 +30,6 @@ GL_ACCOUNT=	World/Phosh
 GL_TUPLE=	World/Phosh:gmobile:v0.2.0:gmobile/subprojects/gmobile \
 		GNOME:gvdb:4758f6f:gvdb/subprojects/gvdb
 MESON_ARGS=	-Dembed-wlroots=disabled
-LDFLAGS+=	-lm # https://cgit.FreeBSD.org/ports/commit/?id=b991d37c58ed
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/${PORTNAME}-outputs-states \
 		share/man/man1/${PORTNAME}-outputs-states.1.gz \

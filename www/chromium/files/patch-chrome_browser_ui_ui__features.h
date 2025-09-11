@@ -1,4 +1,4 @@
---- chrome/browser/ui/ui_features.h.orig	2025-07-02 06:08:04 UTC
+--- chrome/browser/ui/ui_features.h.orig	2025-09-06 10:01:20 UTC
 +++ chrome/browser/ui/ui_features.h
 @@ -28,7 +28,7 @@ BASE_DECLARE_FEATURE(kAllowEyeDropperWGCScreenCapture)
  
@@ -9,7 +9,7 @@
  BASE_DECLARE_FEATURE(kFewerUpdateConfirmations);
  #endif
  
-@@ -225,7 +225,7 @@ BASE_DECLARE_FEATURE(kViewsFirstRunDialog);
+@@ -292,7 +292,7 @@ BASE_DECLARE_FEATURE(kViewsFirstRunDialog);
  BASE_DECLARE_FEATURE(kViewsJSAppModalDialog);
  #endif
  

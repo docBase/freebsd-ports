@@ -1,5 +1,5 @@
 PORTNAME=	vscode
-DISTVERSION=	1.102.3
+DISTVERSION=	1.103.2
 PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/tagattie/FreeBSD-VSCode/releases/download/${DISTVERSION}/:node_modules
@@ -69,7 +69,7 @@ USES=		desktop-file-utils gl gmake gnome gssapi:mit iconv:wchar_t \
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
 
-SOURCE_COMMIT_HASH=	488a1f239235055e34e673291fb8d8c810886f81
+SOURCE_COMMIT_HASH=	6f17636121051a53c88d3e605c491d22af2ba755
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
@@ -78,7 +78,7 @@ USE_XORG=	x11 xcb xcomposite xcursor xdamage xext xfixes xi xkbfile \
 USE_GL=		gbm gl glesv2
 USE_GNOME=	atk cairo pango gdkpixbuf gtk30 libxml2 libxslt
 
-SHEBANG_REGEX=	./(extensions|node_modules|resources|scripts|src)/.*\.sh$$
+SHEBANG_REGEX=	./(extensions|node_modules|resources|scripts|src)/.*(\.(pl|py|sh)|makeBlacker|makeFF)$$
 PATHFIX_FILES=	src/vs/workbench/contrib/debug/node/terminals.ts
 
 DATADIR=	${PREFIX}/share/code-oss
@@ -98,7 +98,7 @@ TEST_ENV=	${MAKE_ENV:C/TMPDIR=.*//}
 
 NODEJS_DIR=	${.CURDIR:H:H}/www/node22
 .include "${NODEJS_DIR}/Makefile.version"
-ELECTRON_DIR=	${.CURDIR:H:H}/devel/electron35
+ELECTRON_DIR=	${.CURDIR:H:H}/devel/electron37
 .include "${ELECTRON_DIR}/Makefile.version"
 
 ELECTRON_DOWNLOAD_URL=	https://github.com/electron/electron/releases/download/v${ELECTRON_VER}
@@ -288,6 +288,8 @@ build-remote-extension-host: configure pre-build
 
 ### targets for port maintainer(s)
 make-node-modules-archive: extract
+# add node module for signature verification of extensions from Open VSX Registry
+	@${PATCH} -s -p0 -d ${WRKSRC} < ${FILESDIR}/patch-package.json
 	@${ECHO_MSG} "===>  Fetching and installing node modules in ${WRKSRC}"
 	@cd ${WRKSRC} && \
 	${SETENV} ${MAKE_ENV} npm install --ignore-scripts --no-progress --no-audit --no-fund && \

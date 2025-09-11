@@ -280,6 +280,7 @@
     SUBDIR += icecast
     SUBDIR += icegenerator
     SUBDIR += ices
+    SUBDIR += id3edit
     SUBDIR += id3el
     SUBDIR += id3lib
     SUBDIR += id3mtag
@@ -651,6 +652,7 @@
     SUBDIR += py-pydub
     SUBDIR += py-pyjacklib
     SUBDIR += py-pylast
+    SUBDIR += py-pyliblo3
     SUBDIR += py-pymad
     SUBDIR += py-pyogg
     SUBDIR += py-pyradio
@@ -852,6 +854,7 @@
     SUBDIR += webrtc-audio-processing0
     SUBDIR += webrtc-audio-processing2
     SUBDIR += welle.io
+    SUBDIR += whisper.cpp
     SUBDIR += whysynth
     SUBDIR += wildmidi
     SUBDIR += wmix

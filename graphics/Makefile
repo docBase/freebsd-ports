@@ -346,6 +346,7 @@
     SUBDIR += hppsmtools
     SUBDIR += hs-tart
     SUBDIR += hugin
+    SUBDIR += hvif-tools
     SUBDIR += hyprgraphics
     SUBDIR += hyprland-protocols
     SUBDIR += icat
@@ -674,7 +675,6 @@
     SUBDIR += optar
     SUBDIR += optipng
     SUBDIR += osg
-    SUBDIR += osg34
     SUBDIR += osgearth
     SUBDIR += ospray
     SUBDIR += ospray-studio
@@ -1117,6 +1117,7 @@
     SUBDIR += rubygem-gemojione32
     SUBDIR += rubygem-geokit
     SUBDIR += rubygem-gitlab_emoji
+    SUBDIR += rubygem-graphene1
     SUBDIR += rubygem-gruff
     SUBDIR += rubygem-histogram
     SUBDIR += rubygem-image_processing

@@ -1,6 +1,6 @@
 PORTNAME=	pocket-id
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.4
+DISTVERSION=	1.10.0
 PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/
@@ -14,7 +14,7 @@ LICENSE=	BSD2CLAUSE
 
 BROKEN_i386=	cannot use int64(off) (value of type int64) as int32 value in assignment
 
-USES=		go:modules
+USES=		go:1.25,modules
 USE_GITHUB=	yes
 USE_RC_SUBR=	${PORTNAME}
 

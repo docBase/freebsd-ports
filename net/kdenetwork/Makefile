@@ -1,5 +1,6 @@
 PORTNAME=	kdenetwork
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net kde
 
 MAINTAINER=	kde@FreeBSD.org
@@ -7,7 +8,6 @@ COMMENT=	KDE Network applications (meta port)
 WWW=		https://apps.kde.org/categories/internet/
 
 USES=		kde:6 metaport qt:6
-USE_QT=		#
 
 OPTIONS_DEFINE=	FILESHARING KGET KRDC KRFB
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}

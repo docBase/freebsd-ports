@@ -1,5 +1,5 @@
 PORTNAME=	searxng
-DISTVERSION=	20250711
+DISTVERSION=	20250819
 PORTREVISION=	1
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -35,14 +35,15 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=0:devel/py-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setproctitle>=0:devel/py-setproctitle@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tomli>=0:textproc/py-tomli@${PY_FLAVOR} \
+		${PY_TOMLI} \
 		${PYTHON_PKGNAMEPREFIX}typer>=0:devel/py-typer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}uvloop>=0:devel/py-uvloop@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}valkey>=0:databases/py-valkey@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}valkey>=0:databases/py-valkey@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}whitenoise>=0:www/py-whitenoise@${PY_FLAVOR}
 
 USES=		python
 USE_GITHUB=	yes
-GH_TAGNAME=	d5743398539263f2c0cac676e073a08cb3eb6eb8
+GH_TAGNAME=	25647c20d1904840d089892bb118390f46c66984
 USE_PYTHON=	autoplist distutils
 USE_RC_SUBR=	searxng
 

@@ -1,6 +1,7 @@
 PORTNAME=	jjui
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.0
+DISTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	hoanga@gmail.com
@@ -17,8 +18,8 @@ USES=		go:modules
 GO_MODULE=	github.com/idursun/jjui@v${DISTVERSION}
 GO_PKGNAME=	github.com/idursun/${PORTNAME}
 GO_TARGET=	./cmd/${PORTNAME}
+
 GO_BUILDFLAGS+=	-ldflags "-s -w -X main.Version=${DISTVERSION}"
-CGO_ENABLED=	0
 
 PLIST_FILES=	bin/${PORTNAME}
 

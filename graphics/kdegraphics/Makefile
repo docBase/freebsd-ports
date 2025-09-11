@@ -1,5 +1,6 @@
 PORTNAME=	kdegraphics
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	graphics kde
 
 MAINTAINER=	kde@FreeBSD.org
@@ -7,7 +8,6 @@ COMMENT=	Graphics applications for KDE (meta port)
 WWW=		https://apps.kde.org/categories/graphics/
 
 USES=		kde:6 metaport qt:6
-USE_QT=		#
 
 OPTIONS_DEFINE=	COLORD \
 		GPHOTO \
