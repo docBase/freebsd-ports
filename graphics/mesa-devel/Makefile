@@ -1,6 +1,7 @@
 PORTNAME=	mesa
-DISTVERSION=	25.2-branchpoint-3042
-DISTVERSIONSUFFIX=	-ga9ea4630d47
+DISTVERSION=	25.2-branchpoint-4196
+DISTVERSIONSUFFIX=	-ge02a1bb173e
+PORTREVISION=	1
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-devel
 
@@ -146,8 +147,8 @@ ZSTD_MESON_ENABLED=	zstd
 
 post-patch:
 # Extract (snapshot) version from the port instead of empty string
-	@${REINPLACE_CMD} '/MESA_GIT_SHA1/s/""/" (git-${DISTVERSIONSUFFIX:C/.*-g//})"/' \
-		${WRKSRC}/bin/git_sha1_gen.py
+	@${REINPLACE_CMD} '/MESA_GIT_SHA1/s/@VCS_TAG@/" (git-${DISTVERSIONSUFFIX:C/.*-g//})"/' \
+		${WRKSRC}/src/git_sha1.h.in
 
 post-patch-COINST-on:
 	@${MV} ${WRKSRC}/src/util/00-${PORTNAME}-defaults.conf \

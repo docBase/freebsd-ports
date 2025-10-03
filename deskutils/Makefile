@@ -1,6 +1,7 @@
     COMMENT = Things that used to be on the desktop before computers were invented
 
     SUBDIR += R-cran-exams
+    SUBDIR += R-cran-exams2forms
     SUBDIR += affiche
     SUBDIR += akonadi-calendar-tools
     SUBDIR += akonadi-import-wizard
@@ -93,6 +94,7 @@
     SUBDIR += gnome-shell-extension-openweather
     SUBDIR += gnome-shell-extension-panel-osd
     SUBDIR += gnome-shell-extension-recent-items
+    SUBDIR += gnome-shell-extension-simple-weather
     SUBDIR += gnome-shell-extension-trash
     SUBDIR += gnome-shell-extension-weather
     SUBDIR += gnome-shell-extension-windowoverlay-icons

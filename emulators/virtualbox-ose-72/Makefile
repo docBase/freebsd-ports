@@ -1,5 +1,5 @@
 PORTNAME=	virtualbox-ose
-DISTVERSION=	7.2.0
+DISTVERSION=	7.2.2
 PORTREVISION?=	0
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.virtualbox.org/virtualbox/${DISTVERSION}/:src \
@@ -22,6 +22,7 @@ ONLY_FOR_ARCHS=	amd64
 BUILD_DEPENDS=	gtar:archivers/gtar \
 		kmk:devel/kBuild \
 		yasm:devel/yasm \
+		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat \
 		xsltproc:textproc/libxslt
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libcurl.so:ftp/curl
@@ -317,6 +318,8 @@ post-patch:
 	@${REINPLACE_CMD} \
 	    -e 's|^versions =.*|versions = ["${PYTHON_VER}${PYTHON_ABIVER}"]|' \
 	    ${WRKSRC}/src/libs/xpcom18a4/python/gen_python_deps.py
+	@${REINPLACE_CMD} -e 's|curl_proxytype|long|g' \
+	    ${WRKSRC}/src/VBox/Runtime/generic/http-curl.cpp
 
 post-patch-AIO-off:
 	@${REINPLACE_CMD} 's|r3/freebsd/fileaio-freebsd.cpp|r3/posix/fileaio-posix.cpp|' \

@@ -58,7 +58,6 @@
     SUBDIR += beacon
     SUBDIR += beanstalkd
     SUBDIR += belle-sip
-    SUBDIR += benthos
     SUBDIR += bindtest
     SUBDIR += binkd
     SUBDIR += bird2
@@ -68,8 +67,6 @@
     SUBDIR += boinc-client
     SUBDIR += boinc_curses
     SUBDIR += boinctui
-    SUBDIR += bosh-bootloader
-    SUBDIR += bosh-cli
     SUBDIR += bounce
     SUBDIR += bredbandskollen
     SUBDIR += brynet
@@ -81,7 +78,6 @@
     SUBDIR += c3270
     SUBDIR += calendarsupport
     SUBDIR += ccxstream
-    SUBDIR += cf
     SUBDIR += charm
     SUBDIR += chrony
     SUBDIR += chrony-lite
@@ -93,7 +89,6 @@
     SUBDIR += cloudquery
     SUBDIR += clusterit
     SUBDIR += cnd
-    SUBDIR += concourse-fly
     SUBDIR += containernetworking-plugins
     SUBDIR += corkscrew
     SUBDIR += corosync2
@@ -534,6 +529,7 @@
     SUBDIR += netembryo
     SUBDIR += nethogs
     SUBDIR += netmap
+    SUBDIR += netpeek
     SUBDIR += netpipes
     SUBDIR += netscript
     SUBDIR += netsed
@@ -596,6 +592,7 @@
     SUBDIR += openvswitch
     SUBDIR += ortp
     SUBDIR += osrtspproxy
+    SUBDIR += ovhcloud-cli
     SUBDIR += owamp
     SUBDIR += p5-Acme-HTTP
     SUBDIR += p5-AddressBook
@@ -1070,6 +1067,7 @@
     SUBDIR += py-gdown
     SUBDIR += py-geopy
     SUBDIR += py-gntp
+    SUBDIR += py-google-cloud-pubsub
     SUBDIR += py-greenstalk
     SUBDIR += py-gspread
     SUBDIR += py-h11

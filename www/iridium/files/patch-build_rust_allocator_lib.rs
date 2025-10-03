@@ -1,18 +1,59 @@
-https://chromium.googlesource.com/chromium/src/+/8393b61ba876c8e1614275c97767f9b06b889f48
-https://chromium.googlesource.com/chromium/src/+/6aae0e2353c857d98980ff677bf304288d7c58de
-
-
---- build/rust/allocator/lib.rs.orig	2025-06-18 14:17:42.000000000 +0200
-+++ build/rust/allocator/lib.rs	2025-08-24 10:57:12.002293000 +0200
-@@ -89,9 +89,8 @@ mod both_allocators {
-     /// As part of rustc's contract for using `#[global_allocator]` without
-     /// rustc-generated shims we must define this symbol, since we are opting in
-     /// to unstable functionality. See https://github.com/rust-lang/rust/issues/123015
--    #[no_mangle]
--    #[linkage = "weak"]
--    static __rust_no_alloc_shim_is_unstable: u8 = 0;
-+    #[rustc_std_internal_symbol]
-+    fn __rust_no_alloc_shim_is_unstable_v2() {}
+--- build/rust/allocator/lib.rs.orig	2025-09-10 13:22:16 UTC
++++ build/rust/allocator/lib.rs
+@@ -90,6 +90,12 @@ mod both_allocators {
+     #[linkage = "weak"]
+     fn __rust_no_alloc_shim_is_unstable_v2() {}
  
++    // TODO(crbug.com/422538133) Remove after rolling past
++    // https://github.com/rust-lang/rust/pull/141061
++    #[no_mangle]
++    #[linkage = "weak"]
++    static __rust_no_alloc_shim_is_unstable: u8 = 0;
++
      // Mangle the symbol name as rustc expects.
      #[rustc_std_internal_symbol]
+     #[allow(non_upper_case_globals)]
+https://issues.chromium.org/issues/440481922
+https://chromium-review.googlesource.com/c/chromium/src/+/6875644
+
+
+From 23d818d3c7fba4658248f17fd7b8993199242aa9 Mon Sep 17 00:00:00 2001
+From: Hans Wennborg <hans@chromium.org>
+Date: Fri, 22 Aug 2025 10:34:47 -0700
+Subject: [PATCH] [rust] Define __rust_alloc_error_handler_should_panic_v2
+
+https://github.com/rust-lang/rust/pull/143387 made
+__rust_alloc_error_handler_should_panic a function.
+
+The new definition is needed when rolling Rust past that PR. We can
+remove the old symbol afterwards.
+
+Bug: 440481922
+Change-Id: I3340edd6d96d76de14942af67939978140430424
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/6875644
+Commit-Queue: Arthur Eubanks <aeubanks@google.com>
+Reviewed-by: Arthur Eubanks <aeubanks@google.com>
+Auto-Submit: Hans Wennborg <hans@chromium.org>
+Commit-Queue: Hans Wennborg <hans@chromium.org>
+Cr-Commit-Position: refs/heads/main@{#1505162}
+---
+
+diff --git a/build/rust/allocator/lib.rs b/build/rust/allocator/lib.rs
+index 29b3af1..a7fa7a4 100644
+--- build/rust/allocator/lib.rs
++++ build/rust/allocator/lib.rs
+@@ -90,7 +90,14 @@
+     #[linkage = "weak"]
+     fn __rust_no_alloc_shim_is_unstable_v2() {}
+ 
++    #[rustc_std_internal_symbol]
++    #[linkage = "weak"]
++    fn __rust_alloc_error_handler_should_panic_v2() -> u8 {
++        0
++    }
++
+     // Mangle the symbol name as rustc expects.
++    // TODO(crbug.com/440481922): Remove this after rolling past https://github.com/rust-lang/rust/pull/143387
+     #[rustc_std_internal_symbol]
+     #[allow(non_upper_case_globals)]
+     #[linkage = "weak"]

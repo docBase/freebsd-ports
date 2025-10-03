@@ -556,6 +556,7 @@
     SUBDIR += pg_store_plans
     SUBDIR += pg_tileserv
     SUBDIR += pgaccess
+    SUBDIR += pgactive
     SUBDIR += pgadmin3
     SUBDIR += pgagroal
     SUBDIR += pgbackrest
@@ -576,6 +577,7 @@
     SUBDIR += pgroonga
     SUBDIR += pgrouting
     SUBDIR += pgsanity
+    SUBDIR += pgschema
     SUBDIR += pgtcl
     SUBDIR += pgtop
     SUBDIR += pguri
@@ -832,6 +834,7 @@
     SUBDIR += py-python-memcached
     SUBDIR += py-python-sql
     SUBDIR += py-python-swiftclient
+    SUBDIR += py-qdrant-client
     SUBDIR += py-queries
     SUBDIR += py-rb
     SUBDIR += py-redis

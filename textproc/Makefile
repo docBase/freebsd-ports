@@ -1417,6 +1417,7 @@
     SUBDIR += py-html2text
     SUBDIR += py-htmlmin2
     SUBDIR += py-humanfriendly
+    SUBDIR += py-humps
     SUBDIR += py-hunspell
     SUBDIR += py-ini2toml
     SUBDIR += py-interegular
@@ -1551,6 +1552,7 @@
     SUBDIR += py-pygtail
     SUBDIR += py-pyhamcrest
     SUBDIR += py-pykwalify
+    SUBDIR += py-pylatexenc
     SUBDIR += py-pylons-sphinx-themes
     SUBDIR += py-pyls-spyder
     SUBDIR += py-pymdown-extensions
@@ -1703,6 +1705,7 @@
     SUBDIR += py-towncrier
     SUBDIR += py-translationstring
     SUBDIR += py-transpopy
+    SUBDIR += py-tree-sitter-language-pack
     SUBDIR += py-ttp
     SUBDIR += py-ttp-templates
     SUBDIR += py-typogrify

@@ -962,6 +962,7 @@
     SUBDIR += py-cmyt
     SUBDIR += py-colormath
     SUBDIR += py-contourpy
+    SUBDIR += py-conway-polynomials
     SUBDIR += py-cryptominisat
     SUBDIR += py-cvxopt
     SUBDIR += py-cvxpy
@@ -1001,6 +1002,7 @@
     SUBDIR += py-hdmedians
     SUBDIR += py-hepstats
     SUBDIR += py-heyoka
+    SUBDIR += py-highspy
     SUBDIR += py-hmmlearn
     SUBDIR += py-hypernetx
     SUBDIR += py-igraph
@@ -1266,6 +1268,7 @@
     SUBDIR += tinyexpr
     SUBDIR += tinymt
     SUBDIR += tlapack
+    SUBDIR += tlfloat
     SUBDIR += tmv
     SUBDIR += tomsfastmath
     SUBDIR += topaz

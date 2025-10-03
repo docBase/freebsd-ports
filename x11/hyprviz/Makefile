@@ -1,6 +1,7 @@
 PORTNAME=	hyprviz
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.4
+DISTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -22,6 +23,10 @@ PLIST_FILES=	bin/${PORTNAME} \
 PORTDOCS=	readme.md
 
 OPTIONS_DEFINE=	DOCS
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/share|${DATADIR:H}|' \
+		${WRKSRC}/src/system_info.rs
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}

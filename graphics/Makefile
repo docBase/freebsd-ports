@@ -155,6 +155,7 @@
     SUBDIR += drm-61-kmod
     SUBDIR += drm-66-kmod
     SUBDIR += drm-kmod
+    SUBDIR += drm-latest-kmod
     SUBDIR += drm_info
     SUBDIR += dspdfviewer
     SUBDIR += dssim
@@ -245,6 +246,7 @@
     SUBDIR += geos
     SUBDIR += geoserver
     SUBDIR += gexiv2
+    SUBDIR += gexiv2_016
     SUBDIR += giflib
     SUBDIR += gifmerge
     SUBDIR += gifsicle
@@ -514,6 +516,7 @@
     SUBDIR += libqrencode
     SUBDIR += librasterlite2
     SUBDIR += libraw
+    SUBDIR += libresprite
     SUBDIR += librsvg2
     SUBDIR += librsvg2-rust
     SUBDIR += librtprocess
@@ -890,6 +893,7 @@
     SUBDIR += py-PyOpenGL
     SUBDIR += py-PyOpenGL-accelerate
     SUBDIR += py-actdiag
+    SUBDIR += py-agx-emulsion
     SUBDIR += py-albucore
     SUBDIR += py-albumentations
     SUBDIR += py-altair
@@ -1248,6 +1252,7 @@
     SUBDIR += waifu2x-converter-cpp
     SUBDIR += waifu2x-ncnn-vulkan
     SUBDIR += wallhaven-cli
+    SUBDIR += wallust
     SUBDIR += wayland
     SUBDIR += wayland-protocols
     SUBDIR += wayland-utils

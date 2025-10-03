@@ -1,5 +1,5 @@
 PORTNAME=	node-sqlcipher
-DISTVERSION=	2.2.2
+DISTVERSION=	2.4.4
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/signalapp/node-sqlcipher/archive/refs/tags/v${DISTVERSION}/:sqlcipher \
 		https://registry.npmjs.org/@esbuild/freebsd-arm64/-/:esbuildarm64 \
@@ -22,7 +22,7 @@ ONLY_FOR_ARCHS=	aarch64 amd64
 BUILD_DEPENDS=	${LOCALBASE}/lib/libsignal_sqlcipher_extension.a:devel/signal-sqlcipher-extension \
 		npm:www/npm${NODEJS_SUFFIX}
 
-USES=		nodejs:20,build
+USES=		nodejs:22,build
 
 PLIST_FILES=	lib/node_sqlcipher.node
 

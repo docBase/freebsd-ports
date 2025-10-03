@@ -385,6 +385,7 @@
     SUBDIR += cask
     SUBDIR += catch
     SUBDIR += catch2
+    SUBDIR += catppuccin-whiskers
     SUBDIR += cbang
     SUBDIR += cbfmt
     SUBDIR += cbmc
@@ -485,6 +486,7 @@
     SUBDIR += commit-patch
     SUBDIR += commitizen
     SUBDIR += commoncpp
+    SUBDIR += compdbgen
     SUBDIR += compiler-rt
     SUBDIR += compiz-bcop
     SUBDIR += concurrencpp
@@ -661,6 +663,7 @@
     SUBDIR += electron35
     SUBDIR += electron36
     SUBDIR += electron37
+    SUBDIR += electron38
     SUBDIR += elf
     SUBDIR += elf-dissector
     SUBDIR += elfcat
@@ -1227,6 +1230,7 @@
     SUBDIR += libbegemot
     SUBDIR += libbfd
     SUBDIR += libbinio
+    SUBDIR += libblake3
     SUBDIR += libbpfjit
     SUBDIR += libbson
     SUBDIR += libburn
@@ -1827,6 +1831,7 @@
     SUBDIR += oniguruma
     SUBDIR += open-beagle
     SUBDIR += open62541
+    SUBDIR += openapi
     SUBDIR += openapi-tui
     SUBDIR += opencl
     SUBDIR += opencl-clang
@@ -2229,6 +2234,7 @@
     SUBDIR += p5-Data-Binary
     SUBDIR += p5-Data-Bind
     SUBDIR += p5-Data-Capture
+    SUBDIR += p5-Data-Censor
     SUBDIR += p5-Data-ClearSilver-HDF
     SUBDIR += p5-Data-Clone
     SUBDIR += p5-Data-Cmp
@@ -4600,7 +4606,6 @@
     SUBDIR += py-buildbot-console-view
     SUBDIR += py-buildbot-grid-view
     SUBDIR += py-buildbot-pkg
-    SUBDIR += py-buildbot-react-console-view
     SUBDIR += py-buildbot-waterfall-view
     SUBDIR += py-buildbot-worker
     SUBDIR += py-buildbot-wsgi-dashboards
@@ -4641,6 +4646,7 @@
     SUBDIR += py-cfgv
     SUBDIR += py-cfn-lint
     SUBDIR += py-cftime
+    SUBDIR += py-cgen
     SUBDIR += py-chai
     SUBDIR += py-chainmap
     SUBDIR += py-characteristic
@@ -4836,6 +4842,7 @@
     SUBDIR += py-dukpy
     SUBDIR += py-dulwich
     SUBDIR += py-dunamai
+    SUBDIR += py-durationpy
     SUBDIR += py-durus
     SUBDIR += py-dynrules
     SUBDIR += py-e3-core
@@ -5187,6 +5194,7 @@
     SUBDIR += py-lazr.uri
     SUBDIR += py-lazy
     SUBDIR += py-lazy-object-proxy
+    SUBDIR += py-lazy_imports
     SUBDIR += py-lazy_loader
     SUBDIR += py-legacy-api-wrap
     SUBDIR += py-libcst
@@ -5235,10 +5243,12 @@
     SUBDIR += py-lxml5
     SUBDIR += py-mac-vendor-lookup
     SUBDIR += py-macholib
+    SUBDIR += py-madoka
     SUBDIR += py-magic
     SUBDIR += py-magnet2torrent
     SUBDIR += py-mailcap-fix
     SUBDIR += py-makefun
+    SUBDIR += py-mando
     SUBDIR += py-manuel
     SUBDIR += py-marisa-trie
     SUBDIR += py-marrow.mailer
@@ -5333,6 +5343,12 @@
     SUBDIR += py-objsize
     SUBDIR += py-oci
     SUBDIR += py-odfpy
+    SUBDIR += py-odoo-addon-openupgrade-framework16
+    SUBDIR += py-odoo-addon-openupgrade-framework17
+    SUBDIR += py-odoo-addon-openupgrade-framework18
+    SUBDIR += py-odoo-addon-openupgrade-scripts16
+    SUBDIR += py-odoo-addon-openupgrade-scripts17
+    SUBDIR += py-odoo-addon-openupgrade-scripts18
     SUBDIR += py-offtrac
     SUBDIR += py-olefile
     SUBDIR += py-omegaconf
@@ -5371,6 +5387,7 @@
     SUBDIR += py-opentelemetry-semantic-conventions
     SUBDIR += py-opentelemetry-util-http
     SUBDIR += py-opentracing
+    SUBDIR += py-openupgradelib
     SUBDIR += py-opster
     SUBDIR += py-optik
     SUBDIR += py-optree
@@ -5515,6 +5532,7 @@
     SUBDIR += py-poetry-types
     SUBDIR += py-poetry2setup
     SUBDIR += py-polib
+    SUBDIR += py-pondpond
     SUBDIR += py-pooch
     SUBDIR += py-pop
     SUBDIR += py-pop-config
@@ -6081,6 +6099,7 @@
     SUBDIR += py-tree-format
     SUBDIR += py-tree-sitter
     SUBDIR += py-tree-sitter-languages
+    SUBDIR += py-tree-sitter023
     SUBDIR += py-treelib
     SUBDIR += py-trimesh
     SUBDIR += py-trove-classifiers
@@ -6394,6 +6413,7 @@
     SUBDIR += recycle
     SUBDIR += redasm
     SUBDIR += redo
+    SUBDIR += reflect-cpp
     SUBDIR += reflection-cpp
     SUBDIR += regexx
     SUBDIR += regexxer
@@ -7446,6 +7466,7 @@
     SUBDIR += rubygem-googleapis-common-protos
     SUBDIR += rubygem-googleapis-common-protos-gitlab
     SUBDIR += rubygem-googleapis-common-protos-types
+    SUBDIR += rubygem-googleapis-common-protos-types-gitlab
     SUBDIR += rubygem-graf
     SUBDIR += rubygem-grape
     SUBDIR += rubygem-grape-entity
@@ -7584,6 +7605,7 @@
     SUBDIR += rubygem-marcel
     SUBDIR += rubygem-memo_wise
     SUBDIR += rubygem-memoist
+    SUBDIR += rubygem-memoist3
     SUBDIR += rubygem-memoizable
     SUBDIR += rubygem-memoize
     SUBDIR += rubygem-memory_profiler
@@ -7912,6 +7934,7 @@
     SUBDIR += rubygem-scientist
     SUBDIR += rubygem-sd_notify
     SUBDIR += rubygem-sdoc
+    SUBDIR += rubygem-semantic_logger
     SUBDIR += rubygem-semantic_puppet
     SUBDIR += rubygem-semantic_range
     SUBDIR += rubygem-semi_semantic
@@ -8021,6 +8044,7 @@
     SUBDIR += rubygem-syntax_tree
     SUBDIR += rubygem-sysinfo
     SUBDIR += rubygem-syslog
+    SUBDIR += rubygem-syslog_protocol
     SUBDIR += rubygem-systemu
     SUBDIR += rubygem-table_print
     SUBDIR += rubygem-tdiff
@@ -8259,6 +8283,7 @@
     SUBDIR += spr
     SUBDIR += spread-sheet-widget
     SUBDIR += srecord
+    SUBDIR += srell
     SUBDIR += sse2neon
     SUBDIR += st
     SUBDIR += stack
@@ -8267,6 +8292,7 @@
     SUBDIR += statik
     SUBDIR += statsvn
     SUBDIR += stb
+    SUBDIR += stc
     SUBDIR += stdman
     SUBDIR += stdx-allocator
     SUBDIR += stfl
@@ -8413,7 +8439,6 @@
     SUBDIR += ut
     SUBDIR += utf8cpp
     SUBDIR += uthash
-    SUBDIR += util-linux
     SUBDIR += uv
     SUBDIR += uvwasi
     SUBDIR += valgrind

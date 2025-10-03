@@ -1,7 +1,7 @@
 PORTNAME=	dorst
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.19.4
-PORTREVISION=	2
+DISTVERSION=	0.19.5
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	slowdive@me.com
@@ -37,7 +37,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/share/org.hellbyte.dorst.desktop \
 		${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/share/org.hellbyte.dorst.png \
-		${STAGEDIR}${PREFIX}/share/pixmaps/org.hellbyte.dorst.png
+		${STAGEDIR}${PREFIX}/share/pixmaps
 .endif
 
 PLIST_FILES+=	bin/dorst

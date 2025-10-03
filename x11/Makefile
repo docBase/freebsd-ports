@@ -34,6 +34,7 @@
     SUBDIR += budgie
     SUBDIR += budgie-desktop
     SUBDIR += budgie-screensaver
+    SUBDIR += budgie-session
     SUBDIR += cde
     SUBDIR += cde-devel
     SUBDIR += chayang
@@ -301,6 +302,12 @@
     SUBDIR += nvidia-driver-390
     SUBDIR += nvidia-driver-470
     SUBDIR += nvidia-driver-devel
+    SUBDIR += nvidia-kmod
+    SUBDIR += nvidia-kmod-304
+    SUBDIR += nvidia-kmod-340
+    SUBDIR += nvidia-kmod-390
+    SUBDIR += nvidia-kmod-470
+    SUBDIR += nvidia-kmod-devel
     SUBDIR += nvidia-settings
     SUBDIR += nvidia-xconfig
     SUBDIR += nwg-bar
@@ -457,6 +464,7 @@
     SUBDIR += virglrenderer
     SUBDIR += virtboard
     SUBDIR += virtualgl
+    SUBDIR += walker
     SUBDIR += wallutils
     SUBDIR += wapanel
     SUBDIR += watershot

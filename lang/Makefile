@@ -89,7 +89,6 @@
     SUBDIR += gauche
     SUBDIR += gawk
     SUBDIR += gcc
-    SUBDIR += gcc11
     SUBDIR += gcc12
     SUBDIR += gcc12-devel
     SUBDIR += gcc13
@@ -383,6 +382,7 @@
     SUBDIR += tolua++
     SUBDIR += trealla-prolog
     SUBDIR += tuareg-mode.el
+    SUBDIR += typescript
     SUBDIR += typstfmt
     SUBDIR += typstyle
     SUBDIR += ucc
