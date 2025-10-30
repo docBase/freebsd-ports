@@ -199,6 +199,8 @@
     SUBDIR += mysql84-server
     SUBDIR += mysql91-client
     SUBDIR += mysql91-server
+    SUBDIR += mysql94-client
+    SUBDIR += mysql94-server
     SUBDIR += mysqlbackup
     SUBDIR += mysqldump-secure
     SUBDIR += mysqlreport
@@ -538,6 +540,7 @@
     SUBDIR += percona-orchestrator
     SUBDIR += percona-toolkit
     SUBDIR += pg-gvm
+    SUBDIR += pg-safeupdate
     SUBDIR += pg.el
     SUBDIR += pgFormatter
     SUBDIR += pg_activity
@@ -756,6 +759,7 @@
     SUBDIR += py-aiosql
     SUBDIR += py-aiosqlite
     SUBDIR += py-alembic
+    SUBDIR += py-anysqlite
     SUBDIR += py-apache-arrow
     SUBDIR += py-apsw
     SUBDIR += py-asyncmy
@@ -813,6 +817,7 @@
     SUBDIR += py-pony
     SUBDIR += py-postgresql
     SUBDIR += py-powa-collector
+    SUBDIR += py-prisma
     SUBDIR += py-psycogreen
     SUBDIR += py-psycopg
     SUBDIR += py-psycopg-c
@@ -840,6 +845,7 @@
     SUBDIR += py-redis
     SUBDIR += py-redis2
     SUBDIR += py-redis5
+    SUBDIR += py-redisvl
     SUBDIR += py-rrdtool
     SUBDIR += py-schemachange
     SUBDIR += py-sispy
@@ -1051,7 +1057,10 @@
     SUBDIR += rubygem-redis-client
     SUBDIR += rubygem-redis-cluster-client
     SUBDIR += rubygem-redis-clustering
+    SUBDIR += rubygem-redis-clustering-gitlab
+    SUBDIR += rubygem-redis-gitlab
     SUBDIR += rubygem-redis-namespace
+    SUBDIR += rubygem-redis-namespace-gitlab
     SUBDIR += rubygem-redis-namespace110
     SUBDIR += rubygem-ruby-mysql
     SUBDIR += rubygem-sdbm
@@ -1131,6 +1140,7 @@
     SUBDIR += unixODBC
     SUBDIR += usql
     SUBDIR += valkey
+    SUBDIR += valkey8
     SUBDIR += vfront
     SUBDIR += virtualpg
     SUBDIR += weaviate

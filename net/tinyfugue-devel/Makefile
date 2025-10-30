@@ -1,5 +1,5 @@
 PORTNAME=	tinyfugue
-PORTVERSION=	5.1.6
+PORTVERSION=	5.2.1
 PORTREVISION=	1
 CATEGORIES=	net games
 PKGNAMESUFFIX=	-devel${PKGNAMESUFFIX2}
@@ -11,8 +11,7 @@ WWW=		https://github.com/ingwarsw/tinyfugue
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpcre.so:devel/pcre
-#LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
+LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ingwarsw
