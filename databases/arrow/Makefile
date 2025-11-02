@@ -207,9 +207,6 @@ PLIST_FILES+=	bin/arrow-file-to-stream \
 .if ${PORT_OPTIONS:MGANDIVA} || ${PORT_OPTIONS:MCOMPUTE}
 PLIST_FILES+=	lib/cmake/Arrow/Findutf8proc.cmake
 .endif
-.if ${PORT_OPTIONS:MGANDIVA} || ${PORT_OPTIONS:MZSTD}
-PLIST_FILES+=	lib/cmake/Gandiva/FindzstdAlt.cmake
-.endif
 
 .if ${PORT_OPTIONS:MPYTHON} == "PYTHON" && ${PORT_OPTIONS:MFLIGHT} == "FLIGHT"
     PLIST_SUB+=	PYTHONFLIGHT=""
