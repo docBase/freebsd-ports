@@ -139,7 +139,6 @@
     SUBDIR += sendxmpp
     SUBDIR += signal-cli
     SUBDIR += signal-desktop
-    SUBDIR += signald
     SUBDIR += slack-term
     SUBDIR += snac
     SUBDIR += spectral
@@ -147,7 +146,6 @@
     SUBDIR += sshout
     SUBDIR += tde2e
     SUBDIR += tdlib
-    SUBDIR += tdlib-purple
     SUBDIR += telegram-cli
     SUBDIR += telegram-desktop
     SUBDIR += telegramqml

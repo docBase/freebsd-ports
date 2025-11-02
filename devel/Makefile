@@ -663,7 +663,6 @@
     SUBDIR += egypt
     SUBDIR += eiffelstudio
     SUBDIR += electron34
-    SUBDIR += electron35
     SUBDIR += electron36
     SUBDIR += electron37
     SUBDIR += electron38
@@ -4754,7 +4753,6 @@
     SUBDIR += py-crosshair-tool
     SUBDIR += py-cson
     SUBDIR += py-csv23
-    SUBDIR += py-ctags
     SUBDIR += py-ctypesgen
     SUBDIR += py-cucumber-expressions
     SUBDIR += py-cucumber-tag-expressions
@@ -5329,6 +5327,7 @@
     SUBDIR += py-mypy_extensions
     SUBDIR += py-mystic
     SUBDIR += py-naiveBayesClassifier
+    SUBDIR += py-namex
     SUBDIR += py-nanobind
     SUBDIR += py-nanotime
     SUBDIR += py-natsort
@@ -5662,7 +5661,6 @@
     SUBDIR += py-pyinstaller
     SUBDIR += py-pyinstaller-hooks-contrib
     SUBDIR += py-pyintelowl
-    SUBDIR += py-pyjq
     SUBDIR += py-pyjsparser
     SUBDIR += py-pykdtree
     SUBDIR += py-pylama
@@ -6157,7 +6155,6 @@
     SUBDIR += py-types-retry
     SUBDIR += py-types-setuptools
     SUBDIR += py-types-toml
-    SUBDIR += py-types-ujson
     SUBDIR += py-typeshed-client
     SUBDIR += py-typing-extensions
     SUBDIR += py-typing-inspect
@@ -6359,7 +6356,6 @@
     SUBDIR += pyside6
     SUBDIR += pyside6-tools
     SUBDIR += pystring
-    SUBDIR += pysvn
     SUBDIR += pythontidy
     SUBDIR += pytype
     SUBDIR += qbe
@@ -8436,6 +8432,7 @@
     SUBDIR += tinycbor
     SUBDIR += tinygo
     SUBDIR += tinylaf
+    SUBDIR += tinyopt
     SUBDIR += tinysparql
     SUBDIR += tkcon
     SUBDIR += tkcvs
