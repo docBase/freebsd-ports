@@ -18,7 +18,7 @@ BUILD_DEPENDS=	arrow>=${PORTVERSION}<${PORTVERSION}_99:databases/arrow \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	libarrow.so:databases/arrow
 
-USES=		cmake:indirect python shebangfix
+USES=		cmake:indirect python
 USE_PYTHON=	autoplist concurrent cython3 pep517
 
 post-install:
