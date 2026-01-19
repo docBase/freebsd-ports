@@ -1,5 +1,5 @@
 PORTNAME=	blosc2
-PORTVERSION=	3.11.1
+PORTVERSION=	3.12.2
 CATEGORIES=	archivers python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,7 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>=0:devel/py-msgpack@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
 
 USES=		cmake:indirect pkgconfig python
-USE_PYTHON=	autoplist concurrent cython3 pep517
+USE_PYTHON=	autoplist concurrent cython pep517
 
 MAKE_ENV=	USE_SYSTEM_BLOSC2=1
 

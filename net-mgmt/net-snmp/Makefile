@@ -1,6 +1,5 @@
 PORTNAME=	snmp
-PORTVERSION=	5.9.4
-PORTREVISION=	6
+PORTVERSION=	5.9.5.2
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/net-${PORTNAME}/net-${PORTNAME}/${PORTVERSION} \
@@ -52,7 +51,8 @@ USE_CSTD=	c99
 LIB_DEPENDS=	libpkg.so:${PKG_ORIGIN}
 
 CFLAGS+=	-I${LOCALBASE}/include -I${PKG_PREFIX}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-lm -lkvm -ldevstat \
+		-L${PKG_PREFIX}/lib -L${LOCALBASE}/lib ${LCRYPTO}
 CONFIGURE_ENV+=	PERLPROG="${PERL}" PSPROG="${PS_CMD}" SED="${SED}"
 CONFIGURE_ARGS+=--enable-shared --enable-internal-md5 \
 		--with-default-snmp-version="${DEFAULT_SNMP_VERSION}" \
@@ -62,7 +62,7 @@ CONFIGURE_ARGS+=--enable-shared --enable-internal-md5 \
 		--with-persistent-directory="${NET_SNMP_PERSISTENTDIR}" \
 		--with-gnu-ld --without-libwrap --enable-ipv6 \
 		--without-kmem-usage \
-		--with-ldflags="-lm -lkvm -ldevstat -L${PKG_PREFIX}/lib -L${LOCALBASE}/lib ${LCRYPTO}"
+		--with-ldflags=${LDFLAGS:Q}
 SUB_FILES=	pkg-message
 
 .if defined(WITH_SSP)
@@ -74,6 +74,7 @@ CONFIGURE_ARGS+=--with-defaults
 .endif
 
 TLS_CONFIGURE_ON=	--with-security-modules=tsm --with-transports=TLSTCP,DTLSUDP
+MYSQL_BROKEN=		ISO C99 and later do not support implicit int
 
 .include <bsd.port.options.mk>
 
@@ -144,8 +145,8 @@ CONFIGURE_ARGS+=--enable-agentx-dom-sock-only
 CONFIGURE_ARGS+=--without-root-access
 .endif
 
-SHLIB_VERSION=	40
-SHLIB_VERSION2=	.2.1
+SHLIB_VERSION=	45
+SHLIB_VERSION2=	.0.0
 PLIST_SUB+=	SHLIB_VERSION=${SHLIB_VERSION} SHLIB_VERSION2=${SHLIB_VERSION2}
 SCRIPTS_SUB=	PREFIX=${PREFIX} PERL=${PERL}
 

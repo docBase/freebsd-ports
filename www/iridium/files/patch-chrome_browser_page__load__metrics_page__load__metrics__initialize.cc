@@ -1,6 +1,6 @@
---- chrome/browser/page_load_metrics/page_load_metrics_initialize.cc.orig	2025-11-06 10:11:34 UTC
+--- chrome/browser/page_load_metrics/page_load_metrics_initialize.cc.orig	2026-01-16 14:21:21 UTC
 +++ chrome/browser/page_load_metrics/page_load_metrics_initialize.cc
-@@ -70,7 +70,7 @@
+@@ -68,7 +68,7 @@
  #include "url/gurl.h"
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

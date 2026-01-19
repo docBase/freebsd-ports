@@ -15,6 +15,8 @@ WWW=		https://llvm.org/
 LICENSE_FILE_BSD3CLAUSE=${LICENSE_DIR}/utils/unittest/googletest/LICENSE.TXT
 .include "${.CURDIR}/../llvm-devel/Makefile.LICENSE"
 
+BUILD_DEPENDS=	${PY_SETUPTOOLS}
+
 LLVM_RELEASE=	${DISTVERSION:C/rc.*//}
 LLVM_MAJOR=	${LLVM_RELEASE:C/\.[0-9]\.[0-9]$//}
 LLVM_SUFFIX=	${LLVM_MAJOR}
@@ -139,8 +141,9 @@ FLANG_IMPLIES=		MLIR
 FLANG_PORTDOCS=		flang
 FLANG_PLIST_DIRS=	${LLVM_DIR}/include/flang/Config
 GOLD_DESC=		Build the LLVM Gold plugin for LTO
-GOLD_CMAKE_ON=		-DLLVM_BINUTILS_INCDIR=${LOCALBASE}/include
 GOLD_BUILD_DEPENDS=	${LOCALBASE}/bin/ld.gold:devel/binutils
+GOLD_CMAKE_ON=		-DLLVM_BINUTILS_INCDIR=${LOCALBASE}/include
+GOLD_EXTRA_PATCHES_OFF=	${PATCHDIR}/gold-off-llvm_tools_CMakeLists.txt
 LIT_DESC=		Install lit and FileCheck test tools
 LIT_VARS=		_USES_PYTHON=python
 LLD_DESC=		Install lld, the LLVM linker

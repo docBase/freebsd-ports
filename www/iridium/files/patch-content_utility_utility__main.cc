@@ -1,8 +1,8 @@
---- content/utility/utility_main.cc.orig	2025-10-28 14:29:43 UTC
+--- content/utility/utility_main.cc.orig	2026-01-16 14:21:21 UTC
 +++ content/utility/utility_main.cc
-@@ -39,17 +39,21 @@
+@@ -38,22 +38,31 @@
+ #include "services/on_device_model/public/mojom/on_device_model_service.mojom.h"
  #include "services/tracing/public/cpp/trace_startup.h"
- #include "services/video_effects/public/cpp/buildflags.h"
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
@@ -23,30 +23,26 @@
  #include "services/audio/audio_sandbox_hook_linux.h"
  #include "services/network/network_sandbox_hook_linux.h"
  #include "services/screen_ai/buildflags/buildflags.h"
-@@ -84,7 +88,12 @@
+ #include "services/shape_detection/shape_detection_sandbox_hook.h"
  
- #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
- 
--#if BUILDFLAG(ENABLE_VIDEO_EFFECTS) && BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_BSD)
 +#include "sandbox/policy/sandbox.h"
 +#include "content/common/gpu_pre_sandbox_hook_bsd.h"
 +#endif
 +
-+#if BUILDFLAG(ENABLE_VIDEO_EFFECTS) && (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD))
- #include "services/video_effects/video_effects_sandbox_hook_linux.h"  // nogncheck
- #endif  // BUILDFLAG(IS_LINUX)
- 
-@@ -121,7 +130,7 @@
- sandbox::TargetServices* g_utility_target_services = nullptr;
+ #if BUILDFLAG(USE_LINUX_VIDEO_ACCELERATION)
+ #include "gpu/config/gpu_info_collector.h"
+ #include "media/gpu/sandbox/hardware_video_encoding_sandbox_hook_linux.h"
+@@ -112,7 +121,7 @@ sandbox::TargetServices* g_utility_target_services = n
  #endif  // BUILDFLAG(IS_WIN)
  
--#if BUILDFLAG(ENABLE_ON_DEVICE_TRANSLATION) && BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(ENABLE_ON_DEVICE_TRANSLATION) && (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD))
+ #if BUILDFLAG(ENABLE_ON_DEVICE_TRANSLATION) && \
+-    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS))
++    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD))
  #include "components/services/on_device_translation/sandbox_hook.h"
- #endif  // BUILDFLAG(ENABLE_ON_DEVICE_TRANSLATION) && BUILDFLAG(IS_LINUX)
- 
-@@ -129,7 +138,7 @@ namespace content {
+ #endif  // BUILDFLAG(ENABLE_ON_DEVICE_TRANSLATION) &&  (BUILDFLAG(IS_LINUX) ||
+         // BUILDFLAG(IS_CHROMEOS))
+@@ -121,7 +130,7 @@ namespace content {
  
  namespace {
  
@@ -55,7 +51,7 @@
  std::vector<std::string> GetNetworkContextsParentDirectories() {
    base::MemoryMappedFile::Region region;
    base::ScopedFD read_pipe_fd = base::FileDescriptorStore::GetInstance().TakeFD(
-@@ -285,7 +294,7 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -277,7 +286,7 @@ int UtilityMain(MainFunctionParams parameters) {
      CHECK(on_device_model::PreSandboxInit());
    }
  
@@ -64,7 +60,7 @@
  
  #if BUILDFLAG(USE_LINUX_VIDEO_ACCELERATION) && BUILDFLAG(USE_VAAPI)
    // Regardless of the sandbox status, the VaapiWrapper needs to be initialized
-@@ -300,7 +309,10 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -292,7 +301,10 @@ int UtilityMain(MainFunctionParams parameters) {
    // thread type change in ChildProcess constructor. It also needs to be
    // registered before the process has multiple threads, which may race with
    // application of the sandbox.
@@ -75,34 +71,25 @@
  
    // Initializes the sandbox before any threads are created.
    // TODO(jorgelo): move this after GTK initialization when we enable a strict
-@@ -332,7 +344,7 @@ int UtilityMain(MainFunctionParams parameters) {
-       pre_sandbox_hook =
+@@ -325,7 +337,7 @@ int UtilityMain(MainFunctionParams parameters) {
            base::BindOnce(&speech::SpeechRecognitionPreSandboxHook);
        break;
--#if BUILDFLAG(ENABLE_ON_DEVICE_TRANSLATION) && BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(ENABLE_ON_DEVICE_TRANSLATION) && (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD))
+ #if BUILDFLAG(ENABLE_ON_DEVICE_TRANSLATION) && \
+-    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS))
++    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD))
      case sandbox::mojom::Sandbox::kOnDeviceTranslation:
        pre_sandbox_hook = base::BindOnce(
            &on_device_translation::OnDeviceTranslationSandboxHook);
-@@ -348,7 +360,7 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -342,7 +354,7 @@ int UtilityMain(MainFunctionParams parameters) {
  #else
        NOTREACHED();
  #endif
--#if BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-     case sandbox::mojom::Sandbox::kVideoEffects:
- #if BUILDFLAG(ENABLE_VIDEO_EFFECTS)
-       pre_sandbox_hook =
-@@ -356,7 +368,7 @@ int UtilityMain(MainFunctionParams parameters) {
- #endif
-       break;
- #endif  // BUILDFLAG(IS_LINUX)
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
      case sandbox::mojom::Sandbox::kShapeDetection:
        pre_sandbox_hook =
            base::BindOnce(&shape_detection::ShapeDetectionPreSandboxHook);
-@@ -391,6 +403,7 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -371,6 +383,7 @@ int UtilityMain(MainFunctionParams parameters) {
      default:
        break;
    }
@@ -110,7 +97,7 @@
    if (!sandbox::policy::IsUnsandboxedSandboxType(sandbox_type) &&
        (parameters.zygote_child || !pre_sandbox_hook.is_null())) {
      sandbox_options.use_amd_specific_policies =
-@@ -398,6 +411,11 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -378,6 +391,11 @@ int UtilityMain(MainFunctionParams parameters) {
      sandbox::policy::Sandbox::Initialize(
          sandbox_type, std::move(pre_sandbox_hook), sandbox_options);
    }

@@ -13,15 +13,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 
-FLAVORS=	asterisk20 asterisk22
-FLAVOR?=	${FLAVORS:[2]}
+FLAVORS=	asterisk22 asterisk20
+FLAVOR?=	asterisk22
 
 ${FLAVOR}_PKGNAMEPREFIX=	${FLAVOR}-
 ${FLAVOR}_BUILD_DEPENDS=	asterisk:net/${FLAVOR}
 ${FLAVOR}_RUN_DEPENDS=		asterisk:net/${FLAVOR}
 
-USES=		autoreconf:2.69 compiler:c11 gettext-tools iconv:wchar_t \
-		libtool ssl
+USES=		compiler:c11 iconv:wchar_t libtool ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	chan-sccp
 GH_PROJECT=	chan-sccp

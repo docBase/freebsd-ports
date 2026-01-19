@@ -1,6 +1,6 @@
---- components/supervised_user/core/browser/supervised_user_metrics_service.cc.orig	2025-09-11 13:19:19 UTC
+--- components/supervised_user/core/browser/supervised_user_metrics_service.cc.orig	2026-01-16 14:21:21 UTC
 +++ components/supervised_user/core/browser/supervised_user_metrics_service.cc
-@@ -103,7 +103,7 @@ SupervisedUserMetricsService::SupervisedUserMetricsSer
+@@ -105,7 +105,7 @@ SupervisedUserMetricsService::SupervisedUserMetricsSer
            std::move(metrics_service_accessor_delegate)) {
    DCHECK(pref_service_);
    supervised_user_service_observation_.Observe(&supervised_user_service);

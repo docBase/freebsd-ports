@@ -1,6 +1,6 @@
 PORTNAME=	drm-66-kmod
 PORTVERSION=	${DRM_KMOD_DISTVERSION}
-PORTREVISION=	6
+PORTREVISION=	8
 CATEGORIES=	graphics kld
 
 .include "Makefile.version"
@@ -54,8 +54,14 @@ PLIST_SUB+=	I915="@comment "
 
 MAKE_ENV+=	MAKEOBJDIRPREFIX=${WRKSRC}/obj
 
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 211
+CFLAGS+=	-Wno-default-const-init-var-unsafe
+.endif
+
 pre-build:
 		${MKDIR} ${WRKSRC}/obj
 		(cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} obj)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

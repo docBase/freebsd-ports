@@ -1,6 +1,6 @@
---- ui/gl/gl_switches.cc.orig	2025-11-06 10:11:34 UTC
+--- ui/gl/gl_switches.cc.orig	2026-01-16 14:21:21 UTC
 +++ ui/gl/gl_switches.cc
-@@ -17,7 +17,7 @@
+@@ -16,7 +16,7 @@
  #endif
  
  #if BUILDFLAG(ENABLE_VULKAN) && \

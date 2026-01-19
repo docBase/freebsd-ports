@@ -1,6 +1,6 @@
---- ui/color/color_id.h.orig	2025-11-06 10:11:34 UTC
+--- ui/color/color_id.h.orig	2026-01-16 14:21:21 UTC
 +++ ui/color/color_id.h
-@@ -652,7 +652,7 @@
+@@ -657,7 +657,7 @@
    E_CPONLY(kColorCrosSysPositive) \
    E_CPONLY(kColorCrosSysComplementVariant) \
    E_CPONLY(kColorCrosSysInputFieldOnBase)

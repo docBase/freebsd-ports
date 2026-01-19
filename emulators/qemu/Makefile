@@ -1,5 +1,5 @@
 PORTNAME=	qemu
-DISTVERSION=	10.1.2
+DISTVERSION=	10.2.0
 PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
@@ -113,7 +113,6 @@ CONFIGURE_ARGS+=	--disable-attr \
 			--disable-tpm \
 			--disable-user \
 			--disable-vhost-net \
-			--disable-virtfs \
 			--disable-vnc
 .endif
 .if ${FLAVOR:U} == tools

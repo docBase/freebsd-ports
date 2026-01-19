@@ -1,5 +1,5 @@
 PORTNAME=	typescript-go
-PORTVERSION=	7.0.0.g20251115
+PORTVERSION=	7.0.0.g20260114
 PORTREVISION=	1
 CATEGORIES=	lang
 
@@ -11,12 +11,12 @@ WWW=		https://www.typescriptlang.org/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.25,modules
+USES=		go:1.25+,modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
 GH_PROJECT=	typescript-go
-GH_TAGNAME=	05f4d69f81d416946ce46a374d91b78c0fbd37c8
+GH_TAGNAME=	f5bcdfc02e6527b774418a26ee817c4397da8546
 GH_TUPLE=	microsoft:TypeScript:9e8eaa1746b0d09c3cd29048126ef9cf24f29c03:typescript/_submodules/TypeScript
 
 GO_MOD_DIST=	https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/${GH_TAGNAME}/

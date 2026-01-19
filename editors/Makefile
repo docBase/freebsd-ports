@@ -33,6 +33,7 @@
     SUBDIR += dkns
     SUBDIR += drjava
     SUBDIR += dte
+    SUBDIR += dz6
     SUBDIR += e3
     SUBDIR += e93
     SUBDIR += ecce
@@ -204,6 +205,7 @@
     SUBDIR += lite-xl
     SUBDIR += marginalia.el
     SUBDIR += marker
+    SUBDIR += markmywords
     SUBDIR += mg
     SUBDIR += mickey
     SUBDIR += micro
@@ -249,6 +251,7 @@
     SUBDIR += py-pynvim
     SUBDIR += py-vim-bridge
     SUBDIR += rehex
+    SUBDIR += remarkable
     SUBDIR += retext
     SUBDIR += rubygem-neovim
     SUBDIR += sam

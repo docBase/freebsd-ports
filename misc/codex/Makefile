@@ -1,6 +1,6 @@
 PORTNAME=	codex
 DISTVERSIONPREFIX=	rust-v
-DISTVERSION=	0.63.0
+DISTVERSION=	0.87.0
 CATEGORIES=	misc devel
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -11,16 +11,26 @@ WWW=		https://openai.com/codex \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libdbus-1.so:devel/dbus \
+LIB_DEPENDS=	libzstd.so:archivers/zstd \
+		libdbus-1.so:devel/dbus \
 		libonig.so:devel/oniguruma
 RUN_DEPENDS=	bash:shells/bash \
 		rg:textproc/ripgrep
 TEST_DEPENDS=	bash:shells/bash
 
-USES=		cargo python:test ssl
+USES=		cargo python:test shebangfix ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	openai
+
+SHEBANG_FILES=	codex-rs/core/src/skills/assets/samples/skill-creator/scripts/init_skill.py \
+		codex-rs/core/src/skills/assets/samples/skill-creator/scripts/package_skill.py \
+		codex-rs/core/src/skills/assets/samples/skill-creator/scripts/quick_validate.py \
+		codex-rs/core/src/skills/assets/samples/skill-installer/scripts/github_utils.py \
+		codex-rs/core/src/skills/assets/samples/skill-installer/scripts/install-skill-from-github.py \
+		codex-rs/core/src/skills/assets/samples/skill-installer/scripts/list-curated-skills.py \
+		codex-rs/mcp-types/check_lib_rs.py \
+		codex-rs/mcp-types/generate_mcp_types.py
 
 CARGO_CARGOTOML=	${BUILD_WRKSRC}/Cargo.toml
 CARGO_CARGOLOCK=	${BUILD_WRKSRC}/Cargo.lock
@@ -52,13 +62,14 @@ post-patch:
 		${BUILD_WRKSRC}/core/src/exec.rs \
 		${BUILD_WRKSRC}/core/src/parse_command.rs \
 		${BUILD_WRKSRC}/core/src/shell.rs \
+		${BUILD_WRKSRC}/core/src/shell_snapshot.rs \
 		${BUILD_WRKSRC}/core/src/tools/handlers/shell.rs \
 		${BUILD_WRKSRC}/core/src/tools/handlers/unified_exec.rs \
-		${BUILD_WRKSRC}/core/src/tools/spec.rs \
 		${BUILD_WRKSRC}/core/tests/suite/exec.rs \
 		${BUILD_WRKSRC}/core/tests/suite/unified_exec.rs \
 		${BUILD_WRKSRC}/core/tests/suite/user_notification.rs \
-		${BUILD_WRKSRC}/tui/src/exec_command.rs
+		${BUILD_WRKSRC}/tui/src/exec_command.rs \
+		${BUILD_WRKSRC}/tui2/src/exec_command.rs
 	@${REINPLACE_CMD} -e 's|python3|${PYTHON_VERSION}|' \
 		${BUILD_WRKSRC}/app-server/tests/suite/codex_message_processor_flow.rs \
 		${BUILD_WRKSRC}/app-server/tests/suite/v2/turn_start.rs \
@@ -68,7 +79,8 @@ post-patch:
 		${BUILD_WRKSRC}/core/tests/suite/tools.rs \
 		${BUILD_WRKSRC}/core/tests/suite/unified_exec.rs \
 		${BUILD_WRKSRC}/exec/tests/suite/sandbox.rs \
-		${BUILD_WRKSRC}/mcp-server/tests/suite/codex_tool.rs
+		${BUILD_WRKSRC}/mcp-server/tests/suite/codex_tool.rs \
+		${BUILD_WRKSRC}/utils/pty/src/tests.rs
 
 post-build-COMPLETIONS-on:
 	@${MKDIR} ${WRKSRC}/completions

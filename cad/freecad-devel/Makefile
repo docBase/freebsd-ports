@@ -15,6 +15,7 @@ CONFLICTS_INSTALL=      freecad # bin/FreeCAD
 
 BUILD_DEPENDS=	doxygen:devel/doxygen \
 		pybind11-config:devel/py-pybind11@${PY_FLAVOR} \
+		pybind11>0:devel/pybind11 \
 		${PYTHON_PKGNAMEPREFIX}pyside6-tools>0:devel/pyside6-tools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pivy>0:graphics/py-pivy@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/matplotlib/__init__.py:math/py-matplotlib@${PY_FLAVOR} \
@@ -36,11 +37,12 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libboost_thread.so:devel/boost-libs \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreeimage.so:graphics/freeimage \
-		libavutil.so.58:multimedia/ffmpeg \
+		libavutil.so.60:multimedia/ffmpeg \
 		libavformat.so.58:multimedia/ffmpeg4 \
 		libmed.so:french/med \
 		libshiboken6.abi3.so:devel/shiboken6@${PY_FLAVOR} \
-		libhdf5.so:science/hdf5
+		libhdf5.so:science/hdf5 \
+		libicui18n.so:devel/icu
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pivy>0:graphics/py-pivy@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/matplotlib/__init__.py:math/py-matplotlib@${PY_FLAVOR}

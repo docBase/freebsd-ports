@@ -1,4 +1,4 @@
---- chrome/browser/component_updater/registration.cc.orig	2025-09-11 13:19:19 UTC
+--- chrome/browser/component_updater/registration.cc.orig	2026-01-16 14:21:21 UTC
 +++ chrome/browser/component_updater/registration.cc
 @@ -94,7 +94,7 @@
  #endif  // BUILDFLAG(ENABLE_WIDEVINE_CDM_COMPONENT)
@@ -18,7 +18,7 @@
  #include "chrome/browser/component_updater/wasm_tts_engine_component_installer.h"
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
-@@ -245,7 +245,7 @@ void RegisterComponentsForUpdate() {
+@@ -254,7 +254,7 @@ void RegisterComponentsForUpdate() {
    RegisterCookieReadinessListComponent(cus);
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -27,7 +27,7 @@
    RegisterAmountExtractionHeuristicRegexesComponent(cus);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
          // BUILDFLAG(IS_CHROMEOS)
-@@ -257,7 +257,7 @@ void RegisterComponentsForUpdate() {
+@@ -266,7 +266,7 @@ void RegisterComponentsForUpdate() {
    }
  #endif  // BUIDLFLAG(IS_ANDROID)
  
@@ -35,4 +35,4 @@
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    RegisterWasmTtsEngineComponent(cus, g_browser_process->local_state());
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
- 
+ }

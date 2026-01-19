@@ -1,6 +1,6 @@
 PORTNAME=	vuls
 DISTVERSIONPREFIX=v
-DISTVERSION=	0.36.3
+DISTVERSION=	0.37.0
 PORTREVISION=	1
 CATEGORIES=	security
 
@@ -11,7 +11,7 @@ WWW=		https://vuls.io
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.25,modules
+USES=		go:1.25+,modules
 
 GO_MODULE=	github.com/future-architect/vuls
 GO_TARGET=	./cmd/${PORTNAME}

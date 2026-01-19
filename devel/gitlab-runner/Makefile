@@ -1,7 +1,6 @@
 PORTNAME=	gitlab-runner
 DISTVERSIONPREFIX=	v
-DISTVERSION=	18.6.3
-PORTREVISION=	1
+DISTVERSION=	18.8.0
 CATEGORIES=	devel
 MASTER_SITES=	https://gitlab-runner-downloads.s3.amazonaws.com/master/docker/:dockerx64 \
 		https://gitlab-runner-downloads.s3.amazonaws.com/master/docker/:dockerarm
@@ -26,14 +25,14 @@ RUN_DEPENDS=	bash:shells/bash \
 		git:devel/git \
 		gitlab-analyzers-secrets>=0:security/gitlab-analyzers-secrets
 
-USES=		go:modules,1.24
+USES=		go:modules
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 USE_RC_SUBR=	gitlab_runner
 # this branch removes the replace line in go.mod which breaks the way FreeBSD ports build go packages
-GO_MOD_DIST=	https://gitlab.com/mfechner/gitlab-runner/-/raw/18-6-stable/
+GO_MOD_DIST=	https://gitlab.com/mfechner/gitlab-runner/-/raw/18-8-stable/
 
-GITBRANCH=	18-6-stable
+GITBRANCH=	18-8-stable
 GO_MODULE=	gitlab.com/gitlab-org/gitlab-runner
 
 _BUILD_DATE=	$$(date -u +%Y-%m-%dT%H:%M:%S%z)

@@ -1,6 +1,6 @@
 PORTNAME=	hyprgraphics
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.0
+DISTVERSION=	0.5.0
 CATEGORIES=	graphics
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -28,7 +28,7 @@ USE_XORG=	pixman
 
 LDFLAGS+=	-pthread
 
-PLIST_SUB=	SOVERSION_MAJOR=3 \
+PLIST_SUB=	SOVERSION_MAJOR=4 \
 		SOVERSION_FULL=${DISTVERSION:C/-.*//}
 
 .include <bsd.port.mk>

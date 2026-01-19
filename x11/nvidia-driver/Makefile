@@ -28,6 +28,9 @@ LICENSE_FILE=	${WRKSRC}/doc/license.txt
 .include "${.CURDIR}/../nvidia-driver/Makefile.version"
 .include "${.CURDIR}/../nvidia-driver/Makefile.common"
 
+FLAVORS=	xorg xlibre
+FLAVOR?=	${FLAVORS:[1]}
+
 # the package provides lib32 versions of the libraries, which then depends
 # themselves in non existing lib32 libraries, so we don't want the package
 # to end up depending on non existing libraries
@@ -53,11 +56,26 @@ RUN_DEPENDS=	${KMODDIR}/nvidia.ko:x11/nvidia-kmod${PKGNAMESUFFIX}
 LIB_DEPENDS+=	libnvidia-egl-wayland.so:graphics/egl-wayland
 .endif
 
+.if ${NVVERSION} >= 580.00000
+LIB_DEPENDS+=	libnvidia-egl-xcb.so:graphics/egl-x11
+.endif
+
 USES=		uidfix xorg
 .if ${NVVERSION} >= 470.04201
 USES+=		tar:xz
 .endif
-USE_XORG=	x11 xorg-server xext
+
+USE_XORG=	x11 xext
+.if ${FLAVOR} == xlibre
+PKGNAMEPREFIX=	xlibre-
+USES+=xlibre
+USE_XLIBRE+=	xlibre-server
+CONFLICTS_BUILD+=	xorg-server
+.else
+USE_XORG+=	xorg-server
+CONFLICTS_BUILD+=	xlibre-server
+.endif
+
 USE_LDCONFIG=	yes
 
 PIE_UNSAFE=	yes

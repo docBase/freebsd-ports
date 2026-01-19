@@ -1,5 +1,6 @@
 PORTNAME=	mediawiki
-PORTVERSION=	1.44.2
+PORTVERSION=	1.44.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://releases.wikimedia.org/mediawiki/${PORTVERSION:R}/ \
 		LOCAL/wen
@@ -11,7 +12,7 @@ WWW=		https://www.mediawiki.org/
 
 LICENSE=	GPLv2
 
-CONFLICTS=	mediawiki139 mediawiki141 mediawiki142 mediawiki143
+CONFLICTS=	mediawiki139 mediawiki143 mediawiki145
 
 USES=		cpe php:flavors shebangfix
 SHEBANG_FILES=	maintenance/storage/make-blobs
@@ -47,10 +48,10 @@ IMAGICK_RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/imagick.so:graphics/pec
 
 pre-install:
 	@${FIND} -s -d ${WRKSRC} -not -type d | ${SED} "s?${WRKSRC}?${MEDIAWIKIDIR}?g" >>${PLIST}
-	@${ECHO} "@dir %%WWWDIR%%/cache" >> ${PLIST}
 	@${ECHO_CMD} "@owner ${WWWOWN}" >> ${PLIST}
 	@${ECHO_CMD} "@group ${WWWGRP}" >> ${PLIST}
 	@${ECHO} "@mode 0755" >> ${PLIST}
+	@${ECHO} "@dir %%WWWDIR%%/cache" >> ${PLIST}
 	@${ECHO} "@dir %%WWWDIR%%/images" >> ${PLIST}
 	@${ECHO} "@mode" >> ${PLIST}
 	@${ECHO_CMD} "@owner" >> ${PLIST}

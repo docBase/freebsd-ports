@@ -116,6 +116,7 @@ USES=		autoreconf bison compiler:c++11-lib cpe desktop-file-utils \
 USE_GL=		gl glu
 USE_GNOME=	gdkpixbuf gdkpixbuf2xlib gtk20 libxslt glib20
 JAVA_VENDOR=	openjdk
+JAVA_VERSION=	8
 USE_PERL5=	build
 USE_XORG=	ice sm x11 xau xaw xcomposite xcursor xdamage xext xfixes xi \
 		xinerama xrandr xrender xt
@@ -228,7 +229,7 @@ WITH=	SDK
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1500000
 # nm: '../unxfbsdi.pro/slo/b2dcubicbezier.o': Invalid argument
-EXTRA_PATCHES+=         ${FILESDIR}/extra-patch-nm
+EXTRA_PATCHES+=		${FILESDIR}/extra-patch-nm
 .endif
 
 .if defined(WITH_DEBUG)

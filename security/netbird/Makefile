@@ -1,7 +1,6 @@
 PORTNAME=	netbird
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.60.4
-PORTREVISION=	1
+DISTVERSION=	0.63.0
 CATEGORIES=	security net net-vpn
 
 MAINTAINER=	dev@netbird.io
@@ -16,7 +15,7 @@ NOT_FOR_ARCHS_REASON=	"no 32-bit builds supported"
 
 RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss
 
-USES=		go:modules
+USES=		go:1.25+,modules
 USE_RC_SUBR=	${PORTNAME}
 
 GO_MODULE=	github.com/netbirdio/netbird

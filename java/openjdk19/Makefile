@@ -1,15 +1,19 @@
 PORTNAME=	openjdk
 DISTVERSIONPREFIX=	jdk-
 DISTVERSION=	${JDK_MAJOR_VERSION}.${JDK_MINOR_VERSION}.${JDK_PATCH_VERSION}+${JDK_BUILD_NUMBER}-${BSD_JDK_VERSION}
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	java devel
 PKGNAMESUFFIX?=	${JDK_MAJOR_VERSION}
+MASTER_SITES=	LOCAL/openjdk/:boot
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT?=	Java Development Kit ${JDK_MAJOR_VERSION}
 WWW=		https://openjdk.java.net/projects/jdk/19/
 
 LICENSE=	GPLv2
+
+DEPRECATED=	No longer supported by upstream
+EXPIRATION_DATE=	2026-02-12
 
 ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64 powerpc64le
 
@@ -53,7 +57,8 @@ MAKE_ENV=	LANG="C" \
 		LOG=cmdlines \
 		MAKEFLAGS=""
 
-JDK_OSARCH=	bsd-${ARCH:S/amd64/x86_64/:S/i386/x86/:S/powerpc64/ppc64/}
+JDK_ARCH=	${ARCH:S/amd64/x86_64/:S/i386/x86/:S/powerpc64/ppc64/}
+JDK_OSARCH=	bsd-${JDK_ARCH}
 JDK_BUILDDIR=	${WRKSRC}/build/${JDK_OSARCH}-${JDK_BUILD_JVM}-${JDK_BUILD_TYPE}
 .if defined(BUILD_JRE)
 JDK_IMAGEDIR=	${JDK_BUILDDIR}/images/jre
@@ -116,20 +121,10 @@ JDK_BUILD_TYPE=		release
 
 .include <bsd.port.pre.mk>
 
-BOOTSTRAP_JDKS=	${LOCALBASE}/openjdk19 ${LOCALBASE}/openjdk18
-
-# do we have valid native jdk installed?
-.for BJDK in ${BOOTSTRAP_JDKS}
-.  if !defined(BOOTSTRAPJDKDIR) && exists(${BJDK}/bin/javac)
-BOOTSTRAPJDKDIR=	${BJDK}
-.  endif
-.endfor
-
-# if no valid jdk found, set dependency
-.if !defined(BOOTSTRAPJDKDIR)
-BOOTSTRAPJDKDIR?=	${LOCALBASE}/openjdk18
-BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:java/openjdk18
-.endif
+# Set up bootstrap JDK
+BOOTSTRAPJDKDIR=	${WRKDIR}/boot-jdk
+BOOTSTRAPJDKFILE=	openjdk19-19.0.2+7.1_4.${JDK_ARCH}.tar.xz
+DISTFILES+=	${BOOTSTRAPJDKFILE}:boot
 
 JDK_BUILD_JVM=	server
 

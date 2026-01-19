@@ -1010,8 +1010,11 @@ include/folly/python/request_context.h
 include/folly/random/hash.h
 include/folly/random/xoshiro256pp.h
 include/folly/result/coro.h
+include/folly/result/detail/immortal_exception_storage.h
 include/folly/result/gtest_helpers.h
 include/folly/result/result.h
+include/folly/result/rich_error_fwd.h
+include/folly/result/rich_msg.h
 include/folly/result/try.h
 include/folly/result/value_only_result.h
 include/folly/result/value_only_result_coro.h
@@ -1097,7 +1100,6 @@ include/folly/synchronization/StripedThrottledLifoSem.h
 include/folly/synchronization/ThrottledLifoSem.h
 include/folly/synchronization/WaitOptions.h
 include/folly/synchronization/detail/AtomicUtils.h
-include/folly/synchronization/detail/Hardware.h
 include/folly/synchronization/detail/HazptrUtils.h
 include/folly/synchronization/detail/InlineFunctionRef.h
 include/folly/synchronization/detail/Sleeper.h
@@ -1118,6 +1120,7 @@ include/folly/system/Pid.h
 include/folly/system/Shell.h
 include/folly/system/ThreadId.h
 include/folly/system/ThreadName.h
+include/folly/system/arch/x86.h
 include/folly/test/DeterministicSchedule.h
 include/folly/test/TestUtils.h
 include/folly/testing/TestUtil.h

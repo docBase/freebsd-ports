@@ -8,11 +8,6 @@ PKGNAMESUFFIX=	${LLVM_SUFFIX}
 DISTNAME=	llvm-project-${DISTVERSION}.src
 DISTFILES=	llvm-project-${DISTVERSION}.src${EXTRACT_SUFX}
 
-PATCH_SITES=	https://github.com/llvm/llvm-project/commit/
-PATCHFILES+=	llvmorg-18-init-1760-g68744ffbdd7d.patch:-p1 # https://reviews.llvm.org/D157589
-PATCHFILES+=	llvmorg-18-init-15199-gb9935bb02a50.patch:-p1 # https://github.com/llvm/llvm-project/pull/75748
-PATCHFILES+=	llvmorg-18-init-15680-g966d564e43e6.patch:-p1 # https://github.com/llvm/llvm-project/pull/76185
-
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	LLVM and Clang
 WWW=		https://llvm.org/
@@ -163,8 +158,9 @@ FLANG_IMPLIES=		MLIR
 FLANG_PORTDOCS=		flang
 FLANG_PLIST_DIRS=	${LLVM_DIR}/include/flang/Config
 GOLD_DESC=		Build the LLVM Gold plugin for LTO
-GOLD_CMAKE_ON=		-DLLVM_BINUTILS_INCDIR=${LOCALBASE}/include
 GOLD_BUILD_DEPENDS=	${LOCALBASE}/bin/ld.gold:devel/binutils
+GOLD_CMAKE_ON=		-DLLVM_BINUTILS_INCDIR=${LOCALBASE}/include
+GOLD_EXTRA_PATCHES_OFF=	${PATCHDIR}/gold-off-llvm_tools_CMakeLists.txt
 LIT_DESC=		Install lit and FileCheck test tools
 LIT_VARS=		_USES_PYTHON=python
 LLD_DESC=		Install lld, the LLVM linker

@@ -1,6 +1,6 @@
---- components/device_signals/core/common/signals_features.cc.orig	2025-10-30 15:44:36 UTC
+--- components/device_signals/core/common/signals_features.cc.orig	2026-01-14 08:33:23 UTC
 +++ components/device_signals/core/common/signals_features.cc
-@@ -51,7 +51,7 @@ bool IsDetectedAgentSignalCollectionEnabled() {
+@@ -63,7 +63,7 @@ bool IsPolicyDataCollectionEnabled() {
  }
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || \

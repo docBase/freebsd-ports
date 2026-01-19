@@ -1,10 +1,10 @@
 PORTNAME=	deltachat-desktop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.25.3
+DISTVERSION=	2.35.0
 PORTREVISION=	0
 CATEGORIES=	net-im
 MASTER_SITES+=	LOCAL/feld:npmcache
-DISTFILES+=	${PORTNAME}-${DISTVERSIONPREFIX}2.25.1-node-deps.tgz:npmcache
+DISTFILES+=	${PORTNAME}-${DISTVERSIONFULL}-node-deps.tgz:npmcache
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Cross-platform decentralized encrypted messaging service
@@ -13,12 +13,12 @@ WWW=		https://delta.chat/
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ELECTRON_VER=	37
+ELECTRON_VER=	39
 
 # Important to keep the RPC server core in sync with the Desktop release
-RUN_DEPENDS=	deltachat-rpc-server>=2.25<2.26:net/deltachat-rpc-server
-BUILD_DEPENDS=	electron${ELECTRON_VER}:devel/electron${ELECTRON_VER} \
-		npm:www/npm${NODEJS_SUFFIX}
+RUN_DEPENDS=	deltachat-rpc-server>=2.35<2.36:net/deltachat-rpc-server \
+		electron${ELECTRON_VER}:devel/electron${ELECTRON_VER}
+BUILD_DEPENDS=	npm:www/npm${NODEJS_SUFFIX}
 USES=		desktop-file-utils nodejs:22,build pkgconfig
 
 # Possible to support more arches, but need their binary

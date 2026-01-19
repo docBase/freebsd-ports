@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.247.0
+PORTVERSION=	3.251.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -158,7 +158,6 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-elasticloadbalancing>=1<2:devel/rubygem-aws-sdk-elasticloadbalancing \
 		rubygem-aws-sdk-elasticloadbalancingv2>=1<2:devel/rubygem-aws-sdk-elasticloadbalancingv2 \
 		rubygem-aws-sdk-elasticsearchservice>=1<2:devel/rubygem-aws-sdk-elasticsearchservice \
-		rubygem-aws-sdk-elastictranscoder>=1<2:devel/rubygem-aws-sdk-elastictranscoder \
 		rubygem-aws-sdk-emr>=1<2:devel/rubygem-aws-sdk-emr \
 		rubygem-aws-sdk-emrcontainers>=1<2:devel/rubygem-aws-sdk-emrcontainers \
 		rubygem-aws-sdk-emrserverless>=1<2:devel/rubygem-aws-sdk-emrserverless \
@@ -289,6 +288,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-networkmonitor>=1<2:devel/rubygem-aws-sdk-networkmonitor \
 		rubygem-aws-sdk-notifications>=1<2:devel/rubygem-aws-sdk-notifications \
 		rubygem-aws-sdk-notificationscontacts>=1<2:devel/rubygem-aws-sdk-notificationscontacts \
+		rubygem-aws-sdk-novaact>=1<2:devel/rubygem-aws-sdk-novaact \
 		rubygem-aws-sdk-oam>=1<2:devel/rubygem-aws-sdk-oam \
 		rubygem-aws-sdk-observabilityadmin>=1<2:devel/rubygem-aws-sdk-observabilityadmin \
 		rubygem-aws-sdk-odb>=1<2:devel/rubygem-aws-sdk-odb \
@@ -299,6 +299,8 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-osis>=1<2:devel/rubygem-aws-sdk-osis \
 		rubygem-aws-sdk-outposts>=1<2:devel/rubygem-aws-sdk-outposts \
 		rubygem-aws-sdk-panorama>=1<2:devel/rubygem-aws-sdk-panorama \
+		rubygem-aws-sdk-partnercentralaccount>=1<2:devel/rubygem-aws-sdk-partnercentralaccount \
+		rubygem-aws-sdk-partnercentralbenefits>=1<2:devel/rubygem-aws-sdk-partnercentralbenefits \
 		rubygem-aws-sdk-partnercentralchannel>=1<2:devel/rubygem-aws-sdk-partnercentralchannel \
 		rubygem-aws-sdk-partnercentralselling>=1<2:devel/rubygem-aws-sdk-partnercentralselling \
 		rubygem-aws-sdk-paymentcryptography>=1<2:devel/rubygem-aws-sdk-paymentcryptography \
@@ -339,6 +341,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-rolesanywhere>=1<2:devel/rubygem-aws-sdk-rolesanywhere \
 		rubygem-aws-sdk-route53>=1<2:devel/rubygem-aws-sdk-route53 \
 		rubygem-aws-sdk-route53domains>=1<2:devel/rubygem-aws-sdk-route53domains \
+		rubygem-aws-sdk-route53globalresolver>=1<2:devel/rubygem-aws-sdk-route53globalresolver \
 		rubygem-aws-sdk-route53profiles>=1<2:devel/rubygem-aws-sdk-route53profiles \
 		rubygem-aws-sdk-route53recoverycluster>=1<2:devel/rubygem-aws-sdk-route53recoverycluster \
 		rubygem-aws-sdk-route53recoverycontrolconfig>=1<2:devel/rubygem-aws-sdk-route53recoverycontrolconfig \
@@ -411,6 +414,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-wafregional>=1<2:devel/rubygem-aws-sdk-wafregional \
 		rubygem-aws-sdk-wafv2>=1<2:devel/rubygem-aws-sdk-wafv2 \
 		rubygem-aws-sdk-wellarchitected>=1<2:devel/rubygem-aws-sdk-wellarchitected \
+		rubygem-aws-sdk-wickr>=1<2:devel/rubygem-aws-sdk-wickr \
 		rubygem-aws-sdk-workdocs>=1<2:devel/rubygem-aws-sdk-workdocs \
 		rubygem-aws-sdk-workmail>=1<2:devel/rubygem-aws-sdk-workmail \
 		rubygem-aws-sdk-workmailmessageflow>=1<2:devel/rubygem-aws-sdk-workmailmessageflow \
