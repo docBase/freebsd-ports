@@ -1,7 +1,7 @@
 PORTNAME=	pulumi
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.216.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES+=	https://raw.githubusercontent.com/${PORTNAME}/${PORTNAME}/${DISTVERSIONFULL}/
 
@@ -9,20 +9,17 @@ MAINTAINER=	matias@pizarro.net
 COMMENT=	Infrastructure as Code SDK
 WWW=		https://www.pulumi.com/
 
-USES=		go:modules
-USE_GITHUB=	yes
-
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	go:lang/go \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}grpcio>0:devel/py-grpcio@${PY_FLAVOR} \
 		gmake:devel/gmake \
-		${PYTHON_PKGNAMEPREFIX}grpcio>0:devel/py-grpcio@${PY_FLAVOR}
+		go:lang/go
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}grpcio>0:devel/py-grpcio@${PY_FLAVOR}
 
 USES=		go:modules python:3.11
-
 USE_GITHUB=	yes
+
 GO_TARGET=	:${BIN_NAME}
 GO_BUILDFLAGS=	-ldflags=" \
 		-X ${GO_MODULE}/sdk/go/common/version.Version=${DISTVERSION}"
@@ -31,19 +28,18 @@ GO_BUILDFLAGS=	-ldflags=" \
 GO_DBUS_VERSION=	v5.2.2
 GO_TERM_VERSION=	v1.2.0-beta.2
 
-OPTIONS_DEFINE=		PYTHON NODEJS GO
-OPTIONS_DEFAULT=	PYTHON NODEJS GO
+OPTIONS_DEFINE=		GO NODEJS PYTHON
+OPTIONS_DEFAULT=	GO NODEJS PYTHON
 OPTIONS_SUB=		yes
 
-PYTHON_DESC=		Python language support
-NODEJS_DESC=		Node.js language support
-GO_DESC=		Go language support
-
-PYTHON_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip@${PY_FLAVOR}
-PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}grpcio>0:devel/py-grpcio@${PY_FLAVOR}
+GO_DESC=	Go language support
+NODEJS_DESC=	Node.js language support
+PYTHON_DESC=	Python language support
 
 NODEJS_BUILD_DEPENDS=	node:www/node \
 			yarn:www/yarn
+PYTHON_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip@${PY_FLAVOR}
+PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}grpcio>0:devel/py-grpcio@${PY_FLAVOR}
 
 .include <bsd.port.options.mk>
 
@@ -123,6 +119,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/pulumi-language-go ${STAGEDIR}${PREFIX}/bin/
 .endif
 
-BIN_NAME=		pulumi
+BIN_NAME=	pulumi
 
 .include <bsd.port.mk>
