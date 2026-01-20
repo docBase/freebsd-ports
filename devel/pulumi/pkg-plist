@@ -1,0 +1,7 @@
+bin/pulumi
+%%PYTHON%%bin/pulumi-language-python
+%%PYTHON%%bin/pulumi-language-python-exec
+%%PYTHON%%bin/pulumi-resource-pulumi-python
+%%PYTHON%%bin/pulumi-analyzer-policy-python
+%%NODEJS%%bin/pulumi-language-nodejs
+%%GO%%bin/pulumi-language-go

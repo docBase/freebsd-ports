@@ -1,0 +1,17 @@
+Pulumi is an open source infrastructure as code tool for creating, deploying,
+and managing cloud infrastructure. Pulumi works with traditional
+infrastructures like VMs, networks, and databases, in addition to modern
+architectures, including containers, Kubernetes clusters, and serverless
+functions.
+
+Pulumi supports multiple programming languages including Python, TypeScript,
+JavaScript, Go, C#, Java, and YAML. It works with over 150 cloud providers
+including AWS, Azure, Google Cloud Platform, and Kubernetes.
+
+Key features:
+- Infrastructure as real code (not YAML/JSON)
+- Multi-cloud support
+- State management
+- Secret management
+- Policy as code
+- Testing support
