@@ -1,6 +1,7 @@
 PORTNAME=	pulumi
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.216.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES+=	https://raw.githubusercontent.com/${PORTNAME}/${PORTNAME}/${DISTVERSIONFULL}/
 
@@ -31,7 +32,7 @@ GO_DBUS_VERSION=	v5.2.2
 GO_TERM_VERSION=	v1.2.0-beta.2
 
 OPTIONS_DEFINE=		PYTHON NODEJS GO
-OPTIONS_DEFAULT=	PYTHON
+OPTIONS_DEFAULT=	PYTHON NODEJS GO
 OPTIONS_SUB=		yes
 
 PYTHON_DESC=		Python language support
@@ -93,8 +94,8 @@ do-build:
 .if ${PORT_OPTIONS:MGO}
 	@${ECHO_MSG} "===> Building Go language plugin"
 	cd ${WRKSRC}/sdk/go/pulumi-language-go && \
-		${GO_CMD} mod vendor && \
 		${GO_CMD} mod tidy && \
+		${GO_CMD} mod vendor && \
 		${GO_CMD} build \
 		-o ${WRKSRC}/bin/pulumi-language-go \
 		${GO_BUILDFLAGS} \
