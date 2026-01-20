@@ -1,0 +1,7 @@
+Pulumi Terraform Remote State Resource Provider enables accessing and using
+Terraform remote state data within Pulumi programs. This allows organizations
+migrating from Terraform to Pulumi to reference existing Terraform-managed
+resources and gradually transition their infrastructure.
+
+This provider reads Terraform state files from various backends and makes
+the outputs available to Pulumi programs.

@@ -1,0 +1,7 @@
+Pulumi YAML Language Plugin enables writing Pulumi infrastructure as code
+using YAML syntax. This plugin provides both a language host for running
+YAML-based Pulumi programs and a converter for transforming YAML to other
+Pulumi languages.
+
+YAML is a simple, declarative way to define cloud infrastructure that's
+ideal for simpler use cases and getting started with Pulumi.

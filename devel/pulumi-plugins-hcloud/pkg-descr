@@ -1,0 +1,7 @@
+Pulumi Hetzner Cloud (hcloud) Resource Provider enables managing Hetzner Cloud
+infrastructure using Pulumi. This provider is built on the Terraform bridge
+and provides access to Hetzner's cloud resources including servers, networks,
+volumes, load balancers, and more.
+
+Hetzner Cloud offers affordable and reliable cloud infrastructure with
+excellent performance and transparent pricing.

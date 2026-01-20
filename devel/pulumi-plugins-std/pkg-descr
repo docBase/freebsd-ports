@@ -1,0 +1,8 @@
+Pulumi Standard Library (pulumi-std) provides a collection of standard
+library functions for use in Pulumi programs. These functions provide
+common operations like string manipulation, encoding/decoding, and
+other utility functions that can be used across different Pulumi
+providers and languages.
+
+This plugin provides the pulumi-resource-std binary which implements
+the standard library as a Pulumi resource provider.

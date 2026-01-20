@@ -1,0 +1,8 @@
+Pulumi Docker Resource Provider enables managing Docker containers, images,
+networks, and volumes using Pulumi infrastructure as code. This provider is
+built on the Terraform bridge and provides comprehensive Docker resource
+management capabilities.
+
+Use this provider to define and deploy Docker-based applications and
+infrastructure programmatically with type safety and cloud engineering
+best practices.

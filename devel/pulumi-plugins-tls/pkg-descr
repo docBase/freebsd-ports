@@ -1,0 +1,6 @@
+Pulumi TLS Resource Provider enables creating and managing TLS/SSL certificates,
+private keys, certificate signing requests, and other cryptographic resources
+using Pulumi. This provider is built on the Terraform bridge.
+
+Use this provider to generate self-signed certificates, manage certificate
+authorities, and handle TLS resources programmatically in your infrastructure.
