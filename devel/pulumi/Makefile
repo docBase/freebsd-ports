@@ -5,7 +5,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES+=	https://raw.githubusercontent.com/${PORTNAME}/${PORTNAME}/${DISTVERSIONFULL}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	matias@pizarro.net
 COMMENT=	Infrastructure as Code SDK
 WWW=		https://www.pulumi.com/
 
