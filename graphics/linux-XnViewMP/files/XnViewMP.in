@@ -1,0 +1,18 @@
+#!/bin/sh
+#
+# Wrapper script for XnViewMP on FreeBSD Linux compatibility layer
+#
+
+XNVIEWMP_HOME="%%DATADIR%%"
+
+# Set library path for Qt and other dependencies
+export LD_LIBRARY_PATH="${XNVIEWMP_HOME}/lib:${LD_LIBRARY_PATH}"
+
+# Set Qt plugin path (plugins are in lib/platforms, lib/imageformats, etc.)
+export QT_PLUGIN_PATH="${XNVIEWMP_HOME}/lib"
+
+# Change to application directory
+cd "${XNVIEWMP_HOME}" || exit 1
+
+# Execute XnViewMP
+exec "${XNVIEWMP_HOME}/XnView" "$@"

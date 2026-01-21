@@ -1,0 +1,18 @@
+XnViewMP is a powerful cross-platform image viewer and converter for
+Windows, macOS, and Linux. It supports more than 500 image formats
+including JPEG, TIFF, PNG, GIF, WEBP, PSD, JPEG2000, RAW camera formats,
+HEIC/HEIF, JPEG-XL, AVIF, and many more.
+
+Features include:
+- Multiple viewing modes (thumbnails, fullscreen, filmstrip, slideshow)
+- Image editing (resize, crop, rotate, color adjustments)
+- Batch processing for conversions and renaming
+- EXIF, IPTC, and XMP metadata viewing and editing
+- Face detection and duplicate file finder
+- Multi-page TIFF and animated GIF/ICO support
+- Screen capture functionality
+- Unicode support and multilingual interface
+- Dark theme option
+
+XnViewMP is freeware for private, public entities, and educational use.
+Commercial use requires a license from XnSoft.
