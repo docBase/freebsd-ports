@@ -1,6 +1,7 @@
 PORTNAME=	pulumi-plugins-hcloud
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.31.0
+PORTREVISION=   2
 CATEGORIES=	devel
 
 MAINTAINER=	matias@pizarro.net
@@ -18,7 +19,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	pulumi
 GH_PROJECT=	pulumi-hcloud
 
-GO_BUILDFLAGS=	-buildvcs=false
+GO_BUILDFLAGS=	-buildvcs=false \
+		-ldflags "-X github.com/pulumi/pulumi-hcloud/provider/pkg/version.Version=${DISTVERSION}"
 
 # FreeBSD-specific Go dependency fixes
 GO_DBUS_VERSION=	v5.2.2

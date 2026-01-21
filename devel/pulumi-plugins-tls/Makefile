@@ -1,6 +1,7 @@
 PORTNAME=	pulumi-plugins-tls
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.2.3
+PORTREVISION=   2
 CATEGORIES=	devel
 
 MAINTAINER=	matias@pizarro.net
@@ -18,7 +19,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	pulumi
 GH_PROJECT=	pulumi-tls
 
-GO_BUILDFLAGS=	-buildvcs=false
+GO_BUILDFLAGS=	-buildvcs=false \
+		-ldflags "-X github.com/pulumi/pulumi-tls/provider/v5/pkg/version.Version=${DISTVERSION}"
 
 # FreeBSD-specific Go dependency fixes
 GO_DBUS_VERSION=	v5.2.2

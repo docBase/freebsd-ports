@@ -1,7 +1,7 @@
 PORTNAME=	pulumi
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.216.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES+=	https://raw.githubusercontent.com/${PORTNAME}/${PORTNAME}/${DISTVERSIONFULL}/
 
@@ -12,17 +12,19 @@ WWW=		https://www.pulumi.com/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}grpcio>0:devel/py-grpcio@${PY_FLAVOR} \
-		gmake:devel/gmake \
-		go:lang/go
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}grpcio>0:devel/py-grpcio@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}grpcio>0:devel/py-grpcio@${PY_FLAVOR}
 
-USES=		go:modules python:3.11
+USES=		gmake go python:3.11 shebangfix
 USE_GITHUB=	yes
+
+SHEBANG_FILES=	sdk/python/cmd/pulumi-language-python-exec \
+		sdk/python/dist/pulumi-analyzer-policy-python \
+		sdk/python/dist/pulumi-resource-pulumi-python
 
 GO_TARGET=	:${BIN_NAME}
 GO_BUILDFLAGS=	-ldflags=" \
-		-X ${GO_MODULE}/sdk/go/common/version.Version=${DISTVERSION}"
+		-X github.com/pulumi/pulumi/sdk/v3/go/common/version.Version=${DISTVERSION}"
 
 # FreeBSD-specific Go dependency fixes
 GO_DBUS_VERSION=	v5.2.2

@@ -1,6 +1,7 @@
 PORTNAME=	pulumi-plugins-terraform
 DISTVERSIONPREFIX=	v
 DISTVERSION=	6.0.1
+PORTREVISION=   2
 CATEGORIES=	devel
 
 MAINTAINER=	matias@pizarro.net
@@ -18,7 +19,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	pulumi
 GH_PROJECT=	pulumi-terraform
 
-GO_BUILDFLAGS=	-buildvcs=false
+GO_BUILDFLAGS=	-buildvcs=false \
+		-ldflags "-X github.com/pulumi/pulumi-terraform/v6/provider/version.version=${DISTVERSION}"
 
 # FreeBSD-specific Go dependency fixes
 GO_DBUS_VERSION=	v5.2.2
