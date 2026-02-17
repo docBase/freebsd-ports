@@ -1,6 +1,6 @@
 PORTNAME=	amneziawg-go
-PORTVERSION=	0.2.12
-PORTREVISION=	1
+DISTVERSION=	0.2.16
+PORTREVISION=	2
 CATEGORIES=	net net-vpn
 MASTER_SITES=	https://github.com/amnezia-vpn/amneziawg-go/
 
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=	gmake go:modules
 
-GO_MODULE=	github.com/amnezia-vpn/amneziawg-go@v${PORTVERSION}
+GO_MODULE=	github.com/amnezia-vpn/amneziawg-go@v${DISTVERSION}
 
 PLIST_FILES=	bin/${PORTNAME}
 

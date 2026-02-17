@@ -1,6 +1,6 @@
---- third_party/blink/common/features.cc.orig	2026-01-16 14:21:21 UTC
+--- third_party/blink/common/features.cc.orig	2026-02-16 10:45:29 UTC
 +++ third_party/blink/common/features.cc
-@@ -595,7 +595,7 @@ BASE_FEATURE(kDevToolsImprovedNetworkError, base::FEAT
+@@ -596,7 +596,7 @@ BASE_FEATURE(kDevToolsImprovedNetworkError, base::FEAT
  
  BASE_FEATURE(kDirectCompositorThreadIpc,
  #if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \

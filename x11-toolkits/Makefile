@@ -194,7 +194,7 @@
     SUBDIR += py-superqt
     SUBDIR += py-tkinter
     SUBDIR += py-tktreectrl
-    SUBDIR += py-wxPython4
+    SUBDIR += py-wxpython
     SUBDIR += pythonqt
     SUBDIR += qhotkey
     SUBDIR += qml-box2d
@@ -269,6 +269,7 @@
     SUBDIR += wlroots017
     SUBDIR += wlroots018
     SUBDIR += wlroots019
+    SUBDIR += wlroots020
     SUBDIR += wmapp
     SUBDIR += wxgtk30
     SUBDIR += wxgtk32

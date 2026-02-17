@@ -80,7 +80,6 @@
     SUBDIR += badwolf
     SUBDIR += baikal
     SUBDIR += bareos-webui
-    SUBDIR += bareos22-webui
     SUBDIR += bareos23-webui
     SUBDIR += bareos24-webui
     SUBDIR += beehive
@@ -474,6 +473,7 @@
     SUBDIR += mythplugin-mythweb
     SUBDIR += nanoblogger
     SUBDIR += nanoblogger-extra
+    SUBDIR += nbytes
     SUBDIR += ncgopher
     SUBDIR += neon
     SUBDIR += netrik
@@ -1576,6 +1576,7 @@
     SUBDIR += py-dj52-laces
     SUBDIR += py-dj52-social-auth-app-django
     SUBDIR += py-dj52-strawberry-graphql-django
+    SUBDIR += py-dj60-django-stubs-ext
     SUBDIR += py-django-admin-rangefilter
     SUBDIR += py-django-advanced-filters
     SUBDIR += py-django-allauth
@@ -1670,7 +1671,6 @@
     SUBDIR += py-django-solo
     SUBDIR += py-django-sortedm2m
     SUBDIR += py-django-star-ratings
-    SUBDIR += py-django-statici18n
     SUBDIR += py-django-staticinline
     SUBDIR += py-django-storages
     SUBDIR += py-django-stubs-ext
@@ -1692,6 +1692,7 @@
     SUBDIR += py-django52
     SUBDIR += py-django60
     SUBDIR += py-django_compressor
+    SUBDIR += py-django_statici18n
     SUBDIR += py-djangocms-admin-style
     SUBDIR += py-djangoql
     SUBDIR += py-djangorestframework
@@ -1756,6 +1757,7 @@
     SUBDIR += py-flask-theme
     SUBDIR += py-flask-uploads
     SUBDIR += py-flask-wtf
+    SUBDIR += py-flatnotes
     SUBDIR += py-flower
     SUBDIR += py-flup6
     SUBDIR += py-folium
@@ -1876,6 +1878,7 @@
     SUBDIR += py-priority
     SUBDIR += py-priority1
     SUBDIR += py-protego
+    SUBDIR += py-proxy.py
     SUBDIR += py-proxy_tools
     SUBDIR += py-puppetboard
     SUBDIR += py-py-restclient
@@ -2406,6 +2409,8 @@
     SUBDIR += rubygem-redis-rails-rails52
     SUBDIR += rubygem-redis-rails-rails60
     SUBDIR += rubygem-redis-rails-rails61
+    SUBDIR += rubygem-requestjs-rails
+    SUBDIR += rubygem-requestjs-rails-rails72
     SUBDIR += rubygem-responders
     SUBDIR += rubygem-responders-rails-gitlab
     SUBDIR += rubygem-responders-rails5
@@ -2549,6 +2554,7 @@
     SUBDIR += suitecrm
     SUBDIR += suphp
     SUBDIR += surf
+    SUBDIR += surge
     SUBDIR += swiggle
     SUBDIR += sws
     SUBDIR += tailwindcss3
