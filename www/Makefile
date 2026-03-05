@@ -26,6 +26,7 @@
     SUBDIR += R-cran-webutils
     SUBDIR += SNIP
     SUBDIR += UniversalFeedCreator
+    SUBDIR += access-log-exporter
     SUBDIR += adguardhome
     SUBDIR += adjuster
     SUBDIR += agate
@@ -203,6 +204,7 @@
     SUBDIR += flat-frog
     SUBDIR += flexget
     SUBDIR += flickcurl
+    SUBDIR += fmd-server
     SUBDIR += foreign-cdm
     SUBDIR += forgejo
     SUBDIR += forgejo-lts
@@ -500,7 +502,6 @@
     SUBDIR += nginx-naxsi
     SUBDIR += nginx-prometheus-exporter
     SUBDIR += nginx-ultimate-bad-bot-blocker
-    SUBDIR += nginx-vts-exporter
     SUBDIR += nift
     SUBDIR += node
     SUBDIR += node20
@@ -2006,6 +2007,7 @@
     SUBDIR += py-yarl
     SUBDIR += py-youtube-transcript-api
     SUBDIR += py-yt-dlp
+    SUBDIR += py-yt-dlp-ejs
     SUBDIR += pydio-cells
     SUBDIR += qdecoder
     SUBDIR += qhttpengine

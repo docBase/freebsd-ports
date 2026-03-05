@@ -921,7 +921,6 @@
     SUBDIR += gocheese
     SUBDIR += godot
     SUBDIR += godot-tools
-    SUBDIR += godot35
     SUBDIR += goffice
     SUBDIR += gogs
     SUBDIR += golangci-lint
@@ -1013,6 +1012,7 @@
     SUBDIR += hs-threadscope
     SUBDIR += htable
     SUBDIR += hub
+    SUBDIR += hut
     SUBDIR += hvm
     SUBDIR += hwloc
     SUBDIR += hwloc2
@@ -1619,6 +1619,7 @@
     SUBDIR += lua-bitlib
     SUBDIR += lua-bitop
     SUBDIR += lua-cjson
+    SUBDIR += lua-cjson-openresty
     SUBDIR += lua-cqueues
     SUBDIR += lua-gettext
     SUBDIR += lua-language-server
@@ -4336,6 +4337,7 @@
     SUBDIR += premake5
     SUBDIR += priv_wrapper
     SUBDIR += prjpeppercorn111
+    SUBDIR += prjpeppercorn112
     SUBDIR += projectcenter
     SUBDIR += prometheus-cpp
     SUBDIR += protobuf
@@ -4386,6 +4388,7 @@
     SUBDIR += py-aioapns
     SUBDIR += py-aioboto3
     SUBDIR += py-aiobotocore
+    SUBDIR += py-aiofile
     SUBDIR += py-aiofiles
     SUBDIR += py-aiohttp-apispec
     SUBDIR += py-aioice
@@ -4638,6 +4641,7 @@
     SUBDIR += py-cacheyou
     SUBDIR += py-cachier
     SUBDIR += py-cachy
+    SUBDIR += py-caio
     SUBDIR += py-calver
     SUBDIR += py-camel-converter
     SUBDIR += py-canonicaljson
@@ -5618,6 +5622,7 @@
     SUBDIR += py-purl
     SUBDIR += py-py
     SUBDIR += py-py-deviceid
+    SUBDIR += py-py-key-value-aio
     SUBDIR += py-py-partiql-parser
     SUBDIR += py-py-serializable
     SUBDIR += py-py-stackexchange
@@ -5837,6 +5842,7 @@
     SUBDIR += py-python-dateutil
     SUBDIR += py-python-dbusmock
     SUBDIR += py-python-decouple
+    SUBDIR += py-python-discovery
     SUBDIR += py-python-distutils-extra
     SUBDIR += py-python-dtrace
     SUBDIR += py-python-easyconfig
@@ -6348,6 +6354,7 @@
     SUBDIR += py-xxhash
     SUBDIR += py-yacs
     SUBDIR += py-yamllint
+    SUBDIR += py-yamlloader
     SUBDIR += py-yamlordereddictloader
     SUBDIR += py-yappi
     SUBDIR += py-yapps2
@@ -8351,6 +8358,7 @@
     SUBDIR += slibtool
     SUBDIR += sltdl
     SUBDIR += smake
+    SUBDIR += small
     SUBDIR += smc
     SUBDIR += smooth
     SUBDIR += smv
@@ -8438,7 +8446,6 @@
     SUBDIR += taskctl
     SUBDIR += taskflow
     SUBDIR += tass64
-    SUBDIR += tbb
     SUBDIR += tbox
     SUBDIR += tcl-memchan
     SUBDIR += tcl-mmap
