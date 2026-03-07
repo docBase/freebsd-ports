@@ -1,7 +1,6 @@
 PORTNAME=	pulumi-plugins-tls
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.2.3
-PORTREVISION=   2
 CATEGORIES=	devel
 
 MAINTAINER=	matias@pizarro.net
@@ -39,7 +38,7 @@ pre-build:
 
 do-build:
 	@${ECHO_MSG} "===> Building pulumi-resource-tls"
-	cd ${WRKSRC}/provider && ${GO_CMD} build ${GO_BUILDFLAGS} \
+	cd ${WRKSRC}/provider && GOMAXPROCS=8 ${GO_CMD} build ${GO_BUILDFLAGS} \
 		-o ${WRKSRC}/bin/pulumi-resource-tls \
 		./cmd/pulumi-resource-tls
 
