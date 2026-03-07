@@ -1,7 +1,6 @@
 PORTNAME=	pulumi-plugins-hcloud
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.31.0
-PORTREVISION=   2
+DISTVERSION=	1.32.1
 CATEGORIES=	devel
 
 MAINTAINER=	matias@pizarro.net
@@ -39,7 +38,7 @@ pre-build:
 
 do-build:
 	@${ECHO_MSG} "===> Building pulumi-resource-hcloud"
-	cd ${WRKSRC}/provider && ${GO_CMD} build ${GO_BUILDFLAGS} \
+	cd ${WRKSRC}/provider && GOMAXPROCS=8 ${GO_CMD} build ${GO_BUILDFLAGS} \
 		-o ${WRKSRC}/bin/pulumi-resource-hcloud \
 		./cmd/pulumi-resource-hcloud
 
