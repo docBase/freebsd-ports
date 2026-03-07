@@ -9,6 +9,8 @@ WWW=		https://github.com/pulumi/pulumi-aws
 
 LICENSE=	APACHE20
 
+PLIST_FILES=	bin/pulumi-resource-aws
+
 BUILD_DEPENDS=	git:devel/git \
 		go:lang/go \
 		pulumi:devel/pulumi

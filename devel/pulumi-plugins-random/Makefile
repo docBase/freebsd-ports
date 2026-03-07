@@ -9,6 +9,8 @@ WWW=		https://github.com/pulumi/pulumi-random
 
 LICENSE=	APACHE20
 
+PLIST_FILES=	bin/pulumi-resource-random
+
 BUILD_DEPENDS=	go:lang/go \
 		pulumi:devel/pulumi
 RUN_DEPENDS=	pulumi:devel/pulumi

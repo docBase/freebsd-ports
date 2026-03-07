@@ -9,6 +9,8 @@ WWW=		https://github.com/pulumi/pulumi-hcloud
 
 LICENSE=	APACHE20
 
+PLIST_FILES=	bin/pulumi-resource-hcloud
+
 BUILD_DEPENDS=	go:lang/go \
 		pulumi:devel/pulumi
 RUN_DEPENDS=	pulumi:devel/pulumi
