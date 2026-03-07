@@ -1,0 +1,7 @@
+Pulumi AWS Resource Provider enables managing Amazon Web Services (AWS)
+infrastructure using Pulumi. This provider is built on the Terraform bridge
+and provides access to all AWS services including EC2, S3, Lambda, EKS,
+RDS, and hundreds more.
+
+This is one of the most comprehensive cloud providers for Pulumi, supporting
+the full breadth of AWS services and features.

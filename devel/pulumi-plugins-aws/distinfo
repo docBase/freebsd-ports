@@ -1,0 +1,5 @@
+TIMESTAMP = 1772804349
+SHA256 (pulumi-pulumi-aws-v7.20.0_GH0.tar.gz) = bed9f607e5cd8ef515933beea05af6e3aeba80c153333b9f450597acdb32c1ee
+SIZE (pulumi-pulumi-aws-v7.20.0_GH0.tar.gz) = 46182825
+SHA256 (hashicorp-terraform-provider-aws-ea6e951e24066a24891c63a37a3b95f9971d16b8_GH0.tar.gz) = cb635e880aa7489086c0252a8988727a265d4bd94ca0f5981d5c26aa30720a9c
+SIZE (hashicorp-terraform-provider-aws-ea6e951e24066a24891c63a37a3b95f9971d16b8_GH0.tar.gz) = 93905261
