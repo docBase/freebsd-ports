@@ -1,7 +1,6 @@
 PORTNAME=	pulumi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.216.0
-PORTREVISION=	3
+DISTVERSION=	3.225.1
 CATEGORIES=	devel
 MASTER_SITES+=	https://raw.githubusercontent.com/${PORTNAME}/${PORTNAME}/${DISTVERSIONFULL}/
 
@@ -18,9 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}grpcio>0:devel/py-grpcio@${PY_FLAVOR}
 USES=		gmake go python:3.11 shebangfix
 USE_GITHUB=	yes
 
-SHEBANG_FILES=	sdk/python/cmd/pulumi-language-python-exec \
-		sdk/python/dist/pulumi-analyzer-policy-python \
-		sdk/python/dist/pulumi-resource-pulumi-python
+SHEBANG_FILES=	sdk/python/cmd/pulumi-language-python-exec
 
 GO_TARGET=	:${BIN_NAME}
 GO_BUILDFLAGS=	-ldflags=" \
@@ -108,8 +105,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/sdk/python/cmd/pulumi-language-python-exec \
 		${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_SCRIPT} ${WRKSRC}/sdk/python/dist/pulumi-resource-pulumi-python \
-		${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_SCRIPT} ${WRKSRC}/sdk/python/dist/pulumi-analyzer-policy-python \
 		${STAGEDIR}${PREFIX}/bin/
 .endif
 
