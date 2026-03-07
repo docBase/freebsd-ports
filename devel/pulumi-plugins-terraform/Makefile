@@ -1,11 +1,10 @@
 PORTNAME=	pulumi-plugins-terraform
 DISTVERSIONPREFIX=	v
 DISTVERSION=	6.0.1
-PORTREVISION=   2
 CATEGORIES=	devel
 
 MAINTAINER=	matias@pizarro.net
-COMMENT=	Pulumi Terraform Remote State Resource Provider
+COMMENT=	Pulumi Terraform Resource Provider
 WWW=		https://github.com/pulumi/pulumi-terraform
 
 LICENSE=	APACHE20
@@ -36,7 +35,7 @@ pre-build:
 
 do-build:
 	@${ECHO_MSG} "===> Building pulumi-resource-terraform"
-	cd ${WRKSRC} && ${GO_CMD} build ${GO_BUILDFLAGS} \
+	cd ${WRKSRC} && GOMAXPROCS=8 ${GO_CMD} build ${GO_BUILDFLAGS} \
 		-o ${WRKSRC}/bin/pulumi-resource-terraform \
 		main.go
 
