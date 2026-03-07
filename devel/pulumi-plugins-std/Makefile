@@ -1,7 +1,6 @@
 PORTNAME=	pulumi-plugins-std
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.0
-PORTREVISION=   2
+DISTVERSION=	2.3.2
 CATEGORIES=	devel
 
 MAINTAINER=	matias@pizarro.net
@@ -20,7 +19,7 @@ GH_ACCOUNT=	pulumi
 GH_PROJECT=	pulumi-std
 
 GO_BUILDFLAGS=	-buildvcs=false \
-		-ldflags "-X github.com/pulumi/pulumi-std/std/version.Version=${DISTVERSION}"
+		-ldflags "-X github.com/pulumi/pulumi-std/provider/v2/pkg/version.Version=${DISTVERSION}"
 
 # FreeBSD-specific Go dependency fixes
 GO_DBUS_VERSION=	v5.2.2
@@ -28,15 +27,15 @@ GO_TERM_VERSION=	v1.2.0-beta.2
 
 pre-build:
 	@${ECHO_MSG} "===> Updating Go dependencies for FreeBSD compatibility"
-	cd ${WRKSRC}/std && ${GO_CMD} get \
+	cd ${WRKSRC}/provider && ${GO_CMD} get \
 		github.com/godbus/dbus/v5@${GO_DBUS_VERSION} \
 		github.com/pkg/term@${GO_TERM_VERSION}
-	cd ${WRKSRC}/std && ${GO_CMD} mod tidy
-	cd ${WRKSRC}/std && ${GO_CMD} mod vendor
+	cd ${WRKSRC}/provider && ${GO_CMD} mod tidy
+	cd ${WRKSRC}/provider && ${GO_CMD} mod vendor
 
 do-build:
 	@${ECHO_MSG} "===> Building pulumi-resource-std"
-	cd ${WRKSRC}/std && ${GO_CMD} build ${GO_BUILDFLAGS} \
+	cd ${WRKSRC}/provider && GOMAXPROCS=8 ${GO_CMD} build ${GO_BUILDFLAGS} \
 		-o ${WRKSRC}/bin/pulumi-resource-std \
 		./cmd/pulumi-resource-std
 
