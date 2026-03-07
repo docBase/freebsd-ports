@@ -1,7 +1,6 @@
 PORTNAME=	pulumi-plugins-yaml
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.15.0
-PORTREVISION=   2
+DISTVERSION=	1.30.0
 CATEGORIES=	devel
 
 MAINTAINER=	matias@pizarro.net
@@ -36,14 +35,14 @@ pre-build:
 
 do-build:
 	@${ECHO_MSG} "===> Building pulumi-language-yaml"
-	cd ${WRKSRC}/cmd/pulumi-language-yaml && \
-		${GO_CMD} build ${GO_BUILDFLAGS} -o ${WRKSRC}/bin/pulumi-language-yaml .
+	cd ${WRKSRC}/cmd/pulumi-language-yaml && GOMAXPROCS=8 ${GO_CMD} build ${GO_BUILDFLAGS} \
+		-o ${WRKSRC}/bin/pulumi-language-yaml .
 	@${ECHO_MSG} "===> Building pulumi-converter-yaml"
-	cd ${WRKSRC}/cmd/pulumi-converter-yaml && \
-		${GO_CMD} build ${GO_BUILDFLAGS} -o ${WRKSRC}/bin/pulumi-converter-yaml .
+	cd ${WRKSRC}/cmd/pulumi-converter-yaml && GOMAXPROCS=8 ${GO_CMD} build ${GO_BUILDFLAGS} \
+		-o ${WRKSRC}/bin/pulumi-converter-yaml .
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/pulumi-converter-yaml ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/pulumi-language-yaml ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/pulumi-converter-yaml ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>
