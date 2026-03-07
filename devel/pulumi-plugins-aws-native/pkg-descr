@@ -1,0 +1,7 @@
+Pulumi AWS Native Resource Provider enables managing Amazon Web Services (AWS)
+infrastructure using native AWS CloudFormation resource types. Unlike the
+standard AWS provider which uses Terraform, this provider directly uses
+AWS Cloud Control API and CloudFormation specifications.
+
+This provider offers same-day access to new AWS features as they become
+available in CloudFormation, without waiting for Terraform provider updates.
