@@ -9,8 +9,7 @@ WWW=		https://github.com/pulumi/pulumi-docker
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	git:devel/git \
-		go:lang/go \
+BUILD_DEPENDS=	go:lang/go \
 		pulumi:devel/pulumi
 RUN_DEPENDS=	pulumi:devel/pulumi
 
@@ -19,16 +18,27 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	pulumi
 GH_PROJECT=	pulumi-docker
 
-GO_BUILDFLAGS=	-buildvcs=false
+# Upstream terraform-provider-docker submodule (commit from v4.11.0)
+GH_TUPLE=	kreuzwerker:terraform-provider-docker:d7d7ff7f89775a7b71f925a8724de5ce66228019:upstream
+
+GO_BUILDFLAGS=	-buildvcs=false \
+		-ldflags "-X github.com/pulumi/pulumi-docker/provider/v4/pkg/version.Version=${DISTVERSION}"
 
 # FreeBSD-specific Go dependency fixes
 GO_DBUS_VERSION=	v5.2.2
 GO_TERM_VERSION=	v1.2.0-beta.2
 
+post-extract:
+	@${ECHO_MSG} "===> Setting up upstream terraform-provider-docker"
+	${RM} -rf ${WRKSRC}/upstream
+	${MV} ${WRKDIR}/terraform-provider-docker-d7d7ff7f89775a7b71f925a8724de5ce66228019 ${WRKSRC}/upstream
+	@${ECHO_MSG} "===> Applying Pulumi patches to upstream"
+	@cd ${WRKSRC}/upstream && for p in ${WRKSRC}/patches/*.patch; do \
+		${ECHO_MSG} "  Applying $${p##*/}"; \
+		/usr/bin/patch -p1 < "$${p}"; \
+	done
+
 pre-build:
-	@${ECHO_MSG} "===> Initializing upstream submodules"
-	cd ${WRKSRC} && git submodule update --init --recursive || true
-	cd ${WRKSRC} && ./scripts/upstream.sh init || true
 	@${ECHO_MSG} "===> Updating Go dependencies for FreeBSD compatibility"
 	cd ${WRKSRC}/provider && ${GO_CMD} get \
 		github.com/godbus/dbus/v5@${GO_DBUS_VERSION} \
@@ -41,7 +51,7 @@ pre-build:
 
 do-build:
 	@${ECHO_MSG} "===> Building pulumi-resource-docker"
-	cd ${WRKSRC}/provider && ${GO_CMD} build ${GO_BUILDFLAGS} \
+	cd ${WRKSRC}/provider && GOMAXPROCS=8 ${GO_CMD} build ${GO_BUILDFLAGS} \
 		-o ${WRKSRC}/bin/pulumi-resource-docker \
 		./cmd/pulumi-resource-docker
 
