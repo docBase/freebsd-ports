@@ -1,0 +1,11 @@
+Pulumi Command provider for running commands and scripts locally or remotely.
+
+The Command provider allows you to execute arbitrary shell commands and scripts
+as part of your Pulumi program. It supports both local execution and remote
+execution over SSH.
+
+Features:
+- Local command execution
+- Remote command execution via SSH
+- File copying to remote hosts
+- Support for triggers to re-run commands
