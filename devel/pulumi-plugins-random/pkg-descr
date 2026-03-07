@@ -1,0 +1,6 @@
+Pulumi Random Resource Provider enables generating random values such as
+strings, integers, UUIDs, and other random data for use in Pulumi programs.
+This provider is built on the Terraform bridge.
+
+Use this provider to generate random passwords, identifiers, and other
+values that need to be unique or unpredictable in your infrastructure.
