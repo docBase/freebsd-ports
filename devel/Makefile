@@ -833,6 +833,7 @@
     SUBDIR += gh
     SUBDIR += ghidra
     SUBDIR += ghostie
+    SUBDIR += ghpr
     SUBDIR += ghq
     SUBDIR += ghub
     SUBDIR += gilt
@@ -4712,6 +4713,7 @@
     SUBDIR += py-cloc
     SUBDIR += py-cloudpathlib
     SUBDIR += py-cloudpickle
+    SUBDIR += py-cloup
     SUBDIR += py-cluster
     SUBDIR += py-cmd2
     SUBDIR += py-cmdtest
@@ -4778,6 +4780,7 @@
     SUBDIR += py-custodian
     SUBDIR += py-cvss
     SUBDIR += py-cwcwidth
+    SUBDIR += py-cwltest
     SUBDIR += py-cxx
     SUBDIR += py-cycler
     SUBDIR += py-cyclopts
@@ -5990,6 +5993,7 @@
     SUBDIR += py-schedule
     SUBDIR += py-scheduler
     SUBDIR += py-schema
+    SUBDIR += py-schema-salad
     SUBDIR += py-schematics-patched
     SUBDIR += py-scholarly
     SUBDIR += py-scikit-base
@@ -6184,7 +6188,10 @@
     SUBDIR += py-typeguard
     SUBDIR += py-typer
     SUBDIR += py-typer-slim
+    SUBDIR += py-types-Flask-Cors
     SUBDIR += py-types-Pygments
+    SUBDIR += py-types-aws-xray-sdk
+    SUBDIR += py-types-boto
     SUBDIR += py-types-decorator
     SUBDIR += py-types-docutils
     SUBDIR += py-types-jsonschema
