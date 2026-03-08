@@ -23,7 +23,9 @@ GO_BUILDFLAGS=	-buildvcs=false \
 
 PLIST_FILES=	bin/pulumi-resource-terraform
 
-# FreeBSD-specific Go dependency fixes
+# FreeBSD-specific: upstream Go modules require dependency updates for
+# FreeBSD compatibility (godbus/dbus, pkg/term). These cannot be patched
+# statically because vendor directories are regenerated from go.sum.
 GO_DBUS_VERSION=	v5.2.2
 GO_TERM_VERSION=	v1.2.0-beta.2
 
@@ -37,7 +39,7 @@ pre-build:
 
 do-build:
 	@${ECHO_MSG} "===> Building pulumi-resource-terraform"
-	cd ${WRKSRC} && GOMAXPROCS=8 ${GO_CMD} build ${GO_BUILDFLAGS} \
+	cd ${WRKSRC} && GOMAXPROCS=${MAKE_JOBS_NUMBER} ${GO_CMD} build ${GO_BUILDFLAGS} \
 		-o ${WRKSRC}/bin/pulumi-resource-terraform \
 		main.go
 

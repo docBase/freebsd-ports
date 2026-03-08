@@ -23,7 +23,9 @@ GO_BUILDFLAGS=	-buildvcs=false \
 
 PLIST_FILES=	bin/pulumi-resource-aws-native
 
-# FreeBSD-specific Go dependency fixes
+# FreeBSD-specific: upstream Go modules require dependency updates for
+# FreeBSD compatibility (godbus/dbus, pkg/term). These cannot be patched
+# statically because vendor directories are regenerated from go.sum.
 GO_DBUS_VERSION=	v5.2.2
 GO_TERM_VERSION=	v1.2.0-beta.2
 
@@ -36,11 +38,11 @@ pre-build:
 	cd ${WRKSRC}/provider && ${GO_CMD} mod vendor
 	@${ECHO_MSG} "===> Creating compressed schema files"
 	cd ${WRKSRC}/provider/cmd/pulumi-resource-aws-native && \
-		${GZIP_CMD} -k schema.json && ${GZIP_CMD} -k metadata.json
+		${GZIP_CMD} -kf schema.json && ${GZIP_CMD} -kf metadata.json
 
 do-build:
 	@${ECHO_MSG} "===> Building pulumi-resource-aws-native"
-	cd ${WRKSRC}/provider && GOMAXPROCS=8 ${GO_CMD} build ${GO_BUILDFLAGS} \
+	cd ${WRKSRC}/provider && GOMAXPROCS=${MAKE_JOBS_NUMBER} ${GO_CMD} build ${GO_BUILDFLAGS} \
 		-o ${WRKSRC}/bin/pulumi-resource-aws-native \
 		./cmd/pulumi-resource-aws-native
 

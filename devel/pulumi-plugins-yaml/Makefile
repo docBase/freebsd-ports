@@ -24,7 +24,9 @@ GO_BUILDFLAGS=	-buildvcs=false \
 PLIST_FILES=	bin/pulumi-converter-yaml \
 		bin/pulumi-language-yaml
 
-# FreeBSD-specific Go dependency fixes
+# FreeBSD-specific: upstream Go modules require dependency updates for
+# FreeBSD compatibility (godbus/dbus, pkg/term). These cannot be patched
+# statically because vendor directories are regenerated from go.sum.
 GO_DBUS_VERSION=	v5.2.2
 GO_TERM_VERSION=	v1.2.0-beta.2
 
@@ -38,10 +40,10 @@ pre-build:
 
 do-build:
 	@${ECHO_MSG} "===> Building pulumi-language-yaml"
-	cd ${WRKSRC}/cmd/pulumi-language-yaml && GOMAXPROCS=8 ${GO_CMD} build ${GO_BUILDFLAGS} \
+	cd ${WRKSRC}/cmd/pulumi-language-yaml && GOMAXPROCS=${MAKE_JOBS_NUMBER} ${GO_CMD} build ${GO_BUILDFLAGS} \
 		-o ${WRKSRC}/bin/pulumi-language-yaml .
 	@${ECHO_MSG} "===> Building pulumi-converter-yaml"
-	cd ${WRKSRC}/cmd/pulumi-converter-yaml && GOMAXPROCS=8 ${GO_CMD} build ${GO_BUILDFLAGS} \
+	cd ${WRKSRC}/cmd/pulumi-converter-yaml && GOMAXPROCS=${MAKE_JOBS_NUMBER} ${GO_CMD} build ${GO_BUILDFLAGS} \
 		-o ${WRKSRC}/bin/pulumi-converter-yaml .
 
 do-install:

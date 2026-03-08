@@ -27,7 +27,9 @@ GO_BUILDFLAGS=	-buildvcs=false \
 
 PLIST_FILES=	bin/pulumi-resource-aws
 
-# FreeBSD-specific Go dependency fixes
+# FreeBSD-specific: upstream Go modules require dependency updates for
+# FreeBSD compatibility (godbus/dbus, pkg/term). These cannot be patched
+# statically because vendor directories are regenerated from go.sum.
 GO_DBUS_VERSION=	v5.2.2
 GO_TERM_VERSION=	v1.2.0-beta.2
 
@@ -36,10 +38,12 @@ post-extract:
 	${RM} -rf ${WRKSRC}/upstream
 	${MV} ${WRKDIR}/terraform-provider-aws-ea6e951e24066a24891c63a37a3b95f9971d16b8 ${WRKSRC}/upstream
 	@${ECHO_MSG} "===> Applying Pulumi patches to upstream"
-	@cd ${WRKSRC}/upstream && for p in ${WRKSRC}/patches/*.patch; do \
-		${ECHO_MSG} "  Applying $${p##*/}"; \
-		/usr/bin/patch -p1 < "$${p}"; \
-	done
+	@if [ -d ${WRKSRC}/patches ]; then \
+		cd ${WRKSRC}/upstream && for p in ${WRKSRC}/patches/*.patch; do \
+			${ECHO_MSG} "  Applying $${p##*/}"; \
+			${PATCH_CMD} -p1 < "$${p}"; \
+		done; \
+	fi
 
 pre-build:
 	@${ECHO_MSG} "===> Updating Go dependencies for FreeBSD compatibility"
@@ -56,7 +60,7 @@ pre-build:
 
 do-build:
 	@${ECHO_MSG} "===> Building pulumi-resource-aws"
-	cd ${WRKSRC}/provider && GOMAXPROCS=8 ${GO_CMD} build ${GO_BUILDFLAGS} \
+	cd ${WRKSRC}/provider && GOMAXPROCS=${MAKE_JOBS_NUMBER} ${GO_CMD} build ${GO_BUILDFLAGS} \
 		-o ${WRKSRC}/bin/pulumi-resource-aws \
 		./cmd/pulumi-resource-aws
 

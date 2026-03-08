@@ -17,13 +17,19 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}grpcio>0:devel/py-grpcio@${PY_FLAVOR}
 USES=		gmake go python:3.11 shebangfix
 USE_GITHUB=	yes
 
-SHEBANG_FILES=	sdk/python/cmd/pulumi-language-python-exec
+SHEBANG_FILES=	sdk/python/cmd/pulumi-language-python-exec \
+		sdk/python/dist/pulumi-resource-pulumi-python
+
+# NOTE: pulumi-analyzer-policy-python was removed upstream before v3.225.1
+# and is no longer shipped as a separate binary.
 
 GO_TARGET=	:${BIN_NAME}
 GO_BUILDFLAGS=	-ldflags=" \
 		-X github.com/pulumi/pulumi/sdk/v3/go/common/version.Version=${DISTVERSION}"
 
-# FreeBSD-specific Go dependency fixes
+# FreeBSD-specific: upstream Go modules require dependency updates for
+# FreeBSD compatibility (godbus/dbus, pkg/term). These cannot be patched
+# statically because vendor directories are regenerated from go.sum.
 GO_DBUS_VERSION=	v5.2.2
 GO_TERM_VERSION=	v1.2.0-beta.2
 
