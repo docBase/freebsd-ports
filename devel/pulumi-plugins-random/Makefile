@@ -9,8 +9,6 @@ WWW=		https://github.com/pulumi/pulumi-random
 
 LICENSE=	APACHE20
 
-PLIST_FILES=	bin/pulumi-resource-random
-
 BUILD_DEPENDS=	go:lang/go \
 		pulumi:devel/pulumi
 RUN_DEPENDS=	pulumi:devel/pulumi
@@ -22,6 +20,8 @@ GH_PROJECT=	pulumi-random
 
 GO_BUILDFLAGS=	-buildvcs=false \
 		-ldflags "-X github.com/pulumi/pulumi-random/provider/v4/pkg/version.Version=${DISTVERSION}"
+
+PLIST_FILES=	bin/pulumi-resource-random
 
 # FreeBSD-specific Go dependency fixes
 GO_DBUS_VERSION=	v5.2.2

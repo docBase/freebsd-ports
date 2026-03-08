@@ -9,8 +9,6 @@ WWW=		https://github.com/pulumi/pulumi-docker
 
 LICENSE=	APACHE20
 
-PLIST_FILES=	bin/pulumi-resource-docker
-
 BUILD_DEPENDS=	go:lang/go \
 		pulumi:devel/pulumi
 RUN_DEPENDS=	pulumi:devel/pulumi
@@ -25,6 +23,8 @@ GH_TUPLE=	kreuzwerker:terraform-provider-docker:d7d7ff7f89775a7b71f925a8724de5ce
 
 GO_BUILDFLAGS=	-buildvcs=false \
 		-ldflags "-X github.com/pulumi/pulumi-docker/provider/v4/pkg/version.Version=${DISTVERSION}"
+
+PLIST_FILES=	bin/pulumi-resource-docker
 
 # FreeBSD-specific Go dependency fixes
 GO_DBUS_VERSION=	v5.2.2

@@ -1,5 +1,5 @@
---- sdk/go.sum.orig	2026-03-06 11:18:32.671085000 +0100
-+++ sdk/go.sum	2026-03-06 11:23:03.496058000 +0100
+--- sdk/go.sum.orig	2026-03-06 10:18:32 UTC
++++ sdk/go.sum
 @@ -197,8 +197,8 @@
  github.com/pjbgf/sha1cd v0.3.2/go.mod h1:zQWigSxVmsHEZow5qaLtPYxpcKMMQpa09ixqBxuCS6A=
  github.com/pkg/errors v0.9.1 h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=

@@ -9,8 +9,6 @@ WWW=		https://github.com/pulumi/pulumi-terraform
 
 LICENSE=	APACHE20
 
-PLIST_FILES=	bin/pulumi-resource-terraform
-
 BUILD_DEPENDS=	go:lang/go \
 		pulumi:devel/pulumi
 RUN_DEPENDS=	pulumi:devel/pulumi
@@ -22,6 +20,8 @@ GH_PROJECT=	pulumi-terraform
 
 GO_BUILDFLAGS=	-buildvcs=false \
 		-ldflags "-X github.com/pulumi/pulumi-terraform/v6/provider/version.version=${DISTVERSION}"
+
+PLIST_FILES=	bin/pulumi-resource-terraform
 
 # FreeBSD-specific Go dependency fixes
 GO_DBUS_VERSION=	v5.2.2

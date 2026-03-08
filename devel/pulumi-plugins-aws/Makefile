@@ -9,8 +9,6 @@ WWW=		https://github.com/pulumi/pulumi-aws
 
 LICENSE=	APACHE20
 
-PLIST_FILES=	bin/pulumi-resource-aws
-
 BUILD_DEPENDS=	git:devel/git \
 		go:lang/go \
 		pulumi:devel/pulumi
@@ -26,6 +24,8 @@ GH_TUPLE=	hashicorp:terraform-provider-aws:ea6e951e24066a24891c63a37a3b95f9971d1
 
 GO_BUILDFLAGS=	-buildvcs=false \
 		-ldflags "-X github.com/pulumi/pulumi-aws/provider/v7/pkg/version.Version=${DISTVERSION}"
+
+PLIST_FILES=	bin/pulumi-resource-aws
 
 # FreeBSD-specific Go dependency fixes
 GO_DBUS_VERSION=	v5.2.2

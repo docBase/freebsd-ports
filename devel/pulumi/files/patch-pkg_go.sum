@@ -1,5 +1,5 @@
---- pkg/go.sum.orig	2026-03-06 11:18:32.537223000 +0100
-+++ pkg/go.sum	2026-03-06 11:22:05.814511000 +0100
+--- pkg/go.sum.orig	2026-03-06 10:18:32 UTC
++++ pkg/go.sum
 @@ -285,8 +285,8 @@
  github.com/go-ole/go-ole v1.2.6/go.mod h1:pprOEPIfldk/42T2oK7lQ4v4JSDwmV0As9GaiUsvbm0=
  github.com/go-test/deep v1.1.1 h1:0r/53hagsehfO4bzD2Pgr/+RgHqhmf+k1Bpse2cTu1U=

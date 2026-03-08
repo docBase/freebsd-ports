@@ -1,5 +1,5 @@
---- pkg/go.mod.orig	2026-03-06 11:18:32.535984000 +0100
-+++ pkg/go.mod	2026-03-06 11:20:00.963372000 +0100
+--- pkg/go.mod.orig	2026-03-06 10:18:32 UTC
++++ pkg/go.mod
 @@ -74,7 +74,7 @@
  	github.com/fatih/color v1.16.0
  	github.com/go-git/go-git/v5 v5.16.5

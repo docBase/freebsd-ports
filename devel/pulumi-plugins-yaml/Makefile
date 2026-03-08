@@ -9,9 +9,6 @@ WWW=		https://github.com/pulumi/pulumi-yaml
 
 LICENSE=	APACHE20
 
-PLIST_FILES=	bin/pulumi-converter-yaml \
-		bin/pulumi-language-yaml
-
 BUILD_DEPENDS=	go:lang/go \
 		pulumi:devel/pulumi
 RUN_DEPENDS=	pulumi:devel/pulumi
@@ -23,6 +20,9 @@ GH_PROJECT=	pulumi-yaml
 
 GO_BUILDFLAGS=	-buildvcs=false \
 		-ldflags "-X github.com/pulumi/pulumi-yaml/pkg/version.Version=${DISTVERSION}"
+
+PLIST_FILES=	bin/pulumi-converter-yaml \
+		bin/pulumi-language-yaml
 
 # FreeBSD-specific Go dependency fixes
 GO_DBUS_VERSION=	v5.2.2

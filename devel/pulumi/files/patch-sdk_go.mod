@@ -1,5 +1,5 @@
---- sdk/go.mod.orig	2026-03-06 11:18:32.669727000 +0100
-+++ sdk/go.mod	2026-03-06 11:23:03.496356000 +0100
+--- sdk/go.mod.orig	2026-03-06 10:18:32 UTC
++++ sdk/go.mod
 @@ -50,7 +50,7 @@
  	github.com/iwdgo/sigintwindows v0.2.2
  	github.com/klauspost/compress v1.18.0

@@ -9,8 +9,6 @@ WWW=		https://github.com/pulumi/pulumi-aws-native
 
 LICENSE=	APACHE20
 
-PLIST_FILES=	bin/pulumi-resource-aws-native
-
 BUILD_DEPENDS=	go:lang/go \
 		pulumi:devel/pulumi
 RUN_DEPENDS=	pulumi:devel/pulumi
@@ -22,6 +20,8 @@ GH_PROJECT=	pulumi-aws-native
 
 GO_BUILDFLAGS=	-buildvcs=false \
 		-ldflags "-X github.com/pulumi/pulumi-aws-native/provider/pkg/version.Version=${DISTVERSION}"
+
+PLIST_FILES=	bin/pulumi-resource-aws-native
 
 # FreeBSD-specific Go dependency fixes
 GO_DBUS_VERSION=	v5.2.2
@@ -36,7 +36,7 @@ pre-build:
 	cd ${WRKSRC}/provider && ${GO_CMD} mod vendor
 	@${ECHO_MSG} "===> Creating compressed schema files"
 	cd ${WRKSRC}/provider/cmd/pulumi-resource-aws-native && \
-		gzip -k schema.json && gzip -k metadata.json
+		${GZIP_CMD} -k schema.json && ${GZIP_CMD} -k metadata.json
 
 do-build:
 	@${ECHO_MSG} "===> Building pulumi-resource-aws-native"
