@@ -1,5 +1,5 @@
 PORTNAME=	XnViewMP
-PORTVERSION=	1.9.10
+PORTVERSION=	1.10.5
 CATEGORIES=	graphics linux
 MASTER_SITES=	https://download.xnview.com/
 PKGNAMEPREFIX=	linux-
