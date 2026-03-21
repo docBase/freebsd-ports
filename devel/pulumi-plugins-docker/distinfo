@@ -1,5 +1,5 @@
-TIMESTAMP = 1772849961
-SHA256 (pulumi-pulumi-docker-v4.11.0_GH0.tar.gz) = 66738a8246cd5c4a073306b9599389d67c985f5e12a4c6b8b221ad622b71361b
-SIZE (pulumi-pulumi-docker-v4.11.0_GH0.tar.gz) = 984057
+TIMESTAMP = 1774136835
+SHA256 (pulumi-pulumi-docker-v4.11.1_GH0.tar.gz) = a9642ad71c52c635cbc83ae90259ea9a6bb5dc07b735004568ca2da3bde9a276
+SIZE (pulumi-pulumi-docker-v4.11.1_GH0.tar.gz) = 1066176
 SHA256 (kreuzwerker-terraform-provider-docker-d7d7ff7f89775a7b71f925a8724de5ce66228019_GH0.tar.gz) = ec33308860296849dbc7437dcef57b345e319f0d2134f9a3611bbb1c664556f3
 SIZE (kreuzwerker-terraform-provider-docker-d7d7ff7f89775a7b71f925a8724de5ce66228019_GH0.tar.gz) = 318930

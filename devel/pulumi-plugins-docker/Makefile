@@ -1,6 +1,6 @@
 PORTNAME=	pulumi-plugins-docker
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.11.0
+DISTVERSION=	4.11.1
 CATEGORIES=	devel
 
 MAINTAINER=	matias@pizarro.net
@@ -9,8 +9,7 @@ WWW=		https://github.com/pulumi/pulumi-docker
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	go:lang/go \
-		pulumi:devel/pulumi
+BUILD_DEPENDS=	pulumi:devel/pulumi
 RUN_DEPENDS=	pulumi:devel/pulumi
 
 USES=		go:modules
@@ -18,7 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	pulumi
 GH_PROJECT=	pulumi-docker
 
-# Upstream terraform-provider-docker submodule (commit from v4.11.0)
+# Upstream terraform-provider-docker submodule (commit from v4.11.1)
 GH_TUPLE=	kreuzwerker:terraform-provider-docker:d7d7ff7f89775a7b71f925a8724de5ce66228019:upstream
 
 GO_BUILDFLAGS=	-buildvcs=false \
@@ -40,7 +39,7 @@ post-extract:
 	@if [ -d ${WRKSRC}/patches ]; then \
 		cd ${WRKSRC}/upstream && for p in ${WRKSRC}/patches/*.patch; do \
 			${ECHO_MSG} "  Applying $${p##*/}"; \
-			${PATCH_CMD} -p1 < "$${p}"; \
+			${PATCH} -p1 < "$${p}"; \
 		done; \
 	fi
 
