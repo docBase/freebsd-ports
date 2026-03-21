@@ -312,6 +312,7 @@
     SUBDIR += ecos
     SUBDIR += edenmath
     SUBDIR += eigen3
+    SUBDIR += eigen5
     SUBDIR += eispack
     SUBDIR += elan
     SUBDIR += elemental
@@ -1146,6 +1147,7 @@
     SUBDIR += py-theano
     SUBDIR += py-timple
     SUBDIR += py-topologic
+    SUBDIR += py-torchsde
     SUBDIR += py-triangle
     SUBDIR += py-umap-learn
     SUBDIR += py-uncertainties

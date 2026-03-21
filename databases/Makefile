@@ -56,6 +56,7 @@
     SUBDIR += dbtool
     SUBDIR += dbview
     SUBDIR += diesel
+    SUBDIR += dlmdb
     SUBDIR += duckdb
     SUBDIR += ejdb
     SUBDIR += emacsql
@@ -556,6 +557,7 @@
     SUBDIR += pg_partman
     SUBDIR += pg_qualstats
     SUBDIR += pg_repack
+    SUBDIR += pg_search
     SUBDIR += pg_similarity
     SUBDIR += pg_stat_kcache
     SUBDIR += pg_store_plans
