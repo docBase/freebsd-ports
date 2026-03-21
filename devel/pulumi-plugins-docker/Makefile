@@ -12,7 +12,7 @@ LICENSE=	APACHE20
 BUILD_DEPENDS=	pulumi:devel/pulumi
 RUN_DEPENDS=	pulumi:devel/pulumi
 
-USES=		go:modules
+USES=		go:1.25,modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	pulumi
 GH_PROJECT=	pulumi-docker
