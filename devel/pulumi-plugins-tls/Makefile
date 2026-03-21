@@ -1,6 +1,6 @@
 PORTNAME=	pulumi-plugins-tls
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.2.3
+DISTVERSION=	5.3.0
 CATEGORIES=	devel
 
 MAINTAINER=	matias@pizarro.net
@@ -9,8 +9,7 @@ WWW=		https://github.com/pulumi/pulumi-tls
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	go:lang/go \
-		pulumi:devel/pulumi
+BUILD_DEPENDS=	pulumi:devel/pulumi
 RUN_DEPENDS=	pulumi:devel/pulumi
 
 USES=		go:modules

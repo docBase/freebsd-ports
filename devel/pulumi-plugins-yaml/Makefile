@@ -1,6 +1,6 @@
 PORTNAME=	pulumi-plugins-yaml
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.30.0
+DISTVERSION=	1.30.1
 CATEGORIES=	devel
 
 MAINTAINER=	matias@pizarro.net
@@ -9,8 +9,7 @@ WWW=		https://github.com/pulumi/pulumi-yaml
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	go:lang/go \
-		pulumi:devel/pulumi
+BUILD_DEPENDS=	pulumi:devel/pulumi
 RUN_DEPENDS=	pulumi:devel/pulumi
 
 USES=		go:modules
