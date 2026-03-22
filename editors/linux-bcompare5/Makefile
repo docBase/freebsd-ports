@@ -21,10 +21,11 @@ LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	upstream only supports amd64
 
+BUILD_DEPENDS=	patchelf:sysutils/patchelf
+
 USES=		desktop-file-utils gnome linux:rl9 shared-mime-info
 USE_LINUX=	base:run curl:run dbuslibs:run devtools:build freetype:run \
-		qtx11extras:run systemd-libs:run xcb-util:run \
-		xorglibs:run
+		qtx11extras:run systemd-libs:run xcb-util:run xorglibs:run
 
 CONFLICTS_INSTALL=	linux-bcompare[0-9]*
 
@@ -53,6 +54,13 @@ BCLIB_STG=	${STAGEDIR}${PREFIX}/lib/beyondcompare
 pre-install:
 	${LINUXBASE}/usr/bin/gcc --sysroot=${LINUXBASE} -Wall -fPIC -shared \
 		${FILESDIR}/nosched.c -ldl -o ${BCLIB_SRC}/nosched.so
+# Inject nosched.so as a direct ELF dependency of BCompare.
+# LD_PRELOAD does not survive the FreeBSD-to-Linux exec transition
+# through the linuxulator, so we patch the source binary instead.
+# BCompare uses dlsym() to look up pthread_attr_setinheritsched at
+# runtime; nosched.so intercepts dlsym to return a no-op stub,
+# preventing ENOSYS crashes on the linuxulator.
+	patchelf --add-needed nosched.so ${BCLIB_SRC}/BCompare
 
 do-install:
 # bin
