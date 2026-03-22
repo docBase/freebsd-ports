@@ -1,0 +1,11 @@
+--- build/config/linux/BUILD.gn.orig	2025-01-01 00:00:00 UTC
++++ build/config/linux/BUILD.gn
+@@ -41,7 +41,7 @@
+   }
+
+   if ((!is_chromeos || default_toolchain != "//build/toolchain/cros:target") &&
+-      (!use_custom_libcxx || current_cpu == "mipsel")) {
++      (!use_custom_libcxx || current_cpu == "mipsel") && current_os != "freebsd") {
+     libs = [ "atomic" ]
+   }
+ }

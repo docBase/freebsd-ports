@@ -1,0 +1,20 @@
+--- build/toolchain/gcc_toolchain.gni.orig	2025-01-01 00:00:00 UTC
++++ build/toolchain/gcc_toolchain.gni
+@@ -332,7 +332,7 @@
+     tool("cxx") {
+       depfile = "{{output}}.d"
+       precompiled_header_type = "gcc"
+-      command = "$coverage_wrapper$cxx $md -MF $depfile {{defines}} {{include_dirs}} {{cflags}} {{cflags_cc}}${extra_cppflags}${extra_cxxflags} {{module_deps_no_self}} -c {{source}} -o {{output}}"
++      command = "$coverage_wrapper$cxx $md -MF $depfile {{defines}} {{include_dirs}} {{cflags}} {{cflags_cc}}${extra_cppflags}${extra_cxxflags} -c {{source}} -o {{output}}"
+       depsformat = "gcc"
+       description = "CXX {{output}}"
+       outputs = [ "$object_subdir/{{source_name_part}}.o" ]
+@@ -343,7 +343,7 @@
+
+       # Module file doesn't need coverage instrumentation because module files
+       # represent interfaces rather than implementations.
+-      command = "$cxx -MD -MF $depfile {{defines}} {{include_dirs}} {{cflags}} {{cflags_cc}}${extra_cppflags}${extra_cxxflags} {{module_deps_no_self}} -fmodule-name={{cc_module_name}} -x c++ -Xclang -emit-module -c {{source}} -o {{output}}"
++      command = "$cxx -MD -MF $depfile {{defines}} {{include_dirs}} {{cflags}} {{cflags_cc}}${extra_cppflags}${extra_cxxflags} -c {{source}} -o {{output}}"
+       depsformat = "gcc"
+       description = "CXX_MODULE {{output}}"
+       outputs = [ "$object_subdir/{{source_name_part}}.pcm" ]

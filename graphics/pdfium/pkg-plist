@@ -23,3 +23,4 @@ include/pdfium/fpdf_thumbnail.h
 include/pdfium/fpdf_transformpage.h
 include/pdfium/fpdfview.h
 lib/libpdfium.a
+lib/libpdfium.so

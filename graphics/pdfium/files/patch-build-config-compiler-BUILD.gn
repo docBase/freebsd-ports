@@ -1,0 +1,36 @@
+--- build/config/compiler/BUILD.gn.orig	2025-01-01 00:00:00 UTC
++++ build/config/compiler/BUILD.gn
+@@ -617,7 +617,7 @@
+     # https://crbug.com/484082200 for background and https://crrev.com/c/7593035
+     # for discussion.
+     if (!is_wasm) {
+-      cflags += [ "-fno-lifetime-dse" ]
++      # cflags += [ "-fno-lifetime-dse" ]  # GCC-only, not supported by clang
+     }
+
+     # TODO(hans): Remove this once Clang generates better optimized debug info
+@@ -1314,8 +1314,13 @@
+     # simplicity we always explicitly set the architecture.
+     if (current_cpu == "x64") {
+       if (is_clang && !is_android && !is_fuchsia && !is_chromeos_device) {
+-        cflags += [ "--target=x86_64-unknown-linux-gnu" ]
+-        ldflags += [ "--target=x86_64-unknown-linux-gnu" ]
++        if (current_os == "freebsd") {
++          cflags += [ "--target=x86_64-unknown-freebsd" ]
++          ldflags += [ "--target=x86_64-unknown-freebsd" ]
++        } else {
++          cflags += [ "--target=x86_64-unknown-linux-gnu" ]
++          ldflags += [ "--target=x86_64-unknown-linux-gnu" ]
++        }
+       } else {
+         cflags += [ "-m64" ]
+         ldflags += [ "-m64" ]
+@@ -1885,7 +1890,7 @@
+       # sanitizer) is enabled, they then do expensive debug like operations. We
+       # want to suppress this behaviour since we want to keep performance costs
+       # as low as possible while having these checks.
+-      "-fsanitize-ignore-for-ubsan-feature=array-bounds",
++      # "-fsanitize-ignore-for-ubsan-feature=array-bounds",  # Requires clang 20+
+
+       # Because we've enabled array-bounds sanitizing we also want to suppress
+       # the related warning about "unsafe-buffer-usage-in-static-sized-array",

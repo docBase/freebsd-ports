@@ -14,6 +14,7 @@ MASTER_SITES+=	https://chromium.googlesource.com/chromium/src/base/allocator/par
 		https://chromium.googlesource.com/external/github.com/Maratyszcza/FP16/+archive/:fp16 \
 		https://chromium.googlesource.com/chromium/src/third_party/freetype2/+archive/:freetype \
 		https://chromium.googlesource.com/external/github.com/google/googletest/+archive/:gtest \
+		https://chromium.googlesource.com/external/github.com/harfbuzz/harfbuzz/+archive/:harfbuzz \
 		https://chromium.googlesource.com/external/github.com/google/highway/+archive/:highway \
 		https://chromium.googlesource.com/chromium/deps/icu/+archive/:icu \
 		https://chromium.googlesource.com/chromium/third_party/instrumented_libraries/+archive/:instlib \
@@ -45,6 +46,7 @@ DISTFILES+=	2157c84d9a0d075c1ca31cc120590a9743550647.tar.gz:pa \
 		3d2de1816307bac63c16a297e8c4dc501b4076df.tar.gz:fp16 \
 		99b479dc34728936b006679a31e12b8cf432fc55.tar.gz:freetype \
 		4fe3307fb2d9f86d19777c7eb0e4809e9694dde7.tar.gz:gtest \
+		fa2908bf16d2ccd6623f4d575455fea72a1a722b.tar.gz:harfbuzz \
 		84379d1c73de9681b54fbe1c035a23c7bd5d272d.tar.gz:highway \
 		a86a32e67b8d1384b33f8fa48c83a6079b86f8cd.tar.gz:icu \
 		e8cb570a9a2ee9128e2214c73417ad2a3c47780b.tar.gz:instlib \
@@ -101,7 +103,9 @@ GN_ARGS=	is_debug=false \
 		use_custom_libcxx_for_host=false \
 		treat_warnings_as_errors=false \
 		clang_base_path="${LOCALBASE}/llvm19" \
-		clang_version="19"
+		clang_version="19" \
+		use_llvm_libatomic=false \
+		use_allocator_shim=false
 
 _DEPS_DIRS=	base/allocator/partition_allocator:2157c84d9a0d075c1ca31cc120590a9743550647 \
 		build:c9202dd8ca1d4255bd9e505988b945746ddb378a \
@@ -115,6 +119,7 @@ _DEPS_DIRS=	base/allocator/partition_allocator:2157c84d9a0d075c1ca31cc120590a974
 		third_party/fp16/src:3d2de1816307bac63c16a297e8c4dc501b4076df \
 		third_party/freetype/src:99b479dc34728936b006679a31e12b8cf432fc55 \
 		third_party/googletest/src:4fe3307fb2d9f86d19777c7eb0e4809e9694dde7 \
+		third_party/harfbuzz-ng/src:fa2908bf16d2ccd6623f4d575455fea72a1a722b \
 		third_party/highway/src:84379d1c73de9681b54fbe1c035a23c7bd5d272d \
 		third_party/icu:a86a32e67b8d1384b33f8fa48c83a6079b86f8cd \
 		third_party/instrumented_libs:e8cb570a9a2ee9128e2214c73417ad2a3c47780b \
@@ -146,6 +151,12 @@ post-extract:
 	@${MKDIR} ${WRKSRC}/${dep:C/:.*//}
 	@${TAR} -xf ${DISTDIR}/${dep:C/^.*://}.tar.gz -C ${WRKSRC}/${dep:C/:.*//}
 .endfor
+	@${ECHO_CMD} '# Generated for FreeBSD port build' > ${WRKSRC}/build/config/gclient_args.gni
+	@${ECHO_CMD} 'build_with_chromium = false' >> ${WRKSRC}/build/config/gclient_args.gni
+	@${ECHO_CMD} 'checkout_google_benchmark = false' >> ${WRKSRC}/build/config/gclient_args.gni
+	@${ECHO_CMD} 'checkout_src_internal = false' >> ${WRKSRC}/build/config/gclient_args.gni
+	@${MKDIR} ${WRKSRC}/build/modules/freebsd
+	@${ECHO_CMD} '# Stub for FreeBSD C++ modules support' > ${WRKSRC}/build/modules/freebsd/BUILD.gn
 
 do-configure:
 	cd ${WRKSRC} && ${LOCALBASE}/bin/gn gen ${GN_OUT} --args='${GN_ARGS}'
