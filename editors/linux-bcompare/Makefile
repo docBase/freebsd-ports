@@ -1,21 +1,11 @@
 PORTNAME=	bcompare
-DISTVERSION=	5.2.0
-DISTVERSIONSUFFIX=	.31950
+DISTVERSION=	5.1.0
+DISTVERSIONSUFFIX=	.31016
 CATEGORIES=	editors devel linux
-MASTER_SITES=	https://scootersoftware.com/files/ \
-		https://dl.fedoraproject.org/pub/epel/9/Everything/x86_64/Packages/q/:qt6base \
-		https://dl.fedoraproject.org/pub/epel/9/Everything/x86_64/Packages/q/:qt6gui \
-		https://dl.fedoraproject.org/pub/epel/9/Everything/x86_64/Packages/l/:libb2 \
-		https://dl.rockylinux.org/pub/rocky/9/AppStream/x86_64/os/Packages/d/:dblconv
+MASTER_SITES=	https://scootersoftware.com/files/
 PKGNAMEPREFIX=	linux-
 DISTNAME_amd64=	${DISTNAME}.x86_64
 EXTRACT_SUFX=	.rpm
-DISTFILES=	${DISTNAME_${ARCH}}${EXTRACT_SUFX} \
-		qt6-qtbase-6.6.2-1.el9.x86_64.rpm:qt6base \
-		qt6-qtbase-gui-6.6.2-1.el9.x86_64.rpm:qt6gui \
-		libb2-0.98.1-6.el9.x86_64.rpm:libb2 \
-		double-conversion-3.1.5-6.el9.x86_64.rpm:dblconv
-EXTRACT_ONLY=	${DISTNAME_${ARCH}}${EXTRACT_SUFX}
 
 MAINTAINER=	matias@pizarro.net
 COMMENT=	Compare, sync, and merge files and folders (X11)
@@ -28,8 +18,6 @@ LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	upstream only supports amd64
-
-EXTRACT_DEPENDS=	rpm2cpio:archivers/rpm2cpio
 
 USES=		desktop-file-utils gnome linux:rl9 shared-mime-info shebangfix
 USE_LINUX=	base:run dbuslibs:run devtools:build xorglibs:run
@@ -44,48 +32,20 @@ NO_WRKSUBDIR=	true
 DATA_FILTER=	-type d -o -name *\.html -o -name *\.js -o -name *\.css -o \
 		-name *\.gif -o -name *\.png -o -name *\.jpg -o -name \
 		*\.desktop -o -name mime\.types -o -name README -o -name \
-		BCompare.mad -o -name RPM-GPG-KEY-scootersoftware -o -name \
-		scootersoftware.repo
+		copyright -o -name BCompare.mad -o -name \
+		RPM-GPG-KEY-scootersoftware -o -name scootersoftware.repo
 
-LIB_FILES=	libQt6Pas.so.6 lib7z.so libunrar.so libcloudstorage.so.22.0 \
-		nosched.so libQt6Core.so.6 libQt6Gui.so.6 libQt6Widgets.so.6 \
-		libQt6PrintSupport.so.6 libQt6DBus.so.6 libQt6XcbQpa.so.6 \
-		libdouble-conversion.so.3 libb2.so.1
+LIB_FILES=	lib7z.so libcloudstorage.so.22.0 libQt5Pas.so.1 libunrar.so \
+		nosched.so
 PROGRAM_FILES=	BCompare
 SCRIPT_FILES=	bcmount.sh
 
 .include <bsd.port.options.mk>
 
 LIBDIR=		lib64
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-usr_bin_bcompare_amd64
 
 BCLIB_SRC=	${WRKSRC}/usr/${LIBDIR}/beyondcompare
 BCLIB_STG=	${STAGEDIR}${PREFIX}/lib/beyondcompare
-
-_QT6_RPMS=	qt6-qtbase-6.6.2-1.el9.x86_64.rpm \
-		qt6-qtbase-gui-6.6.2-1.el9.x86_64.rpm \
-		libb2-0.98.1-6.el9.x86_64.rpm \
-		double-conversion-3.1.5-6.el9.x86_64.rpm
-
-post-extract:
-# Extract bundled Qt6 runtime libraries from EPEL/RL9 RPMs
-	@${MKDIR} ${WRKDIR}/qt6tmp
-.for rpm in ${_QT6_RPMS}
-	@cd ${WRKDIR}/qt6tmp && ${LOCALBASE}/bin/rpm2cpio < ${DISTDIR}/${rpm} | ${CPIO} -id 2>/dev/null
-.endfor
-	@${CP} ${WRKDIR}/qt6tmp/usr/${LIBDIR}/libQt6Core.so.6* ${BCLIB_SRC}/
-	@${CP} ${WRKDIR}/qt6tmp/usr/${LIBDIR}/libQt6DBus.so.6* ${BCLIB_SRC}/
-	@${CP} ${WRKDIR}/qt6tmp/usr/${LIBDIR}/libQt6Gui.so.6* ${BCLIB_SRC}/
-	@${CP} ${WRKDIR}/qt6tmp/usr/${LIBDIR}/libQt6PrintSupport.so.6* ${BCLIB_SRC}/
-	@${CP} ${WRKDIR}/qt6tmp/usr/${LIBDIR}/libQt6Widgets.so.6* ${BCLIB_SRC}/
-	@${CP} ${WRKDIR}/qt6tmp/usr/${LIBDIR}/libQt6XcbQpa.so.6* ${BCLIB_SRC}/
-	@${CP} ${WRKDIR}/qt6tmp/usr/${LIBDIR}/libdouble-conversion.so.3* ${BCLIB_SRC}/
-	@${CP} ${WRKDIR}/qt6tmp/usr/${LIBDIR}/libb2.so.1* ${BCLIB_SRC}/
-	@${MKDIR} ${BCLIB_SRC}/platforms
-	@${CP} ${WRKDIR}/qt6tmp/usr/${LIBDIR}/qt6/plugins/platforms/libqxcb.so ${BCLIB_SRC}/platforms/
-	@${MKDIR} ${BCLIB_SRC}/xcbglintegrations
-	@${CP} ${WRKDIR}/qt6tmp/usr/${LIBDIR}/qt6/plugins/xcbglintegrations/*.so ${BCLIB_SRC}/xcbglintegrations/
-	@${RM} -r ${WRKDIR}/qt6tmp
 
 pre-install:
 	${LINUXBASE}/usr/bin/gcc --sysroot=${LINUXBASE} -Wall -fPIC -shared \
@@ -100,12 +60,7 @@ do-install:
 	(cd ${BCLIB_SRC} && ${INSTALL_SCRIPT}  ${SCRIPT_FILES}  ${BCLIB_STG})
 	(cd ${BCLIB_SRC} && ${INSTALL_LIB}     ${LIB_FILES}     ${BCLIB_STG})
 	${INSTALL_LIB} ${BCLIB_SRC}/ext/*.so   ${BCLIB_STG}/ext
-	${LN} -sf ${LINUXBASE}/usr/${LIBDIR}/libbz2.so.1 ${BCLIB_STG}/libbz2.so.1.0
-	${INSTALL_LIB} ${LINUXBASE}/usr/${LIBDIR}/libgomp.so.1 ${BCLIB_STG}/libgomp.so.1
-	${MKDIR} ${BCLIB_STG}/platforms
-	${INSTALL_LIB} ${BCLIB_SRC}/platforms/libqxcb.so ${BCLIB_STG}/platforms/
-	${MKDIR} ${BCLIB_STG}/xcbglintegrations
-	${INSTALL_LIB} ${BCLIB_SRC}/xcbglintegrations/*.so ${BCLIB_STG}/xcbglintegrations/
+	${LN} -sf ${LINUXBASE}/usr/${LIBDIR}/libbz2.so.1.0.8 ${BCLIB_STG}/libbz2.so.1.0
 # data
 	(cd ${WRKSRC}/usr/share && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share)
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/16x16/apps

@@ -1,6 +1,6 @@
---- usr/bin/bcompare.orig	2026-03-22 18:52:46.378747000 +0100
-+++ usr/bin/bcompare	2026-03-22 18:52:46.380269000 +0100
-@@ -1,8 +1,20 @@
+--- usr/bin/bcompare.orig	2025-02-26 23:16:46 UTC
++++ usr/bin/bcompare
+@@ -1,17 +1,22 @@
  #!/bin/sh
 
 -BC_LIB=/usr/lib64/beyondcompare
@@ -12,17 +12,9 @@
 +_LD_PRELOAD="$BC_LIB/nosched.so"
 +export _LD_PRELOAD
 +
-+# Disable XCB GL integration to avoid busy-loop on FreeBSD linuxulator
-+# where Linux mesa GL libraries do not work properly
-+QT_XCB_GL_INTEGRATION=none
-+export QT_XCB_GL_INTEGRATION
-+QT_PLUGIN_PATH="$BC_LIB"
-+export QT_PLUGIN_PATH
-+
  BC_PACKAGE_TYPE=rpm
  export BC_PACKAGE_TYPE
 
-@@ -11,9 +23,9 @@
  EXEC="$BC_LIB/BCompare"
 
  if [ -n "$LD_LIBRARY_PATH" ]; then
@@ -34,19 +26,21 @@
  fi
 
  #check to see if we have all of the shared libraries.
-@@ -42,7 +54,7 @@
+@@ -24,7 +29,7 @@
+ ########################################
+ # initialize context menu action scripts for KDE 3.5
+ if [ "$KDE_FULL_SESSION" = "true" ] && [ -f "$BC_LIB/kde_context_menu" ] ; then
+-	if [ "$KDE_SESSION_VERSION" != "4" ] && [ "$KDE_SESSION_VERSION" != "5" ]; then
++	if [ "$KDE_SESSION_VERSION" != "4" ] && [ "$KDE_SESSION_VERSION" != "5" ] && [ "$KDE_SESSION_VERSION" != "6" ]; then
+ 		mkdir -p "$HOME/.beyondcompare"
+ 		if [ -d "$HOME/.kde/share/apps/konqueror" ]; then
+ 			mkdir -p "$HOME/.kde/share/apps/konqueror/servicemenus"
+@@ -40,7 +45,7 @@
  	ARGS=$ARGS" \"$1\""
  	shift 1
  done
 -/bin/bash -c "exec -a $0 $EXEC $ARGS > /dev/null 2>&1" $0
-+/usr/bin/env bash -c "exec -a $0 /usr/bin/env LD_PRELOAD=$_LD_PRELOAD $EXEC $ARGS" $0
++LD_PRELOAD=$_LD_PRELOAD /usr/bin/env bash -c "exec -a $0 $EXEC $ARGS > /dev/null 2>&1" $0
 
  ########################################
  # set exit code / wait on existing instance
-@@ -53,4 +65,6 @@
- 	EXIT=`cat ${USER_TMP}/BC5_.$$`
- 	rm -f ${USER_TMP}/BC5_.$$
- fi
-+[ ! -f bash.core ] || rm -f bash.core
-+[ ! -f pgrep.core ] || rm -f pgrep.core
- exit $EXIT
