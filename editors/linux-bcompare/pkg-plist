@@ -40,6 +40,8 @@ lib/beyondcompare/mime.types
 lib/beyondcompare/nosched.so
 lib/beyondcompare/platforms/libqxcb.so
 lib/beyondcompare/scootersoftware.repo
+lib/beyondcompare/xcbglintegrations/libqxcb-egl-integration.so
+lib/beyondcompare/xcbglintegrations/libqxcb-glx-integration.so
 share/applications/bcompare.desktop
 %%DOCSDIR%%/README
 %%DOCSDIR%%/copyright

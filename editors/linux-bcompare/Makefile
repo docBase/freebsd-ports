@@ -83,6 +83,8 @@ post-extract:
 	@${CP} ${WRKDIR}/qt6tmp/usr/${LIBDIR}/libb2.so.1* ${BCLIB_SRC}/
 	@${MKDIR} ${BCLIB_SRC}/platforms
 	@${CP} ${WRKDIR}/qt6tmp/usr/${LIBDIR}/qt6/plugins/platforms/libqxcb.so ${BCLIB_SRC}/platforms/
+	@${MKDIR} ${BCLIB_SRC}/xcbglintegrations
+	@${CP} ${WRKDIR}/qt6tmp/usr/${LIBDIR}/qt6/plugins/xcbglintegrations/*.so ${BCLIB_SRC}/xcbglintegrations/
 	@${RM} -r ${WRKDIR}/qt6tmp
 
 pre-install:
@@ -102,6 +104,8 @@ do-install:
 	${INSTALL_LIB} ${LINUXBASE}/usr/${LIBDIR}/libgomp.so.1 ${BCLIB_STG}/libgomp.so.1
 	${MKDIR} ${BCLIB_STG}/platforms
 	${INSTALL_LIB} ${BCLIB_SRC}/platforms/libqxcb.so ${BCLIB_STG}/platforms/
+	${MKDIR} ${BCLIB_STG}/xcbglintegrations
+	${INSTALL_LIB} ${BCLIB_SRC}/xcbglintegrations/*.so ${BCLIB_STG}/xcbglintegrations/
 # data
 	(cd ${WRKSRC}/usr/share && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share)
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/16x16/apps
