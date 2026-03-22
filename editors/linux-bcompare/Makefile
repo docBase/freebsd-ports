@@ -4,7 +4,6 @@ DISTVERSIONSUFFIX=	.31950
 CATEGORIES=	editors devel linux
 MASTER_SITES=	https://scootersoftware.com/files/
 PKGNAMEPREFIX=	linux-
-DISTNAME_amd64=	${DISTNAME}.x86_64
 EXTRACT_SUFX=	.rpm
 
 MAINTAINER=	matias@pizarro.net
@@ -27,8 +26,9 @@ SHEBANG_FILES=	${BCLIB_SRC}/bcmount.sh
 CONFLICTS_INSTALL=	linux-bcompare4
 
 NO_BUILD=	yes
-
 NO_WRKSUBDIR=	true
+
+DISTNAME_amd64=	${DISTNAME}.x86_64
 
 DATA_FILTER=	-type d -o -name *\.html -o -name *\.js -o -name *\.css -o \
 		-name *\.gif -o -name *\.png -o -name *\.jpg -o -name \
