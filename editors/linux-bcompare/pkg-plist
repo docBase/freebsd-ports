@@ -34,6 +34,7 @@ lib/beyondcompare/libQt6XcbQpa.so.6
 lib/beyondcompare/libb2.so.1
 lib/beyondcompare/libcloudstorage.so.22.0
 lib/beyondcompare/libdouble-conversion.so.3
+lib/beyondcompare/libgomp.so.1
 lib/beyondcompare/libunrar.so
 lib/beyondcompare/mime.types
 lib/beyondcompare/nosched.so

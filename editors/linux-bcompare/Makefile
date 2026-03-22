@@ -97,6 +97,7 @@ do-install:
 	(cd ${BCLIB_SRC} && ${INSTALL_LIB}     ${LIB_FILES}     ${BCLIB_STG})
 	${INSTALL_LIB} ${BCLIB_SRC}/ext/*.so   ${BCLIB_STG}/ext
 	${LN} -sf ${LINUXBASE}/usr/${LIBDIR}/libbz2.so.1 ${BCLIB_STG}/libbz2.so.1.0
+	${INSTALL_LIB} ${LINUXBASE}/usr/${LIBDIR}/libgomp.so.1 ${BCLIB_STG}/libgomp.so.1
 # data
 	(cd ${WRKSRC}/usr/share && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share)
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/16x16/apps
