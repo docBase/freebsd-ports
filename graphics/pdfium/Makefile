@@ -81,7 +81,7 @@ BUILD_DEPENDS=	gn:devel/gn \
 USES=		compiler:c++20-lang pkgconfig python:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	matias-pizarro
-GH_TAGNAME=	9ae6cb74027c97932b4e313739af873afce361c3
+GH_TAGNAME=	984c4a395b5f433e9643d8b6212606b2211e1500
 
 # Gitiles archives can vary in gzip headers; normalize in pre-checksum.
 .ifnmake portclippy
