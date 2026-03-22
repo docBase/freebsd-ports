@@ -1,18 +1,37 @@
 #define _GNU_SOURCE
 
+#include <dlfcn.h>
 #include <pthread.h>
+#include <stdio.h>
+#include <string.h>
 
-/* Stub out pthread_attr_setinheritsched to prevent ENOSYS crashes
- * on FreeBSD's Linux compatibility layer.
- *
- * Original _dl_sym approach by shkhln and aragats (FreeBSD forums)
- * broke with glibc 2.34+ (Rocky Linux 9) which hid _dl_sym.
- * Direct override is simpler and sufficient since we only need to
- * intercept this one function via LD_PRELOAD.
+/* Thanks to shkhln (https://forums.freebsd.org/members/shkhln.54069/) and
+ * aragats (https://forums.freebsd.org/members/aragats.37029/) for coming
+ * up with the nosched.c fix
  */
 
-int pthread_attr_setinheritsched(pthread_attr_t *attr, int inheritsched) {
-  (void)attr;
-  (void)inheritsched;
+int pthread_noop() {
+  fprintf(stderr, "%s(...)\n", __func__);
   return 0;
 }
+
+/* https://stackoverflow.com/questions/15599026/how-can-i-intercept-dlsym-calls-using-ld-preload/18825060#18825060 */
+void* _dl_sym(void*, const char*, void*);
+
+static void* (*libc_dlsym)(void*, const char*) = NULL;
+
+void* dlsym(void* handle, const char* symbol) {
+
+  if (!libc_dlsym) {
+    /* libc_dlsym = _dl_sym(RTLD_NEXT, "dlsym", dlsym); */
+    libc_dlsym = dlvsym(RTLD_NEXT, "dlsym", "GLIBC_2.2.5");
+    libc_dlsym = libc_dlsym(RTLD_NEXT, "dlsym");
+  }
+
+  if (strcmp(symbol, "pthread_attr_setinheritsched") == 0) {
+    return pthread_noop;
+  }
+
+  return libc_dlsym(handle, symbol);
+}
+

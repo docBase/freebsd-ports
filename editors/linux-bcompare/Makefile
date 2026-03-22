@@ -19,13 +19,12 @@ LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	upstream only supports amd64
 
-USES=		desktop-file-utils gnome linux:rl9 shared-mime-info shebangfix
+USES=		desktop-file-utils gnome linux:rl9 shared-mime-info
 USE_LINUX=	base:run curl:run dbuslibs:run devtools:build freetype:run \
-		qtx11extras:run systemd-libs:run xcb-util:run xorglibs:run
+		qtx11extras:run systemd-libs:run xcb-util:run \
+		xorglibs:run
 
-SHEBANG_FILES=	${BCLIB_SRC}/bcmount.sh
-
-CONFLICTS_INSTALL=	linux-bcompare4
+CONFLICTS_INSTALL=	linux-bcompare[0-9]*
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	true
