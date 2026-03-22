@@ -28,7 +28,7 @@ CONFLICTS_INSTALL=	linux-bcompare4
 
 NO_BUILD=	yes
 
-WRKSRC=		${WRKDIR}/${PKGNAME}
+NO_WRKSUBDIR=	true
 
 DATA_FILTER=	-type d -o -name *\.html -o -name *\.js -o -name *\.css -o \
 		-name *\.gif -o -name *\.png -o -name *\.jpg -o -name \
