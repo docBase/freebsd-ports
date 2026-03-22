@@ -1,3 +1,11 @@
-TIMESTAMP = 1774139029
+TIMESTAMP = 1774197493
 SHA256 (bcompare-5.2.0.31950.x86_64.rpm) = 4ffafd6b4d91dd4e75579e61933dd356954a030a4e63f7f9bce6f14556978f63
 SIZE (bcompare-5.2.0.31950.x86_64.rpm) = 21645375
+SHA256 (qt6-qtbase-6.6.2-1.el9.x86_64.rpm) = 17d2c310307cf2198c2ca8a1b735fdff4abb0608105fedcdd93f8572a2719a92
+SIZE (qt6-qtbase-6.6.2-1.el9.x86_64.rpm) = 4039853
+SHA256 (qt6-qtbase-gui-6.6.2-1.el9.x86_64.rpm) = 627faadfb84b49ffad58fefc4e9dc23e083c38e017c220b295b5b8ad9aa4ae76
+SIZE (qt6-qtbase-gui-6.6.2-1.el9.x86_64.rpm) = 7549448
+SHA256 (libb2-0.98.1-6.el9.x86_64.rpm) = 6e440924788749021bd987e3f15b7146e82fb0955299fb04983987c85c1f588a
+SIZE (libb2-0.98.1-6.el9.x86_64.rpm) = 23739
+SHA256 (double-conversion-3.1.5-6.el9.x86_64.rpm) = 1530845af7fb79dcd217cd440af0f7017e60db6ec27148c18393f2b55737f977
+SIZE (double-conversion-3.1.5-6.el9.x86_64.rpm) = 48804

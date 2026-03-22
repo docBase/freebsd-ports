@@ -25,7 +25,15 @@ lib/beyondcompare/ext/bcompare_ext_konq.i386.so
 lib/beyondcompare/lib7z.so
 lib/beyondcompare/libQt6Pas.so.6
 lib/beyondcompare/libbz2.so.1.0
+lib/beyondcompare/libQt6Core.so.6
+lib/beyondcompare/libQt6DBus.so.6
+lib/beyondcompare/libQt6Gui.so.6
+lib/beyondcompare/libQt6PrintSupport.so.6
+lib/beyondcompare/libQt6Widgets.so.6
+lib/beyondcompare/libQt6XcbQpa.so.6
+lib/beyondcompare/libb2.so.1
 lib/beyondcompare/libcloudstorage.so.22.0
+lib/beyondcompare/libdouble-conversion.so.3
 lib/beyondcompare/libunrar.so
 lib/beyondcompare/mime.types
 lib/beyondcompare/nosched.so
