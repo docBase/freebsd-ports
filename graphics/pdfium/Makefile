@@ -79,8 +79,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	gn:devel/gn \
 		llvm19>=19:devel/llvm19 \
 		ninja:devel/ninja
+LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
+		libopenjp2.so:graphics/openjpeg \
+		libpng.so:graphics/png
 
-USES=		compiler:c++20-lang pkgconfig python:build
+USES=		compiler:c++20-lang jpeg pkgconfig python:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	matias-pizarro
 GH_TAGNAME=	984c4a395b5f433e9643d8b6212606b2211e1500
@@ -105,7 +108,11 @@ GN_ARGS=	is_debug=false \
 		clang_base_path="${LOCALBASE}/llvm19" \
 		clang_version="19" \
 		use_llvm_libatomic=false \
-		use_allocator_shim=false
+		use_allocator_shim=false \
+		use_system_libpng=true \
+		use_system_libjpeg=true \
+		use_system_lcms2=true \
+		use_system_libopenjpeg2=true
 
 _DEPS_DIRS=	base/allocator/partition_allocator:2157c84d9a0d075c1ca31cc120590a9743550647 \
 		build:c9202dd8ca1d4255bd9e505988b945746ddb378a \
@@ -157,17 +164,31 @@ post-extract:
 	@${ECHO_CMD} 'checkout_src_internal = false' >> ${WRKSRC}/build/config/gclient_args.gni
 	@${MKDIR} ${WRKSRC}/build/modules/freebsd
 	@${ECHO_CMD} '# Stub for FreeBSD C++ modules support' > ${WRKSRC}/build/modules/freebsd/BUILD.gn
+	@${MKDIR} ${WRKDIR}/pkgconfig
+	@${ECHO_CMD} 'Name: zlib' > ${WRKDIR}/pkgconfig/zlib.pc
+	@${ECHO_CMD} 'Version: 1.3' >> ${WRKDIR}/pkgconfig/zlib.pc
+	@${ECHO_CMD} 'Description: zlib compression library' >> ${WRKDIR}/pkgconfig/zlib.pc
+	@${ECHO_CMD} 'Libs: -lz' >> ${WRKDIR}/pkgconfig/zlib.pc
+	@${ECHO_CMD} 'Cflags:' >> ${WRKDIR}/pkgconfig/zlib.pc
+	@${ECHO_CMD} 'Name: bzip2' > ${WRKDIR}/pkgconfig/bzip2.pc
+	@${ECHO_CMD} 'Version: 1.0.8' >> ${WRKDIR}/pkgconfig/bzip2.pc
+	@${ECHO_CMD} 'Description: bzip2 compression library' >> ${WRKDIR}/pkgconfig/bzip2.pc
+	@${ECHO_CMD} 'Libs: -lbz2' >> ${WRKDIR}/pkgconfig/bzip2.pc
+	@${ECHO_CMD} 'Cflags:' >> ${WRKDIR}/pkgconfig/bzip2.pc
 
 do-configure:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/gn gen ${GN_OUT} --args='${GN_ARGS}'
+	cd ${WRKSRC} && PKG_CONFIG_PATH="${WRKDIR}/pkgconfig:${LOCALBASE}/libdata/pkgconfig" \
+		${LOCALBASE}/bin/gn gen ${GN_OUT} --args='${GN_ARGS}'
 
 do-build:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/ninja -C ${GN_OUT} pdfium
+	cd ${WRKSRC} && PKG_CONFIG_PATH="${WRKDIR}/pkgconfig:${LOCALBASE}/libdata/pkgconfig" \
+		${LOCALBASE}/bin/ninja -C ${GN_OUT} pdfium
 	@${ECHO_MSG} "===> Building shared library from static archive"
 	cd ${WRKSRC} && ${LOCALBASE}/llvm19/bin/clang++ -shared \
 		-o ${GN_OUT}/obj/libpdfium.so \
 		-Wl,--whole-archive ${GN_OUT}/obj/libpdfium.a \
-		-Wl,--no-whole-archive -lstdc++ -lm
+		-Wl,--no-whole-archive -lstdc++ -lm \
+		-L${LOCALBASE}/lib -lpng -ljpeg -llcms2 -lopenjp2
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/pdfium/cpp
