@@ -20,7 +20,8 @@ ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	upstream only supports amd64
 
 USES=		desktop-file-utils gnome linux:rl9 shared-mime-info shebangfix
-USE_LINUX=	base:run dbuslibs:run devtools:build xorglibs:run
+USE_LINUX=	base:run curl:run dbuslibs:run devtools:build freetype:run \
+		qtx11extras:run systemd-libs:run xcb-util:run xorglibs:run
 
 SHEBANG_FILES=	${BCLIB_SRC}/bcmount.sh
 
