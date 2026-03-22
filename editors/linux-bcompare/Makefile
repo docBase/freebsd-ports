@@ -29,7 +29,7 @@ LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	upstream only supports amd64
 
-BUILD_DEPENDS=	rpm2cpio:archivers/rpm2cpio
+EXTRACT_DEPENDS=	rpm2cpio:archivers/rpm2cpio
 
 USES=		desktop-file-utils gnome linux:rl9 shared-mime-info shebangfix
 USE_LINUX=	base:run dbuslibs:run devtools:build xorglibs:run
@@ -71,7 +71,7 @@ post-extract:
 # Extract bundled Qt6 runtime libraries from EPEL/RL9 RPMs
 	@${MKDIR} ${WRKDIR}/qt6tmp
 .for rpm in ${_QT6_RPMS}
-	@cd ${WRKDIR}/qt6tmp && rpm2cpio < ${DISTDIR}/${rpm} | ${CPIO} -id 2>/dev/null
+	@cd ${WRKDIR}/qt6tmp && ${LOCALBASE}/bin/rpm2cpio < ${DISTDIR}/${rpm} | ${CPIO} -id 2>/dev/null
 .endfor
 	@${CP} ${WRKDIR}/qt6tmp/usr/${LIBDIR}/libQt6Core.so.6* ${BCLIB_SRC}/
 	@${CP} ${WRKDIR}/qt6tmp/usr/${LIBDIR}/libQt6DBus.so.6* ${BCLIB_SRC}/
