@@ -1,6 +1,6 @@
 PORTNAME=	pulumi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.225.1
+DISTVERSION=	3.227.0
 CATEGORIES=	devel
 MASTER_SITES+=	https://raw.githubusercontent.com/${PORTNAME}/${PORTNAME}/${DISTVERSIONFULL}/
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}grpcio>0:devel/py-grpcio@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}grpcio>0:devel/py-grpcio@${PY_FLAVOR}
 
-USES=		gmake go python:3.11 shebangfix
+USES=		gmake go:1.25 python:3.11 shebangfix
 USE_GITHUB=	yes
 
 SHEBANG_FILES=	sdk/python/cmd/pulumi-language-python-exec \

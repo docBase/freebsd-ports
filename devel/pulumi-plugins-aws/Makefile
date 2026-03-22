@@ -1,6 +1,6 @@
 PORTNAME=	pulumi-plugins-aws
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.20.0
+DISTVERSION=	7.23.0
 CATEGORIES=	devel
 
 MAINTAINER=	matias@pizarro.net
@@ -10,17 +10,16 @@ WWW=		https://github.com/pulumi/pulumi-aws
 LICENSE=	APACHE20
 
 BUILD_DEPENDS=	git:devel/git \
-		go:lang/go \
 		pulumi:devel/pulumi
 RUN_DEPENDS=	pulumi:devel/pulumi
 
-USES=		go:modules
+USES=		go:1.25,modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	pulumi
 GH_PROJECT=	pulumi-aws
 
-# Upstream terraform-provider-aws submodule (commit from v7.20.0)
-GH_TUPLE=	hashicorp:terraform-provider-aws:ea6e951e24066a24891c63a37a3b95f9971d16b8:upstream
+# Upstream terraform-provider-aws submodule (commit from v7.23.0)
+GH_TUPLE=	hashicorp:terraform-provider-aws:4981ec2b44ea4892c1ee4f0c1ed23b761a55f44d:upstream
 
 GO_BUILDFLAGS=	-buildvcs=false \
 		-ldflags "-X github.com/pulumi/pulumi-aws/provider/v7/pkg/version.Version=${DISTVERSION}"
@@ -36,12 +35,12 @@ GO_TERM_VERSION=	v1.2.0-beta.2
 post-extract:
 	@${ECHO_MSG} "===> Setting up upstream terraform-provider-aws"
 	${RM} -rf ${WRKSRC}/upstream
-	${MV} ${WRKDIR}/terraform-provider-aws-ea6e951e24066a24891c63a37a3b95f9971d16b8 ${WRKSRC}/upstream
+	${MV} ${WRKDIR}/terraform-provider-aws-4981ec2b44ea4892c1ee4f0c1ed23b761a55f44d ${WRKSRC}/upstream
 	@${ECHO_MSG} "===> Applying Pulumi patches to upstream"
 	@if [ -d ${WRKSRC}/patches ]; then \
 		cd ${WRKSRC}/upstream && for p in ${WRKSRC}/patches/*.patch; do \
 			${ECHO_MSG} "  Applying $${p##*/}"; \
-			${PATCH_CMD} -p1 < "$${p}"; \
+			${PATCH} -p1 < "$${p}"; \
 		done; \
 	fi
 

@@ -1,6 +1,6 @@
 PORTNAME=	pulumi-plugins-aws-native
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.55.0
+DISTVERSION=	1.57.0
 CATEGORIES=	devel
 
 MAINTAINER=	matias@pizarro.net
@@ -9,11 +9,10 @@ WWW=		https://github.com/pulumi/pulumi-aws-native
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	go:lang/go \
-		pulumi:devel/pulumi
+BUILD_DEPENDS=	pulumi:devel/pulumi
 RUN_DEPENDS=	pulumi:devel/pulumi
 
-USES=		go:modules
+USES=		go:1.25,modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	pulumi
 GH_PROJECT=	pulumi-aws-native
