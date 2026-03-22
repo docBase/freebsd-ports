@@ -1,45 +1,9 @@
-@dir bin
 bin/bcompare
-@dir share
-@dir share/applications
-share/applications/bcompare.desktop
-@dir share/mime
-@dir share/mime/packages
-share/mime/packages/bcompare.xml
-@dir share/icons
-@dir share/icons/hicolor
-@dir share/icons/hicolor/16x16
-@dir share/icons/hicolor/16x16/apps
-share/icons/hicolor/16x16/apps/bcompare.png
-@dir share/icons/hicolor/32x32
-@dir share/icons/hicolor/32x32/apps
-share/icons/hicolor/32x32/apps/bcompare.png
-@dir share/icons/hicolor/48x48
-@dir share/icons/hicolor/48x48/apps
-share/icons/hicolor/48x48/apps/bcompare.png
-@dir share/pixmaps
-share/pixmaps/bcompare.png
-share/pixmaps/bcomparefull32.png
-share/pixmaps/bcomparehalf32.png
-@dir lib/beyondcompare
-lib/beyondcompare/bcmount.sh
-lib/beyondcompare/bcmount32
-lib/beyondcompare/bcmount64
 lib/beyondcompare/BCompare
 lib/beyondcompare/BCompare.mad
-lib/beyondcompare/kde_context_menu
-lib/beyondcompare/lib7z.so
-lib/beyondcompare/libQt4Pas.so.5
-lib/beyondcompare/libunrar.so
-lib/beyondcompare/mime.types
 lib/beyondcompare/README
 lib/beyondcompare/RPM-GPG-KEY-scootersoftware
-lib/beyondcompare/scootersoftware.repo
-lib/beyondcompare/nosched.so
-lib/beyondcompare/libbz2.so.1.0
-@dir lib/beyondcompare/ext
-@(,,644) lib/beyondcompare/ext/bcompare_ext_kde.desktop
-@(,,644) lib/beyondcompare/ext/bcompare_ext_konq.desktop
+lib/beyondcompare/bcmount.sh
 lib/beyondcompare/ext/bcompare-ext-caja.amd64.so
 lib/beyondcompare/ext/bcompare-ext-caja.i386.so
 lib/beyondcompare/ext/bcompare-ext-nautilus.amd64.so
@@ -51,494 +15,812 @@ lib/beyondcompare/ext/bcompare-ext-thunarx-2.i386.so
 lib/beyondcompare/ext/bcompare-ext-thunarx-3.amd64.so
 lib/beyondcompare/ext/bcompare-ext-thunarx-3.i386.so
 lib/beyondcompare/ext/bcompare_ext_kde.amd64.so
+lib/beyondcompare/ext/bcompare_ext_kde.desktop
 lib/beyondcompare/ext/bcompare_ext_kde.i386.so
 lib/beyondcompare/ext/bcompare_ext_kde5.amd64.so
-lib/beyondcompare/ext/bcompare_ext_kde5.i386.so
+lib/beyondcompare/ext/bcompare_ext_kde6.amd64.so
 lib/beyondcompare/ext/bcompare_ext_konq.amd64.so
+lib/beyondcompare/ext/bcompare_ext_konq.desktop
 lib/beyondcompare/ext/bcompare_ext_konq.i386.so
-@dir lib/beyondcompare/help
-@(,,644) lib/beyondcompare/help/3-way_merge_concepts.html
-@(,,644) lib/beyondcompare/help/accept.png
-@(,,644) lib/beyondcompare/help/archive_files.html
-@(,,644) lib/beyondcompare/help/bcclipmain.html
-@(,,644) lib/beyondcompare/help/bcclipmain.png
-@(,,644) lib/beyondcompare/help/bcclipmain_zoom57.jpg
-@(,,644) lib/beyondcompare/help/bcclipoptions.html
-@(,,644) lib/beyondcompare/help/bcclipsystemtray.png
-@(,,644) lib/beyondcompare/help/bclogo.png
-@(,,644) lib/beyondcompare/help/browse.png
-@(,,644) lib/beyondcompare/help/calling_bc_from_other_applications.html
-@(,,644) lib/beyondcompare/help/cicon1.png
-@(,,644) lib/beyondcompare/help/cicon2.png
-@(,,644) lib/beyondcompare/help/cicon9.png
-@(,,644) lib/beyondcompare/help/cicon_loadindex_ani.gif
-@(,,644) lib/beyondcompare/help/ciconidx.gif
-@(,,644) lib/beyondcompare/help/collapseall.png
-@(,,644) lib/beyondcompare/help/command_line_reference.html
-@(,,644) lib/beyondcompare/help/commands_reference.html
-@(,,644) lib/beyondcompare/help/commandsbc.html
-@(,,644) lib/beyondcompare/help/commandsdata.html
-@(,,644) lib/beyondcompare/help/commandsdir.html
-@(,,644) lib/beyondcompare/help/commandsdirmerge.html
-@(,,644) lib/beyondcompare/help/commandsdirsync.html
-@(,,644) lib/beyondcompare/help/commandshex.html
-@(,,644) lib/beyondcompare/help/commandshome.html
-@(,,644) lib/beyondcompare/help/commandsmp3.html
-@(,,644) lib/beyondcompare/help/commandspix.html
-@(,,644) lib/beyondcompare/help/commandsreg.html
-@(,,644) lib/beyondcompare/help/commandstext.html
-@(,,644) lib/beyondcompare/help/commandstextedit.html
-@(,,644) lib/beyondcompare/help/commandstextmerge.html
-@(,,644) lib/beyondcompare/help/commandstextpatch.html
-@(,,644) lib/beyondcompare/help/commandsver.html
-@(,,644) lib/beyondcompare/help/compare.png
-@(,,644) lib/beyondcompare/help/conflict.png
-@(,,644) lib/beyondcompare/help/conflictsectionnext.png
-@(,,644) lib/beyondcompare/help/conflictsectionoffnext.png
-@(,,644) lib/beyondcompare/help/conflictsectionprev.png
-@(,,644) lib/beyondcompare/help/contentconflict.png
-@(,,644) lib/beyondcompare/help/contentcopycentertooutput.png
-@(,,644) lib/beyondcompare/help/contentcopyleft.png
-@(,,644) lib/beyondcompare/help/contentcopylefttooutput.png
-@(,,644) lib/beyondcompare/help/contentcopyright.png
-@(,,644) lib/beyondcompare/help/contentcopyrighttooutput.png
-@(,,644) lib/beyondcompare/help/contentdeleteleft.png
-@(,,644) lib/beyondcompare/help/contentdeleteright.png
-@(,,644) lib/beyondcompare/help/contentdifferent.png
-@(,,644) lib/beyondcompare/help/contentdifferentbinary.png
-@(,,644) lib/beyondcompare/help/contentmergeable.png
-@(,,644) lib/beyondcompare/help/contentmerged.png
-@(,,644) lib/beyondcompare/help/contentsame.png
-@(,,644) lib/beyondcompare/help/contentsamebinary.png
-@(,,644) lib/beyondcompare/help/contentsimilar.png
-@(,,644) lib/beyondcompare/help/copy.png
-@(,,644) lib/beyondcompare/help/copyfileleft.png
-@(,,644) lib/beyondcompare/help/copyfileright.png
-@(,,644) lib/beyondcompare/help/copyleft.png
-@(,,644) lib/beyondcompare/help/copyleftorright.png
-@(,,644) lib/beyondcompare/help/copyright.png
-@(,,644) lib/beyondcompare/help/copyto.png
-@(,,644) lib/beyondcompare/help/copytooutput.png
-@(,,644) lib/beyondcompare/help/default.css
-@(,,644) lib/beyondcompare/help/delete.png
-@(,,644) lib/beyondcompare/help/difffilenext.png
-@(,,644) lib/beyondcompare/help/difffileprev.png
-@(,,644) lib/beyondcompare/help/dir_filtering_the_view.html
-@(,,644) lib/beyondcompare/help/dir_how_to_compare.html
-@(,,644) lib/beyondcompare/help/dir_merge_understanding_the_display.html
-@(,,644) lib/beyondcompare/help/dir_reconciling_differences.html
-@(,,644) lib/beyondcompare/help/dir_sync_how_to_sync.html
-@(,,644) lib/beyondcompare/help/dir_sync_understanding_the_display.html
-@(,,644) lib/beyondcompare/help/dir_understanding_the_display.html
-@(,,644) lib/beyondcompare/help/dircomparefilesonly.png
-@(,,644) lib/beyondcompare/help/dircomparesession.png
-@(,,644) lib/beyondcompare/help/dircomparestructure.png
-@(,,644) lib/beyondcompare/help/dirdisplayarchive.png
-@(,,644) lib/beyondcompare/help/dirdisplaydir.png
-@(,,644) lib/beyondcompare/help/dirdisplayex.png
-@(,,644) lib/beyondcompare/help/dirdisplayfile.png
-@(,,644) lib/beyondcompare/help/dirfavconflict.png
-@(,,644) lib/beyondcompare/help/dirfavdiffnoorphan.png
-@(,,644) lib/beyondcompare/help/dirfavleft.png
-@(,,644) lib/beyondcompare/help/dirfavleftnewer.png
-@(,,644) lib/beyondcompare/help/dirfavleftnewerorphan.png
-@(,,644) lib/beyondcompare/help/dirfavleftorphan.png
-@(,,644) lib/beyondcompare/help/dirfavmergeable.png
-@(,,644) lib/beyondcompare/help/dirfavnoorphan.png
-@(,,644) lib/beyondcompare/help/dirfavorphan.png
-@(,,644) lib/beyondcompare/help/dirfavright.png
-@(,,644) lib/beyondcompare/help/dirfavrightnewer.png
-@(,,644) lib/beyondcompare/help/dirfavrightnewerorphan.png
-@(,,644) lib/beyondcompare/help/dirfavrightorphan.png
-@(,,644) lib/beyondcompare/help/dirflatten.png
-@(,,644) lib/beyondcompare/help/dirmerge.png
-@(,,644) lib/beyondcompare/help/dirmergesession.png
-@(,,644) lib/beyondcompare/help/dirshowall.png
-@(,,644) lib/beyondcompare/help/dirsyncsession.png
-@(,,644) lib/beyondcompare/help/display_filters.html
-@(,,644) lib/beyondcompare/help/displayfont.png
-@(,,644) lib/beyondcompare/help/displayfontdecrease.png
-@(,,644) lib/beyondcompare/help/displayfontincrease.png
-@(,,644) lib/beyondcompare/help/displayfontreset.png
-@(,,644) lib/beyondcompare/help/dlgbrowsemachine.html
-@(,,644) lib/beyondcompare/help/dlgdatacolhandling.html
-@(,,644) lib/beyondcompare/help/dlgdiralignwithitem.html
-@(,,644) lib/beyondcompare/help/dlgdirfind.html
-@(,,644) lib/beyondcompare/help/dlgdirotherfilteritem.html
-@(,,644) lib/beyondcompare/help/dlgexport.html
-@(,,644) lib/beyondcompare/help/dlgfileformatmanager.html
-@(,,644) lib/beyondcompare/help/dlgimport.html
-@(,,644) lib/beyondcompare/help/dlgnag.html
-@(,,644) lib/beyondcompare/help/dlgopenwithitem.html
-@(,,644) lib/beyondcompare/help/dlgprofilebrowse.html
-@(,,644) lib/beyondcompare/help/dlgprofilemanager.html
-@(,,644) lib/beyondcompare/help/dlgprogoptions.html
-@(,,644) lib/beyondcompare/help/dlgregister.html
-@(,,644) lib/beyondcompare/help/dlgreport.html
-@(,,644) lib/beyondcompare/help/dlgrestore.html
-@(,,644) lib/beyondcompare/help/dlgsnapshot.html
-@(,,644) lib/beyondcompare/help/dlgsourcecontrolmanager.html
-@(,,644) lib/beyondcompare/help/dlgsupport.html
-@(,,644) lib/beyondcompare/help/dlgtextfindinfiles.html
-@(,,644) lib/beyondcompare/help/dlgtextgrammaritem.html
-@(,,644) lib/beyondcompare/help/dlgtextreplacementitem.html
-@(,,644) lib/beyondcompare/help/dlgworkspacemanager.html
-@(,,644) lib/beyondcompare/help/down.png
-@(,,644) lib/beyondcompare/help/dropdown.png
-@(,,644) lib/beyondcompare/help/editing_text.html
-@(,,644) lib/beyondcompare/help/expandall.png
-@(,,644) lib/beyondcompare/help/favall.png
-@(,,644) lib/beyondcompare/help/favdiff.png
-@(,,644) lib/beyondcompare/help/favnone.png
-@(,,644) lib/beyondcompare/help/favorleft.png
-@(,,644) lib/beyondcompare/help/favorright.png
-@(,,644) lib/beyondcompare/help/favsame.png
-@(,,644) lib/beyondcompare/help/file_formats.html
-@(,,644) lib/beyondcompare/help/file_masks.html
-@(,,644) lib/beyondcompare/help/filecopyselright.png
-@(,,644) lib/beyondcompare/help/filefavconflict.png
-@(,,644) lib/beyondcompare/help/filefavleft.png
-@(,,644) lib/beyondcompare/help/filefavmergeable.png
-@(,,644) lib/beyondcompare/help/filefavright.png
-@(,,644) lib/beyondcompare/help/fileformatmanager.png
-@(,,644) lib/beyondcompare/help/filetakesectioncenter.png
-@(,,644) lib/beyondcompare/help/filetakesectionleft.png
-@(,,644) lib/beyondcompare/help/filetakesectionright.png
-@(,,644) lib/beyondcompare/help/filteredlinecount.png
-@(,,644) lib/beyondcompare/help/filters.png
-@(,,644) lib/beyondcompare/help/find.png
-@(,,644) lib/beyondcompare/help/findinfiles.png
-@(,,644) lib/beyondcompare/help/findnext.png
-@(,,644) lib/beyondcompare/help/findprev.png
-@(,,644) lib/beyondcompare/help/formatdata.html
-@(,,644) lib/beyondcompare/help/formatdataconversion.html
-@(,,644) lib/beyondcompare/help/formatdatageneral.html
-@(,,644) lib/beyondcompare/help/formatdataregional.html
-@(,,644) lib/beyondcompare/help/formatdatatype.html
-@(,,644) lib/beyondcompare/help/formatexternalgeneral.html
-@(,,644) lib/beyondcompare/help/formathex.html
-@(,,644) lib/beyondcompare/help/formathexconversion.html
-@(,,644) lib/beyondcompare/help/formathexgeneral.html
-@(,,644) lib/beyondcompare/help/formatpix.html
-@(,,644) lib/beyondcompare/help/formatpixconversion.html
-@(,,644) lib/beyondcompare/help/formatpixgeneral.html
-@(,,644) lib/beyondcompare/help/formattext.html
-@(,,644) lib/beyondcompare/help/formattextconversion.html
-@(,,644) lib/beyondcompare/help/formattextgeneral.html
-@(,,644) lib/beyondcompare/help/formattextgrammar.html
-@(,,644) lib/beyondcompare/help/formattextmisc.html
-@(,,644) lib/beyondcompare/help/fulledit.png
-@(,,644) lib/beyondcompare/help/fullrefresh.png
-@(,,644) lib/beyondcompare/help/fullscreen.png
-@(,,644) lib/beyondcompare/help/glossary.html
-@(,,644) lib/beyondcompare/help/goto.png
-@(,,644) lib/beyondcompare/help/grammars.html
-@(,,644) lib/beyondcompare/help/headerkey.png
-@(,,644) lib/beyondcompare/help/helpcontents.png
-@(,,644) lib/beyondcompare/help/helpman_navigation.js
-@(,,644) lib/beyondcompare/help/helpman_settings.js
-@(,,644) lib/beyondcompare/help/helpman_topicinit.js
-@(,,644) lib/beyondcompare/help/highlight.js
-@(,,644) lib/beyondcompare/help/hmcontent.html
-@(,,644) lib/beyondcompare/help/hmcontextids.js
-@(,,644) lib/beyondcompare/help/hmftsearch.html
-@(,,644) lib/beyondcompare/help/hmkwindex.html
-@(,,644) lib/beyondcompare/help/ignored.png
-@(,,644) lib/beyondcompare/help/index.html
-@(,,644) lib/beyondcompare/help/info.png
-@(,,644) lib/beyondcompare/help/insigignored.png
-@(,,644) lib/beyondcompare/help/jquery.js
-@(,,644) lib/beyondcompare/help/license_agreement.html
-@(,,644) lib/beyondcompare/help/license_agreement_7-zip.html
-@(,,644) lib/beyondcompare/help/license_agreement_fpc.html
-@(,,644) lib/beyondcompare/help/license_agreement_gpl3.html
-@(,,644) lib/beyondcompare/help/license_agreement_htmlviewer.html
-@(,,644) lib/beyondcompare/help/license_agreement_httpget.html
-@(,,644) lib/beyondcompare/help/license_agreement_innosetup.html
-@(,,644) lib/beyondcompare/help/license_agreement_intlck64.html
-@(,,644) lib/beyondcompare/help/license_agreement_lgpl.html
-@(,,644) lib/beyondcompare/help/license_agreement_mpl.html
-@(,,644) lib/beyondcompare/help/license_agreement_pcre.html
-@(,,644) lib/beyondcompare/help/license_agreement_regexpr.html
-@(,,644) lib/beyondcompare/help/license_agreement_textdiff.html
-@(,,644) lib/beyondcompare/help/license_agreement_wavpack.html
-@(,,644) lib/beyondcompare/help/license_agreement_wix.html
-@(,,644) lib/beyondcompare/help/license_agreement_zlib.html
-@(,,644) lib/beyondcompare/help/linux.png
-@(,,644) lib/beyondcompare/help/mac.png
-@(,,644) lib/beyondcompare/help/maclineending.png
-@(,,644) lib/beyondcompare/help/managing_sessions.html
-@(,,644) lib/beyondcompare/help/mergebase.png
-@(,,644) lib/beyondcompare/help/mergenobase.png
-@(,,644) lib/beyondcompare/help/mirrorleft.png
-@(,,644) lib/beyondcompare/help/mirrorright.png
-@(,,644) lib/beyondcompare/help/moveboth.png
-@(,,644) lib/beyondcompare/help/moveleftorright.png
-@(,,644) lib/beyondcompare/help/moveright.png
-@(,,644) lib/beyondcompare/help/moveto.png
-@(,,644) lib/beyondcompare/help/moving_bc_to_another_computer.html
-@(,,644) lib/beyondcompare/help/mp3play.png
-@(,,644) lib/beyondcompare/help/mp3play2.png
-@(,,644) lib/beyondcompare/help/newfolder.png
-@(,,644) lib/beyondcompare/help/next-dis.png
-@(,,644) lib/beyondcompare/help/next-hot.png
-@(,,644) lib/beyondcompare/help/next.png
-@(,,644) lib/beyondcompare/help/note.png
-@(,,644) lib/beyondcompare/help/opattrib.html
-@(,,644) lib/beyondcompare/help/opcompare.html
-@(,,644) lib/beyondcompare/help/opcopy.html
-@(,,644) lib/beyondcompare/help/opcopyto.html
-@(,,644) lib/beyondcompare/help/opcopytooutput.html
-@(,,644) lib/beyondcompare/help/opdelete.html
-@(,,644) lib/beyondcompare/help/opexchange.html
-@(,,644) lib/beyondcompare/help/opexclude.html
-@(,,644) lib/beyondcompare/help/opmerge.html
-@(,,644) lib/beyondcompare/help/opmove.html
-@(,,644) lib/beyondcompare/help/opmoveto.html
-@(,,644) lib/beyondcompare/help/opnewfolder.html
-@(,,644) lib/beyondcompare/help/oprename.html
-@(,,644) lib/beyondcompare/help/opsync.html
-@(,,644) lib/beyondcompare/help/options.png
-@(,,644) lib/beyondcompare/help/optionsarchive.html
-@(,,644) lib/beyondcompare/help/optionsbackup.html
-@(,,644) lib/beyondcompare/help/optionscolor.html
-@(,,644) lib/beyondcompare/help/optionscommand.html
-@(,,644) lib/beyondcompare/help/optionsdircolor.html
-@(,,644) lib/beyondcompare/help/optionsfilecolor.html
-@(,,644) lib/beyondcompare/help/optionsnextdiff.html
-@(,,644) lib/beyondcompare/help/optionsop.html
-@(,,644) lib/beyondcompare/help/optionsopenwith.html
-@(,,644) lib/beyondcompare/help/optionspixcolor.html
-@(,,644) lib/beyondcompare/help/optionsstartup.html
-@(,,644) lib/beyondcompare/help/optionstab.html
-@(,,644) lib/beyondcompare/help/optionstext.html
-@(,,644) lib/beyondcompare/help/optionstweak.html
-@(,,644) lib/beyondcompare/help/optouch.html
-@(,,644) lib/beyondcompare/help/outputwindow.png
-@(,,644) lib/beyondcompare/help/overunder.png
-@(,,644) lib/beyondcompare/help/pin.png
-@(,,644) lib/beyondcompare/help/pix_how_to_compare.html
-@(,,644) lib/beyondcompare/help/pixautoscale.png
-@(,,644) lib/beyondcompare/help/pixblendtoggle.png
-@(,,644) lib/beyondcompare/help/pixcomparetags.png
-@(,,644) lib/beyondcompare/help/pixdiffblend.png
-@(,,644) lib/beyondcompare/help/pixdiffrange.png
-@(,,644) lib/beyondcompare/help/pixdifftolerance.png
-@(,,644) lib/beyondcompare/help/pixfliphorz.png
-@(,,644) lib/beyondcompare/help/pixflipvert.png
-@(,,644) lib/beyondcompare/help/pixrotateleft.png
-@(,,644) lib/beyondcompare/help/pixrotateright.png
-@(,,644) lib/beyondcompare/help/pixzoomactual.png
-@(,,644) lib/beyondcompare/help/pixzoomfit.png
-@(,,644) lib/beyondcompare/help/prefsinterface.png
-@(,,644) lib/beyondcompare/help/prev-dis.png
-@(,,644) lib/beyondcompare/help/prev-hot.png
-@(,,644) lib/beyondcompare/help/prev.png
-@(,,644) lib/beyondcompare/help/pro.png
-@(,,644) lib/beyondcompare/help/profileamazons3.html
-@(,,644) lib/beyondcompare/help/profiledropbox.html
-@(,,644) lib/beyondcompare/help/profileftp.html
-@(,,644) lib/beyondcompare/help/profileftpconnection.html
-@(,,644) lib/beyondcompare/help/profileftpglobal.html
-@(,,644) lib/beyondcompare/help/profileftplisting.html
-@(,,644) lib/beyondcompare/help/profileftplogin.html
-@(,,644) lib/beyondcompare/help/profileftpproxy.html
-@(,,644) lib/beyondcompare/help/profileftpserver.html
-@(,,644) lib/beyondcompare/help/profileftptransfer.html
-@(,,644) lib/beyondcompare/help/profileonedrive.html
-@(,,644) lib/beyondcompare/help/profilesvn.html
-@(,,644) lib/beyondcompare/help/profilewebdav.html
-@(,,644) lib/beyondcompare/help/recompare.png
-@(,,644) lib/beyondcompare/help/red-bg.jpg
-@(,,644) lib/beyondcompare/help/redo.png
-@(,,644) lib/beyondcompare/help/refresh.png
-@(,,644) lib/beyondcompare/help/regular_expression_reference.html
-@(,,644) lib/beyondcompare/help/remote_services.html
-@(,,644) lib/beyondcompare/help/rename.png
-@(,,644) lib/beyondcompare/help/replace.png
-@(,,644) lib/beyondcompare/help/report.png
-@(,,644) lib/beyondcompare/help/rules.png
-@(,,644) lib/beyondcompare/help/rules_vs_file_formats.html
-@(,,644) lib/beyondcompare/help/rulesvsformats.png
-@(,,644) lib/beyondcompare/help/sample_regular_expressions.html
-@(,,644) lib/beyondcompare/help/sample_scripts.html
-@(,,644) lib/beyondcompare/help/save.png
-@(,,644) lib/beyondcompare/help/savesnapshot.png
-@(,,644) lib/beyondcompare/help/scheduling_a_script.html
-@(,,644) lib/beyondcompare/help/scripting_reference.html
-@(,,644) lib/beyondcompare/help/scripts.html
-@(,,644) lib/beyondcompare/help/searchedit.png
-@(,,644) lib/beyondcompare/help/searching_for_text.html
-@(,,644) lib/beyondcompare/help/selectall.png
-@(,,644) lib/beyondcompare/help/selectallfiles.png
-@(,,644) lib/beyondcompare/help/session_settings.html
-@(,,644) lib/beyondcompare/help/sessiondata.html
-@(,,644) lib/beyondcompare/help/sessiondataalignment.html
-@(,,644) lib/beyondcompare/help/sessiondatacolumns.html
-@(,,644) lib/beyondcompare/help/sessiondataformats.html
-@(,,644) lib/beyondcompare/help/sessiondataspecs.html
-@(,,644) lib/beyondcompare/help/sessiondir.html
-@(,,644) lib/beyondcompare/help/sessiondircomparison.html
-@(,,644) lib/beyondcompare/help/sessiondirhandling.html
-@(,,644) lib/beyondcompare/help/sessiondirmerge.html
-@(,,644) lib/beyondcompare/help/sessiondirmergecomparison.html
-@(,,644) lib/beyondcompare/help/sessiondirmergehandling.html
-@(,,644) lib/beyondcompare/help/sessiondirmergemisc.html
-@(,,644) lib/beyondcompare/help/sessiondirmergenamefilter.html
-@(,,644) lib/beyondcompare/help/sessiondirmergeotherfilters.html
-@(,,644) lib/beyondcompare/help/sessiondirmergespecs.html
-@(,,644) lib/beyondcompare/help/sessiondirmisc.html
-@(,,644) lib/beyondcompare/help/sessiondirnamefilter.html
-@(,,644) lib/beyondcompare/help/sessiondirotherfilters.html
-@(,,644) lib/beyondcompare/help/sessiondirspecs.html
-@(,,644) lib/beyondcompare/help/sessiondirsync.html
-@(,,644) lib/beyondcompare/help/sessiondirsynccomparison.html
-@(,,644) lib/beyondcompare/help/sessiondirsynchandling.html
-@(,,644) lib/beyondcompare/help/sessiondirsyncmisc.html
-@(,,644) lib/beyondcompare/help/sessiondirsyncnamefilter.html
-@(,,644) lib/beyondcompare/help/sessiondirsyncops.html
-@(,,644) lib/beyondcompare/help/sessiondirsyncotherfilters.html
-@(,,644) lib/beyondcompare/help/sessiondirsyncspecs.html
-@(,,644) lib/beyondcompare/help/sessionedit.png
-@(,,644) lib/beyondcompare/help/sessionhex.html
-@(,,644) lib/beyondcompare/help/sessionhexcomparison.html
-@(,,644) lib/beyondcompare/help/sessionhexformats.html
-@(,,644) lib/beyondcompare/help/sessionhexspecs.html
-@(,,644) lib/beyondcompare/help/sessionlocked.png
-@(,,644) lib/beyondcompare/help/sessionmp3.html
-@(,,644) lib/beyondcompare/help/sessionmp3importance.html
-@(,,644) lib/beyondcompare/help/sessionmp3specs.html
-@(,,644) lib/beyondcompare/help/sessionpix.html
-@(,,644) lib/beyondcompare/help/sessionpixformats.html
-@(,,644) lib/beyondcompare/help/sessionpixreplacements.html
-@(,,644) lib/beyondcompare/help/sessionpixspecs.html
-@(,,644) lib/beyondcompare/help/sessionreg.html
-@(,,644) lib/beyondcompare/help/sessionregspecs.html
-@(,,644) lib/beyondcompare/help/sessionsave.png
-@(,,644) lib/beyondcompare/help/sessionsaveas.png
-@(,,644) lib/beyondcompare/help/sessiontext.html
-@(,,644) lib/beyondcompare/help/sessiontextalignment.html
-@(,,644) lib/beyondcompare/help/sessiontextformats.html
-@(,,644) lib/beyondcompare/help/sessiontextimportance.html
-@(,,644) lib/beyondcompare/help/sessiontextmerge.html
-@(,,644) lib/beyondcompare/help/sessiontextmergealignment.html
-@(,,644) lib/beyondcompare/help/sessiontextmergeformats.html
-@(,,644) lib/beyondcompare/help/sessiontextmergeimportance.html
-@(,,644) lib/beyondcompare/help/sessiontextmergespecs.html
-@(,,644) lib/beyondcompare/help/sessiontextreplacements.html
-@(,,644) lib/beyondcompare/help/sessiontextspecs.html
-@(,,644) lib/beyondcompare/help/sessionver.html
-@(,,644) lib/beyondcompare/help/sessionverimportance.html
-@(,,644) lib/beyondcompare/help/sessionverspecs.html
-@(,,644) lib/beyondcompare/help/settings.js
-@(,,644) lib/beyondcompare/help/settings_reference.html
-@(,,644) lib/beyondcompare/help/sharedsessions.png
-@(,,644) lib/beyondcompare/help/sharing_sessions.html
-@(,,644) lib/beyondcompare/help/showaligndetails.png
-@(,,644) lib/beyondcompare/help/showcenter.png
-@(,,644) lib/beyondcompare/help/showcontext.png
-@(,,644) lib/beyondcompare/help/showhexdetails.png
-@(,,644) lib/beyondcompare/help/showitemnum.png
-@(,,644) lib/beyondcompare/help/showruler.png
-@(,,644) lib/beyondcompare/help/showsyntaxhighlighting.png
-@(,,644) lib/beyondcompare/help/showtextdetails.png
-@(,,644) lib/beyondcompare/help/showthumbnail.png
-@(,,644) lib/beyondcompare/help/showws.png
-@(,,644) lib/beyondcompare/help/sidebyside.png
-@(,,644) lib/beyondcompare/help/snapshots.html
-@(,,644) lib/beyondcompare/help/space.png
-@(,,644) lib/beyondcompare/help/specs.html
-@(,,644) lib/beyondcompare/help/specsback.png
-@(,,644) lib/beyondcompare/help/specsforward.png
-@(,,644) lib/beyondcompare/help/standard_vs_pro.html
-@(,,644) lib/beyondcompare/help/support_ordering_and_license.html
-@(,,644) lib/beyondcompare/help/suppressfilters.png
-@(,,644) lib/beyondcompare/help/swap.png
-@(,,644) lib/beyondcompare/help/synccopydeleteleft.png
-@(,,644) lib/beyondcompare/help/synccopydeleteright.png
-@(,,644) lib/beyondcompare/help/synccopyleft.png
-@(,,644) lib/beyondcompare/help/synccopyright.png
-@(,,644) lib/beyondcompare/help/syncdelete.png
-@(,,644) lib/beyondcompare/help/syncprompt.png
-@(,,644) lib/beyondcompare/help/syncrun.png
-@(,,644) lib/beyondcompare/help/tab.png
-@(,,644) lib/beyondcompare/help/texteditsession.png
-@(,,644) lib/beyondcompare/help/textmergesession.png
-@(,,644) lib/beyondcompare/help/textpatchsession.png
-@(,,644) lib/beyondcompare/help/todir.png
-@(,,644) lib/beyondcompare/help/todirflatten.png
-@(,,644) lib/beyondcompare/help/todirkeepbase.png
-@(,,644) lib/beyondcompare/help/todirkeeprelative.png
-@(,,644) lib/beyondcompare/help/toolbardropdown.png
-@(,,644) lib/beyondcompare/help/toolbarfavorites.png
-@(,,644) lib/beyondcompare/help/toolbarfilefilters.png
-@(,,644) lib/beyondcompare/help/toolbartoggles.png
-@(,,644) lib/beyondcompare/help/top-hot.png
-@(,,644) lib/beyondcompare/help/top.png
-@(,,644) lib/beyondcompare/help/touch.png
-@(,,644) lib/beyondcompare/help/undo.png
-@(,,644) lib/beyondcompare/help/unixlineending.png
-@(,,644) lib/beyondcompare/help/up.png
-@(,,644) lib/beyondcompare/help/updateboth.png
-@(,,644) lib/beyondcompare/help/updateleft.png
-@(,,644) lib/beyondcompare/help/updateright.png
-@(,,644) lib/beyondcompare/help/uponelevel.png
-@(,,644) lib/beyondcompare/help/using_bc.html
-@(,,644) lib/beyondcompare/help/using_text_merge.html
-@(,,644) lib/beyondcompare/help/viewdata.html
-@(,,644) lib/beyondcompare/help/viewdata.jpg
-@(,,644) lib/beyondcompare/help/viewdata_zoom33.jpg
-@(,,644) lib/beyondcompare/help/viewdir.html
-@(,,644) lib/beyondcompare/help/viewdir.jpg
-@(,,644) lib/beyondcompare/help/viewdir_zoom33.jpg
-@(,,644) lib/beyondcompare/help/viewdirmerge.html
-@(,,644) lib/beyondcompare/help/viewdirmerge.jpg
-@(,,644) lib/beyondcompare/help/viewdirmerge_zoom33.jpg
-@(,,644) lib/beyondcompare/help/viewdirsync.html
-@(,,644) lib/beyondcompare/help/viewdirsync.jpg
-@(,,644) lib/beyondcompare/help/viewdirsync_zoom33.jpg
-@(,,644) lib/beyondcompare/help/viewhex.html
-@(,,644) lib/beyondcompare/help/viewhex.jpg
-@(,,644) lib/beyondcompare/help/viewhex_zoom33.jpg
-@(,,644) lib/beyondcompare/help/viewhome.html
-@(,,644) lib/beyondcompare/help/viewhome.jpg
-@(,,644) lib/beyondcompare/help/viewhome_zoom33.jpg
-@(,,644) lib/beyondcompare/help/viewmp3.jpg
-@(,,644) lib/beyondcompare/help/viewmp3_zoom33.jpg
-@(,,644) lib/beyondcompare/help/viewother.html
-@(,,644) lib/beyondcompare/help/viewpix.html
-@(,,644) lib/beyondcompare/help/viewpix.jpg
-@(,,644) lib/beyondcompare/help/viewpix_zoom33.jpg
-@(,,644) lib/beyondcompare/help/viewreg.html
-@(,,644) lib/beyondcompare/help/viewreg.jpg
-@(,,644) lib/beyondcompare/help/viewreg_zoom33.jpg
-@(,,644) lib/beyondcompare/help/viewtext.html
-@(,,644) lib/beyondcompare/help/viewtext.jpg
-@(,,644) lib/beyondcompare/help/viewtext_zoom33.jpg
-@(,,644) lib/beyondcompare/help/viewtextedit.html
-@(,,644) lib/beyondcompare/help/viewtextedit.jpg
-@(,,644) lib/beyondcompare/help/viewtextedit_zoom33.jpg
-@(,,644) lib/beyondcompare/help/viewtextmerge.html
-@(,,644) lib/beyondcompare/help/viewtextmerge.jpg
-@(,,644) lib/beyondcompare/help/viewtextmerge_zoom33.jpg
-@(,,644) lib/beyondcompare/help/viewtextpatch.html
-@(,,644) lib/beyondcompare/help/viewtextpatch.jpg
-@(,,644) lib/beyondcompare/help/viewtextpatch_zoom33.jpg
-@(,,644) lib/beyondcompare/help/viewver.jpg
-@(,,644) lib/beyondcompare/help/viewver_zoom33.jpg
-@(,,644) lib/beyondcompare/help/walking_through_differences.html
-@(,,644) lib/beyondcompare/help/warning.png
-@(,,644) lib/beyondcompare/help/webbrowser.png
-@(,,644) lib/beyondcompare/help/welcome.html
-@(,,644) lib/beyondcompare/help/whats_new.html
-@(,,644) lib/beyondcompare/help/where_settings_are_stored.html
-@(,,644) lib/beyondcompare/help/windows.png
-@(,,644) lib/beyondcompare/help/windowslineending.png
-@(,,644) lib/beyondcompare/help/zoom_index.js
-@(,,644) lib/beyondcompare/help/zoom_pageinfo.js
-@(,,644) lib/beyondcompare/help/zoom_search.js
-@(,,644) lib/beyondcompare/help/zoomin.png
-@(,,644) lib/beyondcompare/help/zoomout.png
-%%QT4AMD64%%@dir lib/beyondcompare/qt4
-%%QT4AMD64%%lib/beyondcompare/qt4/libQtCore.so.4
-%%QT4AMD64%%lib/beyondcompare/qt4/libQtGui.so.4
+lib/beyondcompare/lib7z.so
+lib/beyondcompare/libQt6Pas.so.6
+lib/beyondcompare/libbz2.so.1.0
+lib/beyondcompare/libcloudstorage.so.22.0
+lib/beyondcompare/libunrar.so
+lib/beyondcompare/mime.types
+lib/beyondcompare/nosched.so
+lib/beyondcompare/scootersoftware.repo
+share/applications/bcompare.desktop
+%%DOCSDIR%%/README
+%%DOCSDIR%%/copyright
+%%DOCSDIR%%/help/3-way_merge_concepts.html
+%%DOCSDIR%%/help/_hmXpopup.aspx
+%%DOCSDIR%%/help/_hmXpopup.htm
+%%DOCSDIR%%/help/_hmXtopic.aspx
+%%DOCSDIR%%/help/_hmXtopic.htm
+%%DOCSDIR%%/help/_hm_print_window.aspx
+%%DOCSDIR%%/help/_hm_print_window.htm
+%%DOCSDIR%%/help/_hmpermalink.aspx
+%%DOCSDIR%%/help/_hmpermalink.html
+%%DOCSDIR%%/help/admin_policies.html
+%%DOCSDIR%%/help/archive_files.html
+%%DOCSDIR%%/help/bcclipmain.html
+%%DOCSDIR%%/help/bcclipoptions.html
+%%DOCSDIR%%/help/bcshellex.html
+%%DOCSDIR%%/help/calling_bc_from_other_applications.html
+%%DOCSDIR%%/help/command_line_reference.html
+%%DOCSDIR%%/help/commands_reference.html
+%%DOCSDIR%%/help/commandsbc.html
+%%DOCSDIR%%/help/commandsbcmac.html
+%%DOCSDIR%%/help/commandsdir.html
+%%DOCSDIR%%/help/commandsdirmerge.html
+%%DOCSDIR%%/help/commandsdirsync.html
+%%DOCSDIR%%/help/commandshex.html
+%%DOCSDIR%%/help/commandshome.html
+%%DOCSDIR%%/help/commandsmedia.html
+%%DOCSDIR%%/help/commandspix.html
+%%DOCSDIR%%/help/commandsreg.html
+%%DOCSDIR%%/help/commandstable.html
+%%DOCSDIR%%/help/commandstext.html
+%%DOCSDIR%%/help/commandstextedit.html
+%%DOCSDIR%%/help/commandstextmerge.html
+%%DOCSDIR%%/help/commandstextpatch.html
+%%DOCSDIR%%/help/commandsver.html
+%%DOCSDIR%%/help/css/hm_popup.css
+%%DOCSDIR%%/help/css/hmprojectstyles.css
+%%DOCSDIR%%/help/css/hmwebhelp_index_desktop.css
+%%DOCSDIR%%/help/css/hmwebhelp_index_phone.css
+%%DOCSDIR%%/help/css/hmwebhelp_index_tablet.css
+%%DOCSDIR%%/help/css/hmwebhelp_main_desktop.css
+%%DOCSDIR%%/help/css/hmwebhelp_main_phone.css
+%%DOCSDIR%%/help/css/hmwebhelp_main_print.css
+%%DOCSDIR%%/help/css/hmwebhelp_main_tablet.css
+%%DOCSDIR%%/help/css/hmwebhelp_search_desktop.css
+%%DOCSDIR%%/help/css/hmwebhelp_search_phone.css
+%%DOCSDIR%%/help/css/hmwebhelp_search_tablet.css
+%%DOCSDIR%%/help/css/hmwebhelp_toc_desktop.css
+%%DOCSDIR%%/help/css/hmwebhelp_toc_phone.css
+%%DOCSDIR%%/help/css/hmwebhelp_toc_tablet.css
+%%DOCSDIR%%/help/dir_columns.html
+%%DOCSDIR%%/help/dir_filtering_the_view.html
+%%DOCSDIR%%/help/dir_how_to_compare.html
+%%DOCSDIR%%/help/dir_merge_understanding_the_display.html
+%%DOCSDIR%%/help/dir_reconciling_differences.html
+%%DOCSDIR%%/help/dir_sync_how_to_sync.html
+%%DOCSDIR%%/help/dir_sync_understanding_the_display.html
+%%DOCSDIR%%/help/dir_understanding_the_display.html
+%%DOCSDIR%%/help/display_filters.html
+%%DOCSDIR%%/help/dlgbrowsemachine.html
+%%DOCSDIR%%/help/dlgdiralignwithitem.html
+%%DOCSDIR%%/help/dlgdirfind.html
+%%DOCSDIR%%/help/dlgdirotherfilteritem.html
+%%DOCSDIR%%/help/dlgexport.html
+%%DOCSDIR%%/help/dlgfileformatmanager.html
+%%DOCSDIR%%/help/dlgimport.html
+%%DOCSDIR%%/help/dlgnag.html
+%%DOCSDIR%%/help/dlgopenwithitem.html
+%%DOCSDIR%%/help/dlgprofilebrowse.html
+%%DOCSDIR%%/help/dlgprofilemanager.html
+%%DOCSDIR%%/help/dlgprogoptions.html
+%%DOCSDIR%%/help/dlgregister.html
+%%DOCSDIR%%/help/dlgreport.html
+%%DOCSDIR%%/help/dlgrestore.html
+%%DOCSDIR%%/help/dlgsnapshot.html
+%%DOCSDIR%%/help/dlgsourcecontrolmanager.html
+%%DOCSDIR%%/help/dlgsupport.html
+%%DOCSDIR%%/help/dlgtablecolhandling.html
+%%DOCSDIR%%/help/dlgtextfindinfiles.html
+%%DOCSDIR%%/help/dlgtextgrammaritem.html
+%%DOCSDIR%%/help/dlgtextreplacementitem.html
+%%DOCSDIR%%/help/dlgworkspacemanager.html
+%%DOCSDIR%%/help/editing_text.html
+%%DOCSDIR%%/help/favicon.ico
+%%DOCSDIR%%/help/file_formats.html
+%%DOCSDIR%%/help/file_masks.html
+%%DOCSDIR%%/help/formatexternalgeneral.html
+%%DOCSDIR%%/help/formathex.html
+%%DOCSDIR%%/help/formathexconversion.html
+%%DOCSDIR%%/help/formathexgeneral.html
+%%DOCSDIR%%/help/formatpix.html
+%%DOCSDIR%%/help/formatpixconversion.html
+%%DOCSDIR%%/help/formatpixgeneral.html
+%%DOCSDIR%%/help/formattable.html
+%%DOCSDIR%%/help/formattableconversion.html
+%%DOCSDIR%%/help/formattablegeneral.html
+%%DOCSDIR%%/help/formattableregional.html
+%%DOCSDIR%%/help/formattabletype.html
+%%DOCSDIR%%/help/formattext.html
+%%DOCSDIR%%/help/formattextconversion.html
+%%DOCSDIR%%/help/formattextgeneral.html
+%%DOCSDIR%%/help/formattextgrammar.html
+%%DOCSDIR%%/help/formattextmisc.html
+%%DOCSDIR%%/help/glossary.html
+%%DOCSDIR%%/help/grammars.html
+%%DOCSDIR%%/help/hmcontent.html
+%%DOCSDIR%%/help/hmftsearch.html
+%%DOCSDIR%%/help/images/TextMinus.png
+%%DOCSDIR%%/help/images/TextNormal.png
+%%DOCSDIR%%/help/images/TextPlus.png
+%%DOCSDIR%%/help/images/ZoomClose.png
+%%DOCSDIR%%/help/images/accept.png
+%%DOCSDIR%%/help/images/banner_company.jpg
+%%DOCSDIR%%/help/images/bcclipmain.png
+%%DOCSDIR%%/help/images/bcclipmain_zoom57.png
+%%DOCSDIR%%/help/images/bcclipsystemtray.png
+%%DOCSDIR%%/help/images/bclogo.png
+%%DOCSDIR%%/help/images/bg.png
+%%DOCSDIR%%/help/images/browse.png
+%%DOCSDIR%%/help/images/build.svg
+%%DOCSDIR%%/help/images/cicon_loadindex_ani.gif
+%%DOCSDIR%%/help/images/close_data.png
+%%DOCSDIR%%/help/images/closehelp.png
+%%DOCSDIR%%/help/images/collapseall.png
+%%DOCSDIR%%/help/images/compare.png
+%%DOCSDIR%%/help/images/conflict.png
+%%DOCSDIR%%/help/images/conflictsectionnext.png
+%%DOCSDIR%%/help/images/conflictsectionoffnext.png
+%%DOCSDIR%%/help/images/conflictsectionprev.png
+%%DOCSDIR%%/help/images/contentconflict.png
+%%DOCSDIR%%/help/images/contentcopycentertooutput.png
+%%DOCSDIR%%/help/images/contentcopyleft.png
+%%DOCSDIR%%/help/images/contentcopylefttooutput.png
+%%DOCSDIR%%/help/images/contentcopyright.png
+%%DOCSDIR%%/help/images/contentcopyrighttooutput.png
+%%DOCSDIR%%/help/images/contentdeleteleft.png
+%%DOCSDIR%%/help/images/contentdeleteright.png
+%%DOCSDIR%%/help/images/contentdifferent.png
+%%DOCSDIR%%/help/images/contentdifferentbinary.png
+%%DOCSDIR%%/help/images/contentmergeable.png
+%%DOCSDIR%%/help/images/contentmerged.png
+%%DOCSDIR%%/help/images/contentsame.png
+%%DOCSDIR%%/help/images/contentsamebinary.png
+%%DOCSDIR%%/help/images/contentsimilar.png
+%%DOCSDIR%%/help/images/copy.png
+%%DOCSDIR%%/help/images/copyfileleft.png
+%%DOCSDIR%%/help/images/copyfileright.png
+%%DOCSDIR%%/help/images/copyleft.png
+%%DOCSDIR%%/help/images/copyleftorright.png
+%%DOCSDIR%%/help/images/copyright.png
+%%DOCSDIR%%/help/images/copyto.png
+%%DOCSDIR%%/help/images/copytooutput.png
+%%DOCSDIR%%/help/images/delete.png
+%%DOCSDIR%%/help/images/difffilenext.png
+%%DOCSDIR%%/help/images/difffileprev.png
+%%DOCSDIR%%/help/images/dircomparefilesonly.png
+%%DOCSDIR%%/help/images/dircomparesession.png
+%%DOCSDIR%%/help/images/dircomparestructure.png
+%%DOCSDIR%%/help/images/dirdisplayarchive.png
+%%DOCSDIR%%/help/images/dirdisplaydir.png
+%%DOCSDIR%%/help/images/dirdisplayex.png
+%%DOCSDIR%%/help/images/dirdisplayfile.png
+%%DOCSDIR%%/help/images/dirfavconflict.png
+%%DOCSDIR%%/help/images/dirfavdiffnoorphan.png
+%%DOCSDIR%%/help/images/dirfavleft.png
+%%DOCSDIR%%/help/images/dirfavleftnewer.png
+%%DOCSDIR%%/help/images/dirfavleftnewerorphan.png
+%%DOCSDIR%%/help/images/dirfavleftorphan.png
+%%DOCSDIR%%/help/images/dirfavmergeable.png
+%%DOCSDIR%%/help/images/dirfavnoorphan.png
+%%DOCSDIR%%/help/images/dirfavorphan.png
+%%DOCSDIR%%/help/images/dirfavright.png
+%%DOCSDIR%%/help/images/dirfavrightnewer.png
+%%DOCSDIR%%/help/images/dirfavrightnewerorphan.png
+%%DOCSDIR%%/help/images/dirfavrightorphan.png
+%%DOCSDIR%%/help/images/dirflatten.png
+%%DOCSDIR%%/help/images/dirmerge.png
+%%DOCSDIR%%/help/images/dirmergesession.png
+%%DOCSDIR%%/help/images/dirshowall.png
+%%DOCSDIR%%/help/images/dirsyncsession.png
+%%DOCSDIR%%/help/images/displayfont.png
+%%DOCSDIR%%/help/images/displayfontdecrease.png
+%%DOCSDIR%%/help/images/displayfontincrease.png
+%%DOCSDIR%%/help/images/displayfontreset.png
+%%DOCSDIR%%/help/images/down.png
+%%DOCSDIR%%/help/images/dropdown.png
+%%DOCSDIR%%/help/images/expandall.png
+%%DOCSDIR%%/help/images/favall.png
+%%DOCSDIR%%/help/images/favdiff.png
+%%DOCSDIR%%/help/images/favnone.png
+%%DOCSDIR%%/help/images/favorite.svg
+%%DOCSDIR%%/help/images/favorleft.png
+%%DOCSDIR%%/help/images/favorright.png
+%%DOCSDIR%%/help/images/favsame.png
+%%DOCSDIR%%/help/images/filecopyselright.png
+%%DOCSDIR%%/help/images/filefavconflict.png
+%%DOCSDIR%%/help/images/filefavleft.png
+%%DOCSDIR%%/help/images/filefavmergeable.png
+%%DOCSDIR%%/help/images/filefavright.png
+%%DOCSDIR%%/help/images/fileformatmanager.png
+%%DOCSDIR%%/help/images/filetakesectioncenter.png
+%%DOCSDIR%%/help/images/filetakesectionleft.png
+%%DOCSDIR%%/help/images/filetakesectionright.png
+%%DOCSDIR%%/help/images/filteredlinecount.png
+%%DOCSDIR%%/help/images/filters.png
+%%DOCSDIR%%/help/images/find.png
+%%DOCSDIR%%/help/images/findinfiles.png
+%%DOCSDIR%%/help/images/findnext.png
+%%DOCSDIR%%/help/images/findprev.png
+%%DOCSDIR%%/help/images/fullrefresh.png
+%%DOCSDIR%%/help/images/fullscreen.png
+%%DOCSDIR%%/help/images/goto.png
+%%DOCSDIR%%/help/images/helpcontents.png
+%%DOCSDIR%%/help/images/hmlogo_white.png
+%%DOCSDIR%%/help/images/hxlogo_white.png
+%%DOCSDIR%%/help/images/ignored.png
+%%DOCSDIR%%/help/images/info.png
+%%DOCSDIR%%/help/images/insigignored.png
+%%DOCSDIR%%/help/images/internet.svg
+%%DOCSDIR%%/help/images/kw-page.gif
+%%DOCSDIR%%/help/images/leftright.png
+%%DOCSDIR%%/help/images/linux.png
+%%DOCSDIR%%/help/images/logo-image-desk.png
+%%DOCSDIR%%/help/images/logo-image-mobile.png
+%%DOCSDIR%%/help/images/mac.png
+%%DOCSDIR%%/help/images/maclineending.png
+%%DOCSDIR%%/help/images/mediaplay.png
+%%DOCSDIR%%/help/images/mediaplay2.png
+%%DOCSDIR%%/help/images/mergebase.png
+%%DOCSDIR%%/help/images/mergenobase.png
+%%DOCSDIR%%/help/images/mirrorleft.png
+%%DOCSDIR%%/help/images/mirrorright.png
+%%DOCSDIR%%/help/images/mob_home.png
+%%DOCSDIR%%/help/images/mob_next.png
+%%DOCSDIR%%/help/images/mob_previous.png
+%%DOCSDIR%%/help/images/moveboth.png
+%%DOCSDIR%%/help/images/moveleftorright.png
+%%DOCSDIR%%/help/images/moveright.png
+%%DOCSDIR%%/help/images/moveto.png
+%%DOCSDIR%%/help/images/newfolder.png
+%%DOCSDIR%%/help/images/note.png
+%%DOCSDIR%%/help/images/open_data.png
+%%DOCSDIR%%/help/images/options.png
+%%DOCSDIR%%/help/images/outputwindow.png
+%%DOCSDIR%%/help/images/overunder.png
+%%DOCSDIR%%/help/images/page-bg.png
+%%DOCSDIR%%/help/images/pin.png
+%%DOCSDIR%%/help/images/pixautoscale.png
+%%DOCSDIR%%/help/images/pixblendtoggle.png
+%%DOCSDIR%%/help/images/pixcomparetags.png
+%%DOCSDIR%%/help/images/pixdiffblend.png
+%%DOCSDIR%%/help/images/pixdiffrange.png
+%%DOCSDIR%%/help/images/pixdifftolerance.png
+%%DOCSDIR%%/help/images/pixfliphorz.png
+%%DOCSDIR%%/help/images/pixflipvert.png
+%%DOCSDIR%%/help/images/pixrotateleft.png
+%%DOCSDIR%%/help/images/pixrotateright.png
+%%DOCSDIR%%/help/images/pixzoomactual.png
+%%DOCSDIR%%/help/images/pixzoomfit.png
+%%DOCSDIR%%/help/images/prefsinterface.png
+%%DOCSDIR%%/help/images/pro.png
+%%DOCSDIR%%/help/images/recompare.png
+%%DOCSDIR%%/help/images/redo.png
+%%DOCSDIR%%/help/images/refresh.png
+%%DOCSDIR%%/help/images/rename.png
+%%DOCSDIR%%/help/images/replace.png
+%%DOCSDIR%%/help/images/report.png
+%%DOCSDIR%%/help/images/rules.png
+%%DOCSDIR%%/help/images/rulesvsformats.png
+%%DOCSDIR%%/help/images/save.png
+%%DOCSDIR%%/help/images/savesnapshot.png
+%%DOCSDIR%%/help/images/search.svg
+%%DOCSDIR%%/help/images/searchedit.png
+%%DOCSDIR%%/help/images/selectall.png
+%%DOCSDIR%%/help/images/selectallfiles.png
+%%DOCSDIR%%/help/images/sessionedit.png
+%%DOCSDIR%%/help/images/sessionlocked.png
+%%DOCSDIR%%/help/images/sessionsave.png
+%%DOCSDIR%%/help/images/sessionsaveas.png
+%%DOCSDIR%%/help/images/sharedsessions.png
+%%DOCSDIR%%/help/images/shot_foldercompare.png
+%%DOCSDIR%%/help/images/shot_foldercompare_zoom33.png
+%%DOCSDIR%%/help/images/shot_foldermerge.png
+%%DOCSDIR%%/help/images/shot_foldermerge_zoom33.png
+%%DOCSDIR%%/help/images/shot_foldersync.png
+%%DOCSDIR%%/help/images/shot_foldersync_zoom33.png
+%%DOCSDIR%%/help/images/shot_hexcompare.png
+%%DOCSDIR%%/help/images/shot_hexcompare_zoom33.png
+%%DOCSDIR%%/help/images/shot_homeview.png
+%%DOCSDIR%%/help/images/shot_homeview_zoom33.png
+%%DOCSDIR%%/help/images/shot_mediacompare.png
+%%DOCSDIR%%/help/images/shot_mediacompare_zoom33.png
+%%DOCSDIR%%/help/images/shot_pixcompare.png
+%%DOCSDIR%%/help/images/shot_pixcompare_zoom33.png
+%%DOCSDIR%%/help/images/shot_regcompare.png
+%%DOCSDIR%%/help/images/shot_regcompare_zoom33.png
+%%DOCSDIR%%/help/images/shot_tablecompare.png
+%%DOCSDIR%%/help/images/shot_tablecompare_zoom33.png
+%%DOCSDIR%%/help/images/shot_textcompare.png
+%%DOCSDIR%%/help/images/shot_textcompare_zoom33.png
+%%DOCSDIR%%/help/images/shot_textedit.png
+%%DOCSDIR%%/help/images/shot_textedit_zoom33.png
+%%DOCSDIR%%/help/images/shot_textmerge.png
+%%DOCSDIR%%/help/images/shot_textmerge_zoom33.png
+%%DOCSDIR%%/help/images/shot_textpatch.png
+%%DOCSDIR%%/help/images/shot_textpatch_zoom33.png
+%%DOCSDIR%%/help/images/shot_versioncompare.png
+%%DOCSDIR%%/help/images/shot_versioncompare_zoom33.png
+%%DOCSDIR%%/help/images/showaligndetails.png
+%%DOCSDIR%%/help/images/showcenter.png
+%%DOCSDIR%%/help/images/showcontext.png
+%%DOCSDIR%%/help/images/showhexdetails.png
+%%DOCSDIR%%/help/images/showitemnum.png
+%%DOCSDIR%%/help/images/showruler.png
+%%DOCSDIR%%/help/images/showsyntaxhighlighting.png
+%%DOCSDIR%%/help/images/showtextdetails.png
+%%DOCSDIR%%/help/images/showthumbnail.png
+%%DOCSDIR%%/help/images/showws.png
+%%DOCSDIR%%/help/images/sidebyside.png
+%%DOCSDIR%%/help/images/social_mail.png
+%%DOCSDIR%%/help/images/space.png
+%%DOCSDIR%%/help/images/spacer.gif
+%%DOCSDIR%%/help/images/specsback.png
+%%DOCSDIR%%/help/images/specsforward.png
+%%DOCSDIR%%/help/images/suppressfilters.png
+%%DOCSDIR%%/help/images/swap.png
+%%DOCSDIR%%/help/images/synccopydeleteleft.png
+%%DOCSDIR%%/help/images/synccopydeleteright.png
+%%DOCSDIR%%/help/images/synccopyleft.png
+%%DOCSDIR%%/help/images/synccopyright.png
+%%DOCSDIR%%/help/images/syncdelete.png
+%%DOCSDIR%%/help/images/syncprompt.png
+%%DOCSDIR%%/help/images/syncrun.png
+%%DOCSDIR%%/help/images/tab.png
+%%DOCSDIR%%/help/images/tableexcel.png
+%%DOCSDIR%%/help/images/tablehtml.png
+%%DOCSDIR%%/help/images/tablesheets1.png
+%%DOCSDIR%%/help/images/tablesheets2.png
+%%DOCSDIR%%/help/images/texteditsession.png
+%%DOCSDIR%%/help/images/textmergesession.png
+%%DOCSDIR%%/help/images/textpatchsession.png
+%%DOCSDIR%%/help/images/toc.png
+%%DOCSDIR%%/help/images/toc_chapter_closed.svg
+%%DOCSDIR%%/help/images/toc_chapter_open.svg
+%%DOCSDIR%%/help/images/toc_hide.png
+%%DOCSDIR%%/help/images/toc_show.png
+%%DOCSDIR%%/help/images/toc_topic.svg
+%%DOCSDIR%%/help/images/todir.png
+%%DOCSDIR%%/help/images/todirflatten.png
+%%DOCSDIR%%/help/images/todirkeepbase.png
+%%DOCSDIR%%/help/images/todirkeeprelative.png
+%%DOCSDIR%%/help/images/toolbardropdown.png
+%%DOCSDIR%%/help/images/toolbarfavorites.png
+%%DOCSDIR%%/help/images/toolbarfilefilters.png
+%%DOCSDIR%%/help/images/toolbartoggles.png
+%%DOCSDIR%%/help/images/touch.png
+%%DOCSDIR%%/help/images/undo.png
+%%DOCSDIR%%/help/images/unixlineending.png
+%%DOCSDIR%%/help/images/up.png
+%%DOCSDIR%%/help/images/updateboth.png
+%%DOCSDIR%%/help/images/updateleft.png
+%%DOCSDIR%%/help/images/updateright.png
+%%DOCSDIR%%/help/images/uponelevel.png
+%%DOCSDIR%%/help/images/warning.png
+%%DOCSDIR%%/help/images/webbrowser.png
+%%DOCSDIR%%/help/images/windows.png
+%%DOCSDIR%%/help/images/windowslineending.png
+%%DOCSDIR%%/help/images/wordwrap.png
+%%DOCSDIR%%/help/images/zoomin.png
+%%DOCSDIR%%/help/images/zoomout.png
+%%DOCSDIR%%/help/index.html
+%%DOCSDIR%%/help/js/fontSize.js
+%%DOCSDIR%%/help/js/helpman_settings.js
+%%DOCSDIR%%/help/js/highlight.js
+%%DOCSDIR%%/help/js/hmDoCopyCode.js
+%%DOCSDIR%%/help/js/hmDoInlineToggle.js
+%%DOCSDIR%%/help/js/hmDoToggle.js
+%%DOCSDIR%%/help/js/hmEmbedHelp.js
+%%DOCSDIR%%/help/js/hmEmbeddedPopups.js
+%%DOCSDIR%%/help/js/hmFeatureHeader.js
+%%DOCSDIR%%/help/js/hmFeatureHeaderM.js
+%%DOCSDIR%%/help/js/hmImageToggle.js
+%%DOCSDIR%%/help/js/hmImageToggleMobile.js
+%%DOCSDIR%%/help/js/hmSmartPopup.js
+%%DOCSDIR%%/help/js/hmVideoBox.js
+%%DOCSDIR%%/help/js/hmXtopic.js
+%%DOCSDIR%%/help/js/hm_autotoc.js
+%%DOCSDIR%%/help/js/hm_mail_feedback.js
+%%DOCSDIR%%/help/js/hm_webhelp.js
+%%DOCSDIR%%/help/js/hm_xTablesInit.js
+%%DOCSDIR%%/help/js/hmcontent.js
+%%DOCSDIR%%/help/js/hmcontextids.js
+%%DOCSDIR%%/help/js/jquery.history.js
+%%DOCSDIR%%/help/js/jquery.js
+%%DOCSDIR%%/help/js/jquery.scrollTomin.js
+%%DOCSDIR%%/help/js/mobileNav.js
+%%DOCSDIR%%/help/js/socialsharing.js
+%%DOCSDIR%%/help/js/tapImage.js
+%%DOCSDIR%%/help/js/toggleLayoutTable.js
+%%DOCSDIR%%/help/js/xmessage.js
+%%DOCSDIR%%/help/jstopics/3-way_merge_concepts.js
+%%DOCSDIR%%/help/jstopics/admin_policies.js
+%%DOCSDIR%%/help/jstopics/archive_files.js
+%%DOCSDIR%%/help/jstopics/bcclipmain.js
+%%DOCSDIR%%/help/jstopics/bcclipoptions.js
+%%DOCSDIR%%/help/jstopics/bcshellex.js
+%%DOCSDIR%%/help/jstopics/calling_bc_from_other_applications.js
+%%DOCSDIR%%/help/jstopics/command_line_reference.js
+%%DOCSDIR%%/help/jstopics/commands_reference.js
+%%DOCSDIR%%/help/jstopics/commandsbc.js
+%%DOCSDIR%%/help/jstopics/commandsbcmac.js
+%%DOCSDIR%%/help/jstopics/commandsdir.js
+%%DOCSDIR%%/help/jstopics/commandsdirmerge.js
+%%DOCSDIR%%/help/jstopics/commandsdirsync.js
+%%DOCSDIR%%/help/jstopics/commandshex.js
+%%DOCSDIR%%/help/jstopics/commandshome.js
+%%DOCSDIR%%/help/jstopics/commandsmedia.js
+%%DOCSDIR%%/help/jstopics/commandspix.js
+%%DOCSDIR%%/help/jstopics/commandsreg.js
+%%DOCSDIR%%/help/jstopics/commandstable.js
+%%DOCSDIR%%/help/jstopics/commandstext.js
+%%DOCSDIR%%/help/jstopics/commandstextedit.js
+%%DOCSDIR%%/help/jstopics/commandstextmerge.js
+%%DOCSDIR%%/help/jstopics/commandstextpatch.js
+%%DOCSDIR%%/help/jstopics/commandsver.js
+%%DOCSDIR%%/help/jstopics/dir_columns.js
+%%DOCSDIR%%/help/jstopics/dir_filtering_the_view.js
+%%DOCSDIR%%/help/jstopics/dir_how_to_compare.js
+%%DOCSDIR%%/help/jstopics/dir_merge_understanding_the_display.js
+%%DOCSDIR%%/help/jstopics/dir_reconciling_differences.js
+%%DOCSDIR%%/help/jstopics/dir_sync_how_to_sync.js
+%%DOCSDIR%%/help/jstopics/dir_sync_understanding_the_display.js
+%%DOCSDIR%%/help/jstopics/dir_understanding_the_display.js
+%%DOCSDIR%%/help/jstopics/display_filters.js
+%%DOCSDIR%%/help/jstopics/dlgbrowsemachine.js
+%%DOCSDIR%%/help/jstopics/dlgdiralignwithitem.js
+%%DOCSDIR%%/help/jstopics/dlgdirfind.js
+%%DOCSDIR%%/help/jstopics/dlgdirotherfilteritem.js
+%%DOCSDIR%%/help/jstopics/dlgexport.js
+%%DOCSDIR%%/help/jstopics/dlgfileformatmanager.js
+%%DOCSDIR%%/help/jstopics/dlgimport.js
+%%DOCSDIR%%/help/jstopics/dlgnag.js
+%%DOCSDIR%%/help/jstopics/dlgopenwithitem.js
+%%DOCSDIR%%/help/jstopics/dlgprofilebrowse.js
+%%DOCSDIR%%/help/jstopics/dlgprofilemanager.js
+%%DOCSDIR%%/help/jstopics/dlgprogoptions.js
+%%DOCSDIR%%/help/jstopics/dlgregister.js
+%%DOCSDIR%%/help/jstopics/dlgreport.js
+%%DOCSDIR%%/help/jstopics/dlgrestore.js
+%%DOCSDIR%%/help/jstopics/dlgsnapshot.js
+%%DOCSDIR%%/help/jstopics/dlgsourcecontrolmanager.js
+%%DOCSDIR%%/help/jstopics/dlgsupport.js
+%%DOCSDIR%%/help/jstopics/dlgtablecolhandling.js
+%%DOCSDIR%%/help/jstopics/dlgtextfindinfiles.js
+%%DOCSDIR%%/help/jstopics/dlgtextgrammaritem.js
+%%DOCSDIR%%/help/jstopics/dlgtextreplacementitem.js
+%%DOCSDIR%%/help/jstopics/dlgworkspacemanager.js
+%%DOCSDIR%%/help/jstopics/editing_text.js
+%%DOCSDIR%%/help/jstopics/file_formats.js
+%%DOCSDIR%%/help/jstopics/file_masks.js
+%%DOCSDIR%%/help/jstopics/formatexternalgeneral.js
+%%DOCSDIR%%/help/jstopics/formathex.js
+%%DOCSDIR%%/help/jstopics/formathexconversion.js
+%%DOCSDIR%%/help/jstopics/formathexgeneral.js
+%%DOCSDIR%%/help/jstopics/formatpix.js
+%%DOCSDIR%%/help/jstopics/formatpixconversion.js
+%%DOCSDIR%%/help/jstopics/formatpixgeneral.js
+%%DOCSDIR%%/help/jstopics/formattable.js
+%%DOCSDIR%%/help/jstopics/formattableconversion.js
+%%DOCSDIR%%/help/jstopics/formattablegeneral.js
+%%DOCSDIR%%/help/jstopics/formattableregional.js
+%%DOCSDIR%%/help/jstopics/formattabletype.js
+%%DOCSDIR%%/help/jstopics/formattext.js
+%%DOCSDIR%%/help/jstopics/formattextconversion.js
+%%DOCSDIR%%/help/jstopics/formattextgeneral.js
+%%DOCSDIR%%/help/jstopics/formattextgrammar.js
+%%DOCSDIR%%/help/jstopics/formattextmisc.js
+%%DOCSDIR%%/help/jstopics/glossary.js
+%%DOCSDIR%%/help/jstopics/grammars.js
+%%DOCSDIR%%/help/jstopics/index.js
+%%DOCSDIR%%/help/jstopics/license_agreement.js
+%%DOCSDIR%%/help/jstopics/license_agreement_7-zip.js
+%%DOCSDIR%%/help/jstopics/license_agreement_fpc.js
+%%DOCSDIR%%/help/jstopics/license_agreement_gpl3.js
+%%DOCSDIR%%/help/jstopics/license_agreement_htmlviewer.js
+%%DOCSDIR%%/help/jstopics/license_agreement_httpget.js
+%%DOCSDIR%%/help/jstopics/license_agreement_innosetup.js
+%%DOCSDIR%%/help/jstopics/license_agreement_intlck64.js
+%%DOCSDIR%%/help/jstopics/license_agreement_lgpl.js
+%%DOCSDIR%%/help/jstopics/license_agreement_mpl.js
+%%DOCSDIR%%/help/jstopics/license_agreement_pcre.js
+%%DOCSDIR%%/help/jstopics/license_agreement_regexpr.js
+%%DOCSDIR%%/help/jstopics/license_agreement_textdiff.js
+%%DOCSDIR%%/help/jstopics/license_agreement_wavpack.js
+%%DOCSDIR%%/help/jstopics/license_agreement_wix.js
+%%DOCSDIR%%/help/jstopics/license_agreement_zlib.js
+%%DOCSDIR%%/help/jstopics/managing_sessions.js
+%%DOCSDIR%%/help/jstopics/moving_bc_to_another_computer.js
+%%DOCSDIR%%/help/jstopics/opattrib.js
+%%DOCSDIR%%/help/jstopics/opcompare.js
+%%DOCSDIR%%/help/jstopics/opcopy.js
+%%DOCSDIR%%/help/jstopics/opcopyto.js
+%%DOCSDIR%%/help/jstopics/opcopytooutput.js
+%%DOCSDIR%%/help/jstopics/opdelete.js
+%%DOCSDIR%%/help/jstopics/opexchange.js
+%%DOCSDIR%%/help/jstopics/opexclude.js
+%%DOCSDIR%%/help/jstopics/opmerge.js
+%%DOCSDIR%%/help/jstopics/opmove.js
+%%DOCSDIR%%/help/jstopics/opmoveto.js
+%%DOCSDIR%%/help/jstopics/opnewfolder.js
+%%DOCSDIR%%/help/jstopics/oprename.js
+%%DOCSDIR%%/help/jstopics/opsync.js
+%%DOCSDIR%%/help/jstopics/optionsarchive.js
+%%DOCSDIR%%/help/jstopics/optionsbackup.js
+%%DOCSDIR%%/help/jstopics/optionscolor.js
+%%DOCSDIR%%/help/jstopics/optionscommand.js
+%%DOCSDIR%%/help/jstopics/optionsdircolor.js
+%%DOCSDIR%%/help/jstopics/optionsfilecolor.js
+%%DOCSDIR%%/help/jstopics/optionsnextdiff.js
+%%DOCSDIR%%/help/jstopics/optionsop.js
+%%DOCSDIR%%/help/jstopics/optionsopenwith.js
+%%DOCSDIR%%/help/jstopics/optionspixcolor.js
+%%DOCSDIR%%/help/jstopics/optionsstartup.js
+%%DOCSDIR%%/help/jstopics/optionstab.js
+%%DOCSDIR%%/help/jstopics/optionstext.js
+%%DOCSDIR%%/help/jstopics/optionstweak.js
+%%DOCSDIR%%/help/jstopics/optouch.js
+%%DOCSDIR%%/help/jstopics/pix_how_to_compare.js
+%%DOCSDIR%%/help/jstopics/profileamazons3.js
+%%DOCSDIR%%/help/jstopics/profiledropbox.js
+%%DOCSDIR%%/help/jstopics/profileftp.js
+%%DOCSDIR%%/help/jstopics/profileftpconnection.js
+%%DOCSDIR%%/help/jstopics/profileftpglobal.js
+%%DOCSDIR%%/help/jstopics/profileftplisting.js
+%%DOCSDIR%%/help/jstopics/profileftplogin.js
+%%DOCSDIR%%/help/jstopics/profileftpproxy.js
+%%DOCSDIR%%/help/jstopics/profileftpserver.js
+%%DOCSDIR%%/help/jstopics/profileftptransfer.js
+%%DOCSDIR%%/help/jstopics/profileonedrive.js
+%%DOCSDIR%%/help/jstopics/profilesvn.js
+%%DOCSDIR%%/help/jstopics/profilewebdav.js
+%%DOCSDIR%%/help/jstopics/regular_expression_reference.js
+%%DOCSDIR%%/help/jstopics/remote_services.js
+%%DOCSDIR%%/help/jstopics/rules_vs_file_formats.js
+%%DOCSDIR%%/help/jstopics/sample_regular_expressions.js
+%%DOCSDIR%%/help/jstopics/sample_scripts.js
+%%DOCSDIR%%/help/jstopics/scheduling_a_script.js
+%%DOCSDIR%%/help/jstopics/scripting_reference.js
+%%DOCSDIR%%/help/jstopics/scripts.js
+%%DOCSDIR%%/help/jstopics/searching_for_text.js
+%%DOCSDIR%%/help/jstopics/session_settings.js
+%%DOCSDIR%%/help/jstopics/sessiondir.js
+%%DOCSDIR%%/help/jstopics/sessiondircomparison.js
+%%DOCSDIR%%/help/jstopics/sessiondirhandling.js
+%%DOCSDIR%%/help/jstopics/sessiondirmerge.js
+%%DOCSDIR%%/help/jstopics/sessiondirmergecomparison.js
+%%DOCSDIR%%/help/jstopics/sessiondirmergehandling.js
+%%DOCSDIR%%/help/jstopics/sessiondirmergemisc.js
+%%DOCSDIR%%/help/jstopics/sessiondirmergenamefilter.js
+%%DOCSDIR%%/help/jstopics/sessiondirmergeotherfilters.js
+%%DOCSDIR%%/help/jstopics/sessiondirmergespecs.js
+%%DOCSDIR%%/help/jstopics/sessiondirmisc.js
+%%DOCSDIR%%/help/jstopics/sessiondirnamefilter.js
+%%DOCSDIR%%/help/jstopics/sessiondirotherfilters.js
+%%DOCSDIR%%/help/jstopics/sessiondirspecs.js
+%%DOCSDIR%%/help/jstopics/sessiondirsync.js
+%%DOCSDIR%%/help/jstopics/sessiondirsynccomparison.js
+%%DOCSDIR%%/help/jstopics/sessiondirsynchandling.js
+%%DOCSDIR%%/help/jstopics/sessiondirsyncmisc.js
+%%DOCSDIR%%/help/jstopics/sessiondirsyncnamefilter.js
+%%DOCSDIR%%/help/jstopics/sessiondirsyncops.js
+%%DOCSDIR%%/help/jstopics/sessiondirsyncotherfilters.js
+%%DOCSDIR%%/help/jstopics/sessiondirsyncspecs.js
+%%DOCSDIR%%/help/jstopics/sessionhex.js
+%%DOCSDIR%%/help/jstopics/sessionhexcomparison.js
+%%DOCSDIR%%/help/jstopics/sessionhexformats.js
+%%DOCSDIR%%/help/jstopics/sessionhexspecs.js
+%%DOCSDIR%%/help/jstopics/sessionmedia.js
+%%DOCSDIR%%/help/jstopics/sessionmediaimportance.js
+%%DOCSDIR%%/help/jstopics/sessionmediaspecs.js
+%%DOCSDIR%%/help/jstopics/sessionpix.js
+%%DOCSDIR%%/help/jstopics/sessionpixformats.js
+%%DOCSDIR%%/help/jstopics/sessionpixreplacements.js
+%%DOCSDIR%%/help/jstopics/sessionpixspecs.js
+%%DOCSDIR%%/help/jstopics/sessionreg.js
+%%DOCSDIR%%/help/jstopics/sessionregspecs.js
+%%DOCSDIR%%/help/jstopics/sessiontable.js
+%%DOCSDIR%%/help/jstopics/sessiontablecolumns.js
+%%DOCSDIR%%/help/jstopics/sessiontableformats.js
+%%DOCSDIR%%/help/jstopics/sessiontablerows.js
+%%DOCSDIR%%/help/jstopics/sessiontablesheets.js
+%%DOCSDIR%%/help/jstopics/sessiontablespecs.js
+%%DOCSDIR%%/help/jstopics/sessiontext.js
+%%DOCSDIR%%/help/jstopics/sessiontextalignment.js
+%%DOCSDIR%%/help/jstopics/sessiontextformats.js
+%%DOCSDIR%%/help/jstopics/sessiontextimportance.js
+%%DOCSDIR%%/help/jstopics/sessiontextmerge.js
+%%DOCSDIR%%/help/jstopics/sessiontextmergealignment.js
+%%DOCSDIR%%/help/jstopics/sessiontextmergeformats.js
+%%DOCSDIR%%/help/jstopics/sessiontextmergeimportance.js
+%%DOCSDIR%%/help/jstopics/sessiontextmergespecs.js
+%%DOCSDIR%%/help/jstopics/sessiontextreplacements.js
+%%DOCSDIR%%/help/jstopics/sessiontextspecs.js
+%%DOCSDIR%%/help/jstopics/sessionver.js
+%%DOCSDIR%%/help/jstopics/sessionverimportance.js
+%%DOCSDIR%%/help/jstopics/sessionverspecs.js
+%%DOCSDIR%%/help/jstopics/settings_reference.js
+%%DOCSDIR%%/help/jstopics/sharing_sessions.js
+%%DOCSDIR%%/help/jstopics/snapshots.js
+%%DOCSDIR%%/help/jstopics/specs.js
+%%DOCSDIR%%/help/jstopics/standard_vs_pro.js
+%%DOCSDIR%%/help/jstopics/support_ordering_and_license.js
+%%DOCSDIR%%/help/jstopics/table_working_with_multiple.js
+%%DOCSDIR%%/help/jstopics/using_bc.js
+%%DOCSDIR%%/help/jstopics/using_text_merge.js
+%%DOCSDIR%%/help/jstopics/viewdir.js
+%%DOCSDIR%%/help/jstopics/viewdirmerge.js
+%%DOCSDIR%%/help/jstopics/viewdirsync.js
+%%DOCSDIR%%/help/jstopics/viewhex.js
+%%DOCSDIR%%/help/jstopics/viewhome.js
+%%DOCSDIR%%/help/jstopics/viewother.js
+%%DOCSDIR%%/help/jstopics/viewpix.js
+%%DOCSDIR%%/help/jstopics/viewreg.js
+%%DOCSDIR%%/help/jstopics/viewtable.js
+%%DOCSDIR%%/help/jstopics/viewtext.js
+%%DOCSDIR%%/help/jstopics/viewtextedit.js
+%%DOCSDIR%%/help/jstopics/viewtextmerge.js
+%%DOCSDIR%%/help/jstopics/viewtextpatch.js
+%%DOCSDIR%%/help/jstopics/walking_through_differences.js
+%%DOCSDIR%%/help/jstopics/whats_new.js
+%%DOCSDIR%%/help/jstopics/where_settings_are_stored.js
+%%DOCSDIR%%/help/license_agreement.html
+%%DOCSDIR%%/help/license_agreement_7-zip.html
+%%DOCSDIR%%/help/license_agreement_fpc.html
+%%DOCSDIR%%/help/license_agreement_gpl3.html
+%%DOCSDIR%%/help/license_agreement_htmlviewer.html
+%%DOCSDIR%%/help/license_agreement_httpget.html
+%%DOCSDIR%%/help/license_agreement_innosetup.html
+%%DOCSDIR%%/help/license_agreement_intlck64.html
+%%DOCSDIR%%/help/license_agreement_lgpl.html
+%%DOCSDIR%%/help/license_agreement_mpl.html
+%%DOCSDIR%%/help/license_agreement_pcre.html
+%%DOCSDIR%%/help/license_agreement_regexpr.html
+%%DOCSDIR%%/help/license_agreement_textdiff.html
+%%DOCSDIR%%/help/license_agreement_wavpack.html
+%%DOCSDIR%%/help/license_agreement_wix.html
+%%DOCSDIR%%/help/license_agreement_zlib.html
+%%DOCSDIR%%/help/managing_sessions.html
+%%DOCSDIR%%/help/moving_bc_to_another_computer.html
+%%DOCSDIR%%/help/opattrib.html
+%%DOCSDIR%%/help/opcompare.html
+%%DOCSDIR%%/help/opcopy.html
+%%DOCSDIR%%/help/opcopyto.html
+%%DOCSDIR%%/help/opcopytooutput.html
+%%DOCSDIR%%/help/opdelete.html
+%%DOCSDIR%%/help/opexchange.html
+%%DOCSDIR%%/help/opexclude.html
+%%DOCSDIR%%/help/opmerge.html
+%%DOCSDIR%%/help/opmove.html
+%%DOCSDIR%%/help/opmoveto.html
+%%DOCSDIR%%/help/opnewfolder.html
+%%DOCSDIR%%/help/oprename.html
+%%DOCSDIR%%/help/opsync.html
+%%DOCSDIR%%/help/optionsarchive.html
+%%DOCSDIR%%/help/optionsbackup.html
+%%DOCSDIR%%/help/optionscolor.html
+%%DOCSDIR%%/help/optionscommand.html
+%%DOCSDIR%%/help/optionsdircolor.html
+%%DOCSDIR%%/help/optionsfilecolor.html
+%%DOCSDIR%%/help/optionsnextdiff.html
+%%DOCSDIR%%/help/optionsop.html
+%%DOCSDIR%%/help/optionsopenwith.html
+%%DOCSDIR%%/help/optionspixcolor.html
+%%DOCSDIR%%/help/optionsstartup.html
+%%DOCSDIR%%/help/optionstab.html
+%%DOCSDIR%%/help/optionstext.html
+%%DOCSDIR%%/help/optionstweak.html
+%%DOCSDIR%%/help/optouch.html
+%%DOCSDIR%%/help/pix_how_to_compare.html
+%%DOCSDIR%%/help/profileamazons3.html
+%%DOCSDIR%%/help/profiledropbox.html
+%%DOCSDIR%%/help/profileftp.html
+%%DOCSDIR%%/help/profileftpconnection.html
+%%DOCSDIR%%/help/profileftpglobal.html
+%%DOCSDIR%%/help/profileftplisting.html
+%%DOCSDIR%%/help/profileftplogin.html
+%%DOCSDIR%%/help/profileftpproxy.html
+%%DOCSDIR%%/help/profileftpserver.html
+%%DOCSDIR%%/help/profileftptransfer.html
+%%DOCSDIR%%/help/profileonedrive.html
+%%DOCSDIR%%/help/profilesvn.html
+%%DOCSDIR%%/help/profilewebdav.html
+%%DOCSDIR%%/help/regular_expression_reference.html
+%%DOCSDIR%%/help/remote_services.html
+%%DOCSDIR%%/help/rules_vs_file_formats.html
+%%DOCSDIR%%/help/sample_regular_expressions.html
+%%DOCSDIR%%/help/sample_scripts.html
+%%DOCSDIR%%/help/scheduling_a_script.html
+%%DOCSDIR%%/help/scripting_reference.html
+%%DOCSDIR%%/help/scripts.html
+%%DOCSDIR%%/help/searching_for_text.html
+%%DOCSDIR%%/help/session_settings.html
+%%DOCSDIR%%/help/sessiondir.html
+%%DOCSDIR%%/help/sessiondircomparison.html
+%%DOCSDIR%%/help/sessiondirhandling.html
+%%DOCSDIR%%/help/sessiondirmerge.html
+%%DOCSDIR%%/help/sessiondirmergecomparison.html
+%%DOCSDIR%%/help/sessiondirmergehandling.html
+%%DOCSDIR%%/help/sessiondirmergemisc.html
+%%DOCSDIR%%/help/sessiondirmergenamefilter.html
+%%DOCSDIR%%/help/sessiondirmergeotherfilters.html
+%%DOCSDIR%%/help/sessiondirmergespecs.html
+%%DOCSDIR%%/help/sessiondirmisc.html
+%%DOCSDIR%%/help/sessiondirnamefilter.html
+%%DOCSDIR%%/help/sessiondirotherfilters.html
+%%DOCSDIR%%/help/sessiondirspecs.html
+%%DOCSDIR%%/help/sessiondirsync.html
+%%DOCSDIR%%/help/sessiondirsynccomparison.html
+%%DOCSDIR%%/help/sessiondirsynchandling.html
+%%DOCSDIR%%/help/sessiondirsyncmisc.html
+%%DOCSDIR%%/help/sessiondirsyncnamefilter.html
+%%DOCSDIR%%/help/sessiondirsyncops.html
+%%DOCSDIR%%/help/sessiondirsyncotherfilters.html
+%%DOCSDIR%%/help/sessiondirsyncspecs.html
+%%DOCSDIR%%/help/sessionhex.html
+%%DOCSDIR%%/help/sessionhexcomparison.html
+%%DOCSDIR%%/help/sessionhexformats.html
+%%DOCSDIR%%/help/sessionhexspecs.html
+%%DOCSDIR%%/help/sessionmedia.html
+%%DOCSDIR%%/help/sessionmediaimportance.html
+%%DOCSDIR%%/help/sessionmediaspecs.html
+%%DOCSDIR%%/help/sessionpix.html
+%%DOCSDIR%%/help/sessionpixformats.html
+%%DOCSDIR%%/help/sessionpixreplacements.html
+%%DOCSDIR%%/help/sessionpixspecs.html
+%%DOCSDIR%%/help/sessionreg.html
+%%DOCSDIR%%/help/sessionregspecs.html
+%%DOCSDIR%%/help/sessiontable.html
+%%DOCSDIR%%/help/sessiontablecolumns.html
+%%DOCSDIR%%/help/sessiontableformats.html
+%%DOCSDIR%%/help/sessiontablerows.html
+%%DOCSDIR%%/help/sessiontablesheets.html
+%%DOCSDIR%%/help/sessiontablespecs.html
+%%DOCSDIR%%/help/sessiontext.html
+%%DOCSDIR%%/help/sessiontextalignment.html
+%%DOCSDIR%%/help/sessiontextformats.html
+%%DOCSDIR%%/help/sessiontextimportance.html
+%%DOCSDIR%%/help/sessiontextmerge.html
+%%DOCSDIR%%/help/sessiontextmergealignment.html
+%%DOCSDIR%%/help/sessiontextmergeformats.html
+%%DOCSDIR%%/help/sessiontextmergeimportance.html
+%%DOCSDIR%%/help/sessiontextmergespecs.html
+%%DOCSDIR%%/help/sessiontextreplacements.html
+%%DOCSDIR%%/help/sessiontextspecs.html
+%%DOCSDIR%%/help/sessionver.html
+%%DOCSDIR%%/help/sessionverimportance.html
+%%DOCSDIR%%/help/sessionverspecs.html
+%%DOCSDIR%%/help/settings.js
+%%DOCSDIR%%/help/settings_reference.html
+%%DOCSDIR%%/help/sharing_sessions.html
+%%DOCSDIR%%/help/snapshots.html
+%%DOCSDIR%%/help/specs.html
+%%DOCSDIR%%/help/standard_vs_pro.html
+%%DOCSDIR%%/help/support_ordering_and_license.html
+%%DOCSDIR%%/help/table_working_with_multiple.html
+%%DOCSDIR%%/help/using_bc.html
+%%DOCSDIR%%/help/using_text_merge.html
+%%DOCSDIR%%/help/viewdir.html
+%%DOCSDIR%%/help/viewdirmerge.html
+%%DOCSDIR%%/help/viewdirsync.html
+%%DOCSDIR%%/help/viewhex.html
+%%DOCSDIR%%/help/viewhome.html
+%%DOCSDIR%%/help/viewother.html
+%%DOCSDIR%%/help/viewpix.html
+%%DOCSDIR%%/help/viewreg.html
+%%DOCSDIR%%/help/viewtable.html
+%%DOCSDIR%%/help/viewtext.html
+%%DOCSDIR%%/help/viewtextedit.html
+%%DOCSDIR%%/help/viewtextmerge.html
+%%DOCSDIR%%/help/viewtextpatch.html
+%%DOCSDIR%%/help/walking_through_differences.html
+%%DOCSDIR%%/help/whats_new.html
+%%DOCSDIR%%/help/where_settings_are_stored.html
+%%DOCSDIR%%/help/zoom_index.js
+%%DOCSDIR%%/help/zoom_pageinfo.js
+%%DOCSDIR%%/help/zoom_search.js
+share/icons/hicolor/16x16/apps/bcompare.png
+share/icons/hicolor/32x32/apps/bcompare.png
+share/icons/hicolor/48x48/apps/bcompare.png
+share/mime/packages/bcompare.xml
+share/pixmaps/bcompare.png
+share/pixmaps/bcomparefull32.png
+share/pixmaps/bcomparehalf32.png

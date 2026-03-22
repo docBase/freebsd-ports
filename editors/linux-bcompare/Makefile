@@ -49,9 +49,6 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-usr_bin_bcompare_amd64
 BCLIB_SRC=	${WRKSRC}/usr/${LIBDIR}/beyondcompare
 BCLIB_STG=	${STAGEDIR}${PREFIX}/lib/beyondcompare
 
-post-patch:
-	${REINPLACE_CMD} -e 's|^#!/usr/bin/sh$$|#!/bin/sh|' ${BCLIB_SRC}/bcmount.sh
-
 pre-install:
 	${LINUXBASE}/usr/bin/gcc --sysroot=${LINUXBASE} -Wall -fPIC -shared \
 		${FILESDIR}/nosched.c -ldl -o ${BCLIB_SRC}/nosched.so
