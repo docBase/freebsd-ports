@@ -38,6 +38,7 @@ lib/beyondcompare/libgomp.so.1
 lib/beyondcompare/libunrar.so
 lib/beyondcompare/mime.types
 lib/beyondcompare/nosched.so
+lib/beyondcompare/platforms/libqxcb.so
 lib/beyondcompare/scootersoftware.repo
 share/applications/bcompare.desktop
 %%DOCSDIR%%/README

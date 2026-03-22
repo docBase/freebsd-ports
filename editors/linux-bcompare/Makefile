@@ -81,6 +81,8 @@ post-extract:
 	@${CP} ${WRKDIR}/qt6tmp/usr/${LIBDIR}/libQt6XcbQpa.so.6* ${BCLIB_SRC}/
 	@${CP} ${WRKDIR}/qt6tmp/usr/${LIBDIR}/libdouble-conversion.so.3* ${BCLIB_SRC}/
 	@${CP} ${WRKDIR}/qt6tmp/usr/${LIBDIR}/libb2.so.1* ${BCLIB_SRC}/
+	@${MKDIR} ${BCLIB_SRC}/platforms
+	@${CP} ${WRKDIR}/qt6tmp/usr/${LIBDIR}/qt6/plugins/platforms/libqxcb.so ${BCLIB_SRC}/platforms/
 	@${RM} -r ${WRKDIR}/qt6tmp
 
 pre-install:
@@ -98,6 +100,8 @@ do-install:
 	${INSTALL_LIB} ${BCLIB_SRC}/ext/*.so   ${BCLIB_STG}/ext
 	${LN} -sf ${LINUXBASE}/usr/${LIBDIR}/libbz2.so.1 ${BCLIB_STG}/libbz2.so.1.0
 	${INSTALL_LIB} ${LINUXBASE}/usr/${LIBDIR}/libgomp.so.1 ${BCLIB_STG}/libgomp.so.1
+	${MKDIR} ${BCLIB_STG}/platforms
+	${INSTALL_LIB} ${BCLIB_SRC}/platforms/libqxcb.so ${BCLIB_STG}/platforms/
 # data
 	(cd ${WRKSRC}/usr/share && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share)
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/16x16/apps
