@@ -1,0 +1,56 @@
+@dir bin
+bin/bcompare
+@dir share
+@dir share/applications
+share/applications/bcompare.desktop
+@dir share/mime
+@dir share/mime/packages
+share/mime/packages/bcompare.xml
+@dir share/icons
+@dir share/icons/hicolor
+@dir share/icons/hicolor/16x16
+@dir share/icons/hicolor/16x16/apps
+share/icons/hicolor/16x16/apps/bcompare.png
+@dir share/icons/hicolor/32x32
+@dir share/icons/hicolor/32x32/apps
+share/icons/hicolor/32x32/apps/bcompare.png
+@dir share/icons/hicolor/48x48
+@dir share/icons/hicolor/48x48/apps
+share/icons/hicolor/48x48/apps/bcompare.png
+@dir share/pixmaps
+share/pixmaps/bcompare.png
+share/pixmaps/bcomparefull32.png
+share/pixmaps/bcomparehalf32.png
+@dir lib/beyondcompare
+@dir lib/beyondcompare/ext
+lib/beyondcompare/bcmount.sh
+lib/beyondcompare/BCompare
+lib/beyondcompare/BCompare.mad
+lib/beyondcompare/lib7z.so
+lib/beyondcompare/libbz2.so.1.0
+lib/beyondcompare/libcloudstorage.so.22.0
+lib/beyondcompare/libQt5Pas.so.1
+lib/beyondcompare/libunrar.so
+lib/beyondcompare/mime.types
+lib/beyondcompare/nosched.so
+lib/beyondcompare/README
+lib/beyondcompare/RPM-GPG-KEY-scootersoftware
+lib/beyondcompare/scootersoftware.repo
+@(,,644) lib/beyondcompare/ext/bcompare_ext_kde.desktop
+@(,,644) lib/beyondcompare/ext/bcompare_ext_konq.desktop
+lib/beyondcompare/ext/bcompare-ext-caja.amd64.so
+lib/beyondcompare/ext/bcompare-ext-caja.i386.so
+lib/beyondcompare/ext/bcompare-ext-nautilus.amd64.so
+lib/beyondcompare/ext/bcompare-ext-nautilus.i386.so
+lib/beyondcompare/ext/bcompare-ext-nemo.amd64.so
+lib/beyondcompare/ext/bcompare-ext-nemo.i386.so
+lib/beyondcompare/ext/bcompare-ext-thunarx-2.amd64.so
+lib/beyondcompare/ext/bcompare-ext-thunarx-2.i386.so
+lib/beyondcompare/ext/bcompare-ext-thunarx-3.amd64.so
+lib/beyondcompare/ext/bcompare-ext-thunarx-3.i386.so
+lib/beyondcompare/ext/bcompare_ext_kde.amd64.so
+lib/beyondcompare/ext/bcompare_ext_kde.i386.so
+lib/beyondcompare/ext/bcompare_ext_kde5.amd64.so
+lib/beyondcompare/ext/bcompare_ext_kde6.amd64.so
+lib/beyondcompare/ext/bcompare_ext_konq.amd64.so
+lib/beyondcompare/ext/bcompare_ext_konq.i386.so
